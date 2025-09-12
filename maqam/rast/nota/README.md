@@ -4,33 +4,39 @@
 
 ~
 
++ #define tempo #120#
+
 + y
 
-+ v $measure
++ v 8
 
 + { 2 channel
 
-+ { 1 time
-
-+ b [ $measure * $time ]
++ b 0
 
 tin octave = 8 --read from ~ nota 16-ascending
 
-+ b [ $measure * ( $time + 1 ) ]
++ b 8
 
 tin --read from ~ nota 16-descending
 
 + }
 
-+ }
++ b 0
 
-+ b [ $measure * 2 ]
++ a 0 0 16
+
++ s 16
 
 ```
 
 ```scenario oscilla
 
 ~
+
++ t 0 $tempo
+
++ v 4
 
 + { 2 channel
 
@@ -42,10 +48,32 @@ sagat --read from ~ nota tempo
 
 + }
 
++ a 0 0 4
+
++ s 4
+
 ```
 
 ```scenario oscilla
 
-loopback length = -1 * 1
++ t 0 $tempo
+
++ v 16
+
++ { 2 channel
+
++ b 0
+
+tin octave = 8 --read from ~ nota rast
+
++ }
+
++ s 16
+
+```
+
+```scenario oscilla
+
+loopback length = -1 * 0
 
 ```

@@ -22,9 +22,14 @@ giTempo init 0
 
 instr $clock
 
+#define parameters #p4#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_tempo #p4#
 iPTempo init p4
 
 giMeasure init iPLength
@@ -38,9 +43,14 @@ giKey init 0
 
 instr $key
 
+#define parameters #p4#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_pitch #p4#
 iPPitch init p4
 
 giKey init iPPitch
@@ -53,9 +63,14 @@ gaNote [] init nchnls
 
 instr $mixer
 
+#define parameters #p4#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_channel #p4#
 iPChannel init p4
 
 aNote clip gaNote [ iPChannel ], 1, 0dbfs
@@ -68,8 +83,12 @@ endin
 
 instr $loopback
 
+#define parameters ##
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
 
 rewindscore
@@ -107,27 +126,50 @@ endin
 
 instr $tin
 
+#define parameters #p4, p5, p6, p7, p8#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_octave #p4#
 iPOctave init p4
+#define p_tone #p5#
 iPTone init p5
+#define p_channel #p6#
 iPChannel init p6
+#define p_distance #p7#
 iPDistance init p7
+#define p_ornaments #p8#
+iPOrnaments init p8
 
-iAttack init iPLength / 2^6
-iDecay init iPLength / 2^6
+if $p_ornaments > 0 then
+seed 0
+iRandom random 0, $p_ornaments
+iOrnaments init 2 ^ int ( iRandom )
+$p_length /= iOrnaments
+iOrnament init 1
+$p_ornaments = -1
+while iOrnament < iOrnaments do
+schedule p1, iOrnament * $p_length, $p_length, $parameters
+iOrnament += 1
+od
+$p_ornaments = 0
+endif
+iAttack init $p_length / 2^13
+iDecay init $p_length / 2^13
 aAmplitude linseg 0, iAttack, 1, iDecay, 0
 iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / 16 ) )
-aFrequency linsegr iFrequency * 2^(4/16), iAttack / 2^6, iFrequency, iDecay / 2, iFrequency * 2^(-4/16)
-aClip rspline 0, 1, 0, iPLength
-aSkew rspline -1, 1, 0, iPLength
+aFrequency linsegr iFrequency * 2^(16/16), iAttack / 2^1, iFrequency, iDecay / 2, iFrequency * 2^(-4/16)
+aClip rspline 0, 1, 0, $p_length
+aSkew rspline -1, 1, 0, $p_length
 aNote squinewave aFrequency, aClip, aSkew
-aNote *= aAmplitude / 2^2
-aAmplitude linseg 0, iAttack, 1, iPLength - iAttack, 0
+aNote *= aAmplitude / 2^1
+aAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
 aPluck pluck k ( aAmplitude ), k ( aFrequency ) / 2^0, iFrequency, 0, 1
 aNote += aPluck / 2
-aNote butterlp aNote, aFrequency * 2^2
+aNote butterlp aNote, aFrequency * 2^1
 aNote butterhp aNote, aFrequency / 2^0
 gaTin [ iPChannel ] = gaTin [ iPChannel ] + aNote / 2^iPDistance
 
@@ -137,10 +179,16 @@ endin
 
 instr $dom
 
+#define parameters #p4, p5#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_channel #p4#
 iPChannel init p4
+#define p_distance #p5#
 iPDistance init p5
 
 aNote = 0
@@ -173,11 +221,18 @@ endin
 
 instr $tak
 
+#define parameters #p4, p5, p6#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_tone #p4#
 iPTone init p4
+#define p_channel #p5#
 iPChannel init p5
+#define p_distance #p6#
 iPDistance init p6
 
 aNote = 0
@@ -211,11 +266,18 @@ endin
 
 instr $sak
 
+#define parameters #p4, p5, p6#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_tone #p4#
 iPTone init p4
+#define p_channel #p5#
 iPChannel init p5
+#define p_distance #p6#
 iPDistance init p6
 
 aNote = 0
@@ -249,11 +311,18 @@ endin
 
 instr $sik
 
+#define parameters #p4, p5, p6#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_tone #p4#
 iPTone init p4
+#define p_channel #p5#
 iPChannel init p5
+#define p_distance #p6#
 iPDistance init p6
 
 aNote = 0
@@ -287,11 +356,18 @@ endin
 
 instr $sagat
 
+#define parameters #p4, p5, p6#
+#define p_note #p1#
 iPNote init p1
+#define p_step #p2#
 iPStep init p2
+#define p_length #p3#
 iPLength init p3
+#define p_tone #p4#
 iPTone init p4
+#define p_channel #p5#
 iPChannel init p5
+#define p_distance #p6#
 iPDistance init p6
 
 aNote = 0
@@ -320,8 +396,8 @@ aSnatchFrequency linseg 2^16, iAttack/2, 2^13
 aSnatch noise aSnatchAmplitude, 0
 aSnatch butterlp aSnatch, aSnatchFrequency * iPitch
 aNote += aSnatch
-aTambourine tambourine 1, iPLength / 2^2, 2^4, .5, .5, ( 2^11 ) * iPitch, ( 2^12 ) * iPitch, ( 2^13 ) * iPitch
-aNote += aTambourine/2^4
+aTambourine tambourine 1, iPLength / 2^3, 2^4, .5, .5, ( 2^11 ) * iPitch, ( 2^12 ) * iPitch, ( 2^13 ) * iPitch
+aNote += aTambourine/2^0
 aNote clip aNote, 1, 1
 gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / 2^iPDistance
 
@@ -340,21 +416,24 @@ i [1] [0] [1] [$tempo]
 i [3 + .$channel] [0] [-1] [$channel]
 }
 i "_tin" 0 -1
+#define tempo #120#
 y
-v $measure
+v 8
 { 2 channel
-{ 1 time
-b [ $measure * $time ]
+b 0
 { 16 note
-i [5] [$note/16] [1/16] [8] [$note] [$channel] [1]
+i [5] [$note/16] [1/16] [8] [$note] [$channel] [0] [1]
 }
-b [ $measure * ( $time + 1 ) ]
+b 8
 { 16 note
-i [5] [$note/16] [1/16] [8] [16-$note] [$channel] [1]
+i [5] [$note/16] [1/16] [8] [16-$note] [$channel] [0] [1]
 }
 }
-}
-b [ $measure * 2 ]
+b 0
+a 0 0 16
+s 16
+t 0 $tempo
+v 4
 { 2 channel
 { 4 finger
 i [10 + .$channel + .0$finger] [0 + $finger/2^8] [(1/2^3)] [0 + ~ + ( $finger * 4 )] [$channel] [3]
@@ -363,7 +442,32 @@ i [10 + .$channel + .0$finger] [2/4 + $finger/2^8] [(1/2^3)] [0 + ~ + ( $finger 
 i [10 + .$channel + .0$finger] [3/4 + $finger/2^8] [(1/2^3)] [0 + ~ + ( $finger * 4 )] [$channel] [3]
 }
 }
-i [4] [1] [-1]
+a 0 0 4
+s 4
+t 0 $tempo
+v 16
+{ 2 channel
+b 0
+i [5] [0] [1/16] [8] [0] [$channel] [0] [4]
+i [5] [1/16] [1/16] [8] [3] [$channel] [0] [4]
+i [5] [2/16] [1/16] [8] [5] [$channel] [0] [4]
+i [5] [3/16] [1/16] [8] [7] [$channel] [0] [4]
+i [5] [4/16] [1/16] [8] [10] [$channel] [0] [4]
+i [5] [5/16] [1/16] [8] [12] [$channel] [0] [4]
+i [5] [6/16] [1/16] [8] [14] [$channel] [0] [4]
+i [5] [7/16] [1/16] [8] [16] [$channel] [0] [4]
+b 8
+i [5] [0/16] [1/16] [8] [16] [$channel] [0] [4]
+i [5] [1/16] [1/16] [8] [14] [$channel] [0] [4]
+i [5] [2/16] [1/16] [8] [12] [$channel] [0] [4]
+i [5] [3/16] [1/16] [8] [10] [$channel] [0] [4]
+i [5] [4/16] [1/16] [8] [7] [$channel] [0] [4]
+i [5] [5/16] [1/16] [8] [5] [$channel] [0] [4]
+i [5] [6/16] [1/16] [8] [3] [$channel] [0] [4]
+i [5] [7/16] [1/16] [8] [0] [$channel] [0] [4]
+}
+s 16
+i [4] [0] [-1]
 
 </CsScore>
 

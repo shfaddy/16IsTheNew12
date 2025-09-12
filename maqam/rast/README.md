@@ -13,6 +13,15 @@ According to MaqamWorld, [Maqam Rast](https://www.maqamworld.com/en/maqam/rast.p
 * +1050 (step: 196 cents)
 * +1200 (octave, step: 150 cents)
 
+* 0
+* +225
+* +375 (step size from 2→3 is 150 cents)
+* +525 (step: 150 cents)
+* +750 (step: 225 cents)
+* +900 (step: 150 cents)
+* +1050 (step: 150 cents)
+* +1200 (octave, step: 150 cents)
+
 ## Options
 
 ```scenario oscilla

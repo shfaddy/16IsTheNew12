@@ -77,9 +77,9 @@ aSnatch butterlp aSnatch, aSnatchFrequency * iPitch
 
 aNote += aSnatch
 
-aTambourine tambourine 1, iPLength / 2^2, 2^4, .5, .5, ( 2^11 ) * iPitch, ( 2^12 ) * iPitch, ( 2^13 ) * iPitch
+aTambourine tambourine 1, iPLength / 2^3, 2^4, .5, .5, ( 2^11 ) * iPitch, ( 2^12 ) * iPitch, ( 2^13 ) * iPitch
 
-aNote += aTambourine/2^4
+aNote += aTambourine/2^0
 
 aNote clip aNote, 1, 1
 
