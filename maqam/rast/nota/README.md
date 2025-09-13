@@ -8,12 +8,19 @@
 
 ```
 
+```scenario xoscilla
+
+~ nota --read huzam
+
+```
+
 ```scenario oscilla
 
 ~ nota .
 
 --read ajam
 --read rast
+--read huzam
 --read shfaddys
 
 ~
