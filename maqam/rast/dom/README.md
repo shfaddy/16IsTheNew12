@@ -60,7 +60,7 @@ aNote += aSnatch*4
 
 aNote clip aNote, 1, 1
 
-gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / 2^iPDistance
+gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / ( iPDistance + 1 )
 
 ..
 

@@ -2,9 +2,26 @@
 
 ```scenario oscilla
 
-* 0
-* 1/4
-* 2/4
-* 3/4
++ a 0 0 $measure
+
+~ sagat .
+
++ v $measure
+
++ { 2 channel
+
++ { 4 finger
+
++ { $measure beat
+
+* $beat/$measure
+
++ }
+
++ }
+
++ }
+
++ s $measure
 
 ```

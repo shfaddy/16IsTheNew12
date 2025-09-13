@@ -6,7 +6,7 @@
 
 note --attach + .$channel + .0$finger
 
-step --attach + $finger/2^7
+step --attach + $finger/2^9
 
 length = (1/2)
 
@@ -69,7 +69,7 @@ aNote += aSnatch
 
 aNote clip aNote, 1, 1
 
-gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / 2^iPDistance
+gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / ( iPDistance + 1 )
 
 ..
 

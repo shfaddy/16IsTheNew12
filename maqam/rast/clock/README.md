@@ -39,7 +39,7 @@ giTempo init iPTempo
 
 ```scenario oscilla
 
-+ #define tempo #96#
++ #define tempo #88#
 
 + t 0 $tempo
 

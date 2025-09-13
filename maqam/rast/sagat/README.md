@@ -6,7 +6,7 @@
 
 note --attach + .$channel + .0$finger
 
-step --attach + $finger/2^8
+step --attach + $finger/2^16
 
 length = (1/2^3)
 
@@ -83,7 +83,7 @@ aNote += aTambourine/2^0
 
 aNote clip aNote, 1, 1
 
-gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / 2^iPDistance
+gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / ( iPDistance + 1 )
 
 ..
 

@@ -16,7 +16,7 @@ tone --attach + ( $finger * 4 ) + ( ~ * 2 )
 
 --parameter channel = $channel
 
---parameter distance = 3
+--parameter distance = 2
 
 ```
 
@@ -69,7 +69,7 @@ aNote += aSnatch / 2^2
 
 aNote clip aNote, 1, 1
 
-gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / 2^iPDistance
+gaNote [ iPChannel ] = gaNote [ iPChannel ] + aNote / ( iPDistance + 1 )
 
 ..
 

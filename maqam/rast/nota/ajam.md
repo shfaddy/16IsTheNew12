@@ -1,4 +1,4 @@
-# Maqam Rast Nota
+# Maqam Ajam Nota
 
 ```scenario oscilla
 
@@ -33,7 +33,7 @@ ornaments = 3
 
 + #define octave #8#
 
---read from ~ nota rast.scale
+--read from ~ nota ajam.scale
 
 distance = 1/2
 
@@ -41,7 +41,7 @@ ornaments = 4
 
 + #define octave #9#
 
---read from ~ nota rast.scale
+--read from ~ nota ajam.scale
 
 distance = 1/2
 
@@ -49,7 +49,7 @@ ornaments = 5
 
 + #define octave #7#
 
---read from ~ nota rast.scale
+--read from ~ nota ajam.scale
 
 distance = 3
 
@@ -57,7 +57,7 @@ ornaments = 4
 
 + #define octave #10#
 
---read from ~ nota rast.scale
+--read from ~ nota ajam.scale
 
 distance = 0
 
@@ -65,7 +65,7 @@ ornaments = 4
 
 + #define octave #6#
 
---read from ~ nota rast.scale
+--read from ~ nota ajam.scale
 
 distance = 0
 
@@ -73,7 +73,7 @@ ornaments = 4
 
 + #define octave #5#
 
---read from ~ nota rast.scale
+--read from ~ nota ajam.scale
 
 + }
 
