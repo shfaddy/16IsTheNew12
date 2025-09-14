@@ -755,6 +755,154 @@ v $measure
 b 0
 i [5 + .$octave] [0] [1/16] [$octave] [0] [$channel] [1/2] [3]
 i [5 + .$octave] [1/16] [1/16] [$octave] [2] [$channel] [1/2] [3]
+i [5 + .$octave] [2/16] [1/16] [$octave] [4] [$channel] [1/2] [3]
+i [5 + .$octave] [3/16] [1/16] [$octave] [7] [$channel] [1/2] [3]
+i [5 + .$octave] [4/16] [1/16] [$octave] [10] [$channel] [1/2] [3]
+i [5 + .$octave] [5/16] [1/16] [$octave] [12] [$channel] [1/2] [3]
+i [5 + .$octave] [6/16] [1/16] [$octave] [14] [$channel] [1/2] [3]
+i [5 + .$octave] [7/16] [1/16] [$octave] [16] [$channel] [1/2] [3]
+b 8
+i [5 + .$octave] [0/16] [1/16] [$octave] [16] [$channel] [1/2] [3]
+i [5 + .$octave] [1/16] [1/16] [$octave] [14] [$channel] [1/2] [3]
+i [5 + .$octave] [2/16] [1/16] [$octave] [12] [$channel] [1/2] [3]
+i [5 + .$octave] [3/16] [1/16] [$octave] [10] [$channel] [1/2] [3]
+i [5 + .$octave] [4/16] [1/16] [$octave] [7] [$channel] [1/2] [3]
+i [5 + .$octave] [5/16] [1/16] [$octave] [4] [$channel] [1/2] [3]
+i [5 + .$octave] [6/16] [1/16] [$octave] [2] [$channel] [1/2] [3]
+i [5 + .$octave] [7/16] [1/16] [$octave] [0] [$channel] [1/2] [3]
+#define octave #9#
+b 0
+i [5 + .$octave] [0] [1/16] [$octave] [0] [$channel] [1/2] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [2] [$channel] [1/2] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [4] [$channel] [1/2] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [7] [$channel] [1/2] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [10] [$channel] [1/2] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [12] [$channel] [1/2] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [14] [$channel] [1/2] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [16] [$channel] [1/2] [4]
+b 8
+i [5 + .$octave] [0/16] [1/16] [$octave] [16] [$channel] [1/2] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [14] [$channel] [1/2] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [12] [$channel] [1/2] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [10] [$channel] [1/2] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [7] [$channel] [1/2] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [4] [$channel] [1/2] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [2] [$channel] [1/2] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [0] [$channel] [1/2] [4]
+#define octave #7#
+b 0
+i [5 + .$octave] [0] [1/16] [$octave] [0] [$channel] [1/2] [5]
+i [5 + .$octave] [1/16] [1/16] [$octave] [2] [$channel] [1/2] [5]
+i [5 + .$octave] [2/16] [1/16] [$octave] [4] [$channel] [1/2] [5]
+i [5 + .$octave] [3/16] [1/16] [$octave] [7] [$channel] [1/2] [5]
+i [5 + .$octave] [4/16] [1/16] [$octave] [10] [$channel] [1/2] [5]
+i [5 + .$octave] [5/16] [1/16] [$octave] [12] [$channel] [1/2] [5]
+i [5 + .$octave] [6/16] [1/16] [$octave] [14] [$channel] [1/2] [5]
+i [5 + .$octave] [7/16] [1/16] [$octave] [16] [$channel] [1/2] [5]
+b 8
+i [5 + .$octave] [0/16] [1/16] [$octave] [16] [$channel] [1/2] [5]
+i [5 + .$octave] [1/16] [1/16] [$octave] [14] [$channel] [1/2] [5]
+i [5 + .$octave] [2/16] [1/16] [$octave] [12] [$channel] [1/2] [5]
+i [5 + .$octave] [3/16] [1/16] [$octave] [10] [$channel] [1/2] [5]
+i [5 + .$octave] [4/16] [1/16] [$octave] [7] [$channel] [1/2] [5]
+i [5 + .$octave] [5/16] [1/16] [$octave] [4] [$channel] [1/2] [5]
+i [5 + .$octave] [6/16] [1/16] [$octave] [2] [$channel] [1/2] [5]
+i [5 + .$octave] [7/16] [1/16] [$octave] [0] [$channel] [1/2] [5]
+#define octave #10#
+b 0
+i [5 + .$octave] [0] [1/16] [$octave] [0] [$channel] [3] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [2] [$channel] [3] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [4] [$channel] [3] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [7] [$channel] [3] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [10] [$channel] [3] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [12] [$channel] [3] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [14] [$channel] [3] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [16] [$channel] [3] [4]
+b 8
+i [5 + .$octave] [0/16] [1/16] [$octave] [16] [$channel] [3] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [14] [$channel] [3] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [12] [$channel] [3] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [10] [$channel] [3] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [7] [$channel] [3] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [4] [$channel] [3] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [2] [$channel] [3] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [0] [$channel] [3] [4]
+#define octave #6#
+b 0
+i [5 + .$octave] [0] [1/16] [$octave] [0] [$channel] [0] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [2] [$channel] [0] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [4] [$channel] [0] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [7] [$channel] [0] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [10] [$channel] [0] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [12] [$channel] [0] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [14] [$channel] [0] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [16] [$channel] [0] [4]
+b 8
+i [5 + .$octave] [0/16] [1/16] [$octave] [16] [$channel] [0] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [14] [$channel] [0] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [12] [$channel] [0] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [10] [$channel] [0] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [7] [$channel] [0] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [4] [$channel] [0] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [2] [$channel] [0] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [0] [$channel] [0] [4]
+#define octave #5#
+b 0
+i [5 + .$octave] [0] [1/16] [$octave] [0] [$channel] [0] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [2] [$channel] [0] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [4] [$channel] [0] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [7] [$channel] [0] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [10] [$channel] [0] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [12] [$channel] [0] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [14] [$channel] [0] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [16] [$channel] [0] [4]
+b 8
+i [5 + .$octave] [0/16] [1/16] [$octave] [16] [$channel] [0] [4]
+i [5 + .$octave] [1/16] [1/16] [$octave] [14] [$channel] [0] [4]
+i [5 + .$octave] [2/16] [1/16] [$octave] [12] [$channel] [0] [4]
+i [5 + .$octave] [3/16] [1/16] [$octave] [10] [$channel] [0] [4]
+i [5 + .$octave] [4/16] [1/16] [$octave] [7] [$channel] [0] [4]
+i [5 + .$octave] [5/16] [1/16] [$octave] [4] [$channel] [0] [4]
+i [5 + .$octave] [6/16] [1/16] [$octave] [2] [$channel] [0] [4]
+i [5 + .$octave] [7/16] [1/16] [$octave] [0] [$channel] [0] [4]
+}
+s
+t 0 $tempo
+#define measure #16#
+f 0 $measure
+{ 2 channel
+v [ $measure/2 ]
+{ 2 time
+b [ $time * $measure/2 ]
+i [6 + .$channel] [0] [1/2] [$channel] [0]
+i [6 + .$channel] [1/2] [1/2] [$channel] [0]
+{ 4 finger
+{ 16 step
+i [10 + .$channel + .0$finger] [(($step*2)+1)/32 + $finger/2^16] [1/2^10] [0 + ~ + ( $finger * 4 )] [$channel] [40]
+}
+}
+{ 3 finger
+i [9 + .$channel + .0$finger] [1/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [4]
+i [8 + .$channel + .0$finger] [2/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [2]
+i [7 + .$channel + .0$finger] [3/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [3]
+i [9 + .$channel + .0$finger] [4/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [4]
+i [8 + .$channel + .0$finger] [5/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [2]
+i [7 + .$channel + .0$finger] [6/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [3]
+i [9 + .$channel + .0$finger] [7/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [4]
+i [9 + .$channel + .0$finger] [9/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [4]
+i [7 + .$channel + .0$finger] [10/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [3]
+i [8 + .$channel + .0$finger] [11/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [2]
+i [7 + .$channel + .0$finger] [12/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [3]
+i [9 + .$channel + .0$finger] [13/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [4]
+i [9 + .$channel + .0$finger] [14/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [4]
+i [9 + .$channel + .0$finger] [15/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] [$channel] [4]
+}
+}
+v $measure
+#define octave #8#
+b 0
+i [5 + .$octave] [0] [1/16] [$octave] [0] [$channel] [1/2] [3]
+i [5 + .$octave] [1/16] [1/16] [$octave] [2] [$channel] [1/2] [3]
 i [5 + .$octave] [2/16] [1/16] [$octave] [5] [$channel] [1/2] [3]
 i [5 + .$octave] [3/16] [1/16] [$octave] [6] [$channel] [1/2] [3]
 i [5 + .$octave] [4/16] [1/16] [$octave] [10] [$channel] [1/2] [3]

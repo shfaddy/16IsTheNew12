@@ -1,0 +1,419 @@
+0dBFS level = 32768.0
+--Csound version 6.14 (double samples) 2020-11-20
+[commit: none]
+libsndfile-1.0.31
+UnifiedCSD:  oscilla.csd
+STARTING FILE
+Creating options
+Creating orchestra
+closing tag
+Creating score
+rtaudio: ALSA module enabled
+rtmidi: ALSA Raw MIDI module enabled
+instr _tin uses instrument number 11
+Elapsed time at end of orchestra compile: real: 0.009s, CPU: 0.009s
+sorting score ...
+Warp_factor = 4.000000
+Warp_factor = 4.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Warp_factor = 16.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+Clockbase = 0.000000
+Clockbase = 8.000000
+	... done
+Elapsed time at end of score sort: real: 0.035s, CPU: 0.035s
+graphics suppressed, ascii substituted
+0dBFS level = 1.0
+ftable 101:
+WARNING: prerequisites/marmstk1.wav sr = 22050, orch sr = 48000.0
+audio sr = 22050, monaural
+opening WAV infile prerequisites/marmstk1.wav
+ftable 101:	256 points, scalemax 1.000
+      _
+
+           _
+
+
+
+                    .
+     _            .
+   -      .    _           _             -      _
+ -                       '      . - -  _    _        -
+__._'____.______'_____-_______.____________-__.___.-___'________
+             .       .         .   - .  .      _    .
+                       '  ' .                '   -    _
+                        '        .    .   '
+              '  . .
+            -
+
+       _
+        _
+ftable 102:
+ftable 102:	128 points, scalemax 1.000
+                _
+            _-'' ''-_
+          .'         '.
+        _-             -_
+       .                 .
+      -                   -
+     -                     -
+    '                       '
+   '                         '
+  '                           '
+_'_____________________________'________________________________
+                                 _                             _
+                                  _                           _
+                                   _                         _
+                                    _                       _
+                                     .                     .
+                                      .                   .
+                                       -                 -
+                                        '.             .'
+                                          -_         _-
+                                            '._____.'
+orch now loaded
+audio buffered in 256 sample-frame blocks
+ALSA output: total buffer size: 1024, period size: 256
+writing 512 sample blks of 64-bit floats to dac
+SECTION 1:
+new alloc for instr 1:
+new alloc for instr 3:
+new alloc for instr 3:
+new alloc for instr 10:
+new alloc for instr 10:
+new alloc for instr _tin:
+WARNING: Seeding from current time 2441617249
+
+time advanced 4.000 beats by score request
+B  0.000 ..  1.000 T  0.682 TT  0.682 M:  0.00000  0.00000
+B  1.000 ..  2.000 T  1.363 TT  1.363 M:  0.00000  0.00000
+B  2.000 ..  2.000 T  1.364 TT  1.364 M:  0.00000  0.00000
+B  2.000 ..  3.000 T  2.045 TT  2.045 M:  0.00000  0.00000
+B  3.000 ..  4.000 T  2.727 TT  2.727 M:  0.00000  0.00000
+end of section 1	 sect peak amps:  0.00000  0.00000
+inactive allocs returned to freespace
+SECTION 2:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 6:
+new alloc for instr 6:
+  rtevent:	   T  0.085 TT  2.813 M:  1.00000  1.00000
+B  0.000 ..  0.250 T  0.171 TT  2.898 M:  0.99113  0.99925
+new alloc for instr 10:
+new alloc for instr 10:
+new alloc for instr 10:
+new alloc for instr 10:
+new alloc for instr 10:
+new alloc for instr 10:
+new alloc for instr 10:
+new alloc for instr 10:
+  rtevent:	   T  0.256 TT  2.983 M:  0.66841  0.71184
+B  0.250 ..  0.500 T  0.341 TT  3.068 M:  0.52010  0.56256
+new alloc for instr 9:
+new alloc for instr 9:
+B  0.500 ..  0.504 T  0.343 TT  3.071 M:  0.45859  0.37404
+new alloc for instr 9:
+new alloc for instr 9:
+B  0.504 ..  0.508 T  0.346 TT  3.073 M:  0.49161  0.40372
+  rtevent:	   T  0.426 TT  3.153 M:  0.57030  0.66378
+B  0.508 ..  0.750 T  0.511 TT  3.239 M:  0.30248  0.45775
+  rtevent:	   T  0.597 TT  3.324 M:  0.33832  0.32866
+B  0.750 ..  1.000 T  0.682 TT  3.409 M:  0.20353  0.19450
+new alloc for instr 8:
+new alloc for instr 8:
+B  1.000 ..  1.004 T  0.685 TT  3.412 M:  0.54006  0.57754
+new alloc for instr 8:
+new alloc for instr 8:
+B  1.004 ..  1.008 T  0.687 TT  3.415 M:  0.60146  0.53576
+  rtevent:	   T  0.767 TT  3.495 M:  0.64632  0.71780
+B  1.008 ..  1.250 T  0.852 TT  3.579 M:  0.24393  0.25507
+B  1.250 ..  1.250 T  0.853 TT  3.580 M:  0.05422  0.07876
+  rtevent:	   T  0.938 TT  3.665 M:  0.30627  0.35410
+WARNING: Buffer underrun in real-time audio output
+B  1.250 ..  1.500 T  1.023 TT  3.750 M:  0.21784  0.27473
+new alloc for instr 7:
+new alloc for instr 7:
+B  1.500 ..  1.516 T  1.033 TT  3.761 M:  0.64222  0.50372
+new alloc for instr 7:
+new alloc for instr 7:
+B  1.516 ..  1.531 T  1.044 TT  3.771 M:  0.62963  0.64741
+new alloc for instr 7:
+new alloc for instr 7:
+  rtevent:	   T  1.108 TT  3.835 M:  0.72087  0.69676
+B  1.531 ..  1.750 T  1.193 TT  3.921 M:  0.24906  0.32603
+  rtevent:	   T  1.279 TT  4.006 M:  0.37341  0.33454
+B  1.750 ..  2.000 T  1.363 TT  4.091 M:  0.22998  0.20675
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+new alloc for instr 5:
+B  2.000 ..  2.004 T  1.366 TT  4.093 M:  0.38262  0.39391
+B  2.004 ..  2.008 T  1.369 TT  4.096 M:  0.39733  0.39620
+  rtevent:	   T  1.406 TT  4.133 M:  0.39244  0.41334
+  rtevent:	   T  1.449 TT  4.176 M:  0.30381  0.28006
+  rtevent:	   T  1.491 TT  4.219 M:  0.29579  0.17253
+B  2.008 ..  2.250 T  1.534 TT  4.261 M:  0.23649  0.12900
+  rtevent:	   T  1.534 TT  4.261 M:  0.00000  0.00000
+  rtevent:	   T  1.534 TT  4.261 M:  0.00000  0.00000
+  rtevent:	   T  1.534 TT  4.261 M:  0.00000  0.00000
+  rtevent:	   T  1.534 TT  4.261 M:  0.00000  0.00000
+  rtevent:	   T  1.534 TT  4.261 M:  0.00000  0.00000
+B  2.250 ..  2.250 T  1.535 TT  4.262 M:  0.16482  0.05457
+  rtevent:	   T  1.577 TT  4.304 M:  0.25839  0.32501
+  rtevent:	   T  1.619 TT  4.347 M:  0.19104  0.19547
+  rtevent:	   T  1.661 TT  4.389 M:  0.13447  0.17603
+  rtevent:	   T  1.704 TT  4.431 M:  0.12160  0.09810
+  rtevent:	   T  1.704 TT  4.431 M:  0.00000  0.00000
+  rtevent:	   T  1.704 TT  4.431 M:  0.00000  0.00000
+  rtevent:	   T  1.704 TT  4.431 M:  0.00000  0.00000
+  rtevent:	   T  1.704 TT  4.431 M:  0.00000  0.00000
+  rtevent:	   T  1.704 TT  4.431 M:  0.00000  0.00000
+  rtevent:	   T  1.704 TT  4.431 M:  0.00000  0.00000
+  rtevent:	   T  1.704 TT  4.431 M:  0.00000  0.00000
+B  2.250 ..  2.500 T  1.705 TT  4.432 M:  0.05791  0.01918
+B  2.500 ..  2.504 T  1.707 TT  4.435 M:  0.55798  0.54036
+B  2.504 ..  2.508 T  1.710 TT  4.437 M:  0.54670  0.63050
+  rtevent:	   T  1.747 TT  4.474 M:  0.54395  0.80427
+  rtevent:	   T  1.789 TT  4.517 M:  0.16677  0.18026
+  rtevent:	   T  1.832 TT  4.559 M:  0.14394  0.24356
+  rtevent:	   T  1.875 TT  4.602 M:  0.12994  0.16273
+B  2.508 ..  2.750 T  1.875 TT  4.603 M:  0.06321  0.07933
+  rtevent:	   T  1.917 TT  4.645 M:  0.22853  0.34948
+  rtevent:	   T  1.960 TT  4.687 M:  0.07628  0.21131
+  rtevent:	   T  2.003 TT  4.730 M:  0.05952  0.17736
+B  2.750 ..  3.000 T  2.045 TT  4.773 M:  0.02574  0.09033
+B  3.000 ..  3.016 T  2.056 TT  4.783 M:  0.56913  0.49589
+B  3.016 ..  3.031 T  2.067 TT  4.794 M:  0.67695  0.63479
+  rtevent:	   T  2.088 TT  4.815 M:  0.70690  0.61264
+  rtevent:	   T  2.131 TT  4.858 M:  0.28211  0.27258
+  rtevent:	   T  2.131 TT  4.858 M:  0.00000  0.00000
+  rtevent:	   T  2.131 TT  4.858 M:  0.00000  0.00000
+  rtevent:	   T  2.131 TT  4.858 M:  0.00000  0.00000
+  rtevent:	   T  2.173 TT  4.901 M:  0.18311  0.15888
+B  3.031 ..  3.250 T  2.216 TT  4.943 M:  0.16299  0.13604
+  rtevent:	   T  2.259 TT  4.986 M:  0.38888  0.21429
+  rtevent:	   T  2.301 TT  5.029 M:  0.34332  0.12186
+  rtevent:	   T  2.343 TT  5.071 M:  0.21453  0.14708
+  rtevent:	   T  2.386 TT  5.113 M:  0.12383  0.08275
+B  3.250 ..  3.500 T  2.387 TT  5.114 M:  0.02146  0.04222
+B  3.500 ..  3.504 T  2.389 TT  5.117 M:  0.46442  0.32800
+B  3.504 ..  3.508 T  2.392 TT  5.119 M:  0.33012  0.38231
+  rtevent:	   T  2.429 TT  5.156 M:  0.31988  0.34491
+  rtevent:	   T  2.471 TT  5.199 M:  0.14726  0.11789
+  rtevent:	   T  2.514 TT  5.241 M:  0.18204  0.12020
+B  3.508 ..  3.750 T  2.557 TT  5.284 M:  0.09653  0.07206
+B  3.750 ..  3.750 T  2.557 TT  5.285 M:  0.02602  0.04038
+  rtevent:	   T  2.599 TT  5.327 M:  0.39704  0.23508
+  rtevent:	   T  2.642 TT  5.369 M:  0.24078  0.06499
+  rtevent:	   T  2.685 TT  5.412 M:  0.18785  0.08541
+B  3.750 ..  4.000 T  2.727 TT  5.455 M:  0.09676  0.04391
+  rtevent:	   T  2.770 TT  5.497 M:  1.00000  1.00000
+  rtevent:	   T  2.813 TT  5.540 M:  1.00000  1.00000
+  rtevent:	   T  2.855 TT  5.583 M:  0.99728  0.99912
+B  4.000 ..  4.250 T  2.898 TT  5.625 M:  0.87370  0.89329
+  rtevent:	   T  2.941 TT  5.668 M:  0.59006  0.70286
+  rtevent:	   T  2.983 TT  5.711 M:  0.57409  0.53236
+  rtevent:	   T  3.025 TT  5.753 M:  0.58758  0.53786
+B  4.250 ..  4.500 T  3.068 TT  5.795 M:  0.52375  0.47136
+B  4.500 ..  4.504 T  3.071 TT  5.798 M:  0.52028  0.55363
+B  4.504 ..  4.508 T  3.073 TT  5.801 M:  0.39717  0.45405
+  rtevent:	   T  3.111 TT  5.838 M:  0.64627  0.57683
+  rtevent:	   T  3.153 TT  5.881 M:  0.49743  0.44436
+  rtevent:	   T  3.196 TT  5.923 M:  0.45901  0.43886
+B  4.508 ..  4.750 T  3.239 TT  5.966 M:  0.30975  0.34054
+  rtevent:	   T  3.281 TT  6.009 M:  0.36229  0.40758
+  rtevent:	   T  3.324 TT  6.051 M:  0.22373  0.26681
+  rtevent:	   T  3.367 TT  6.094 M:  0.17500  0.35033
+B  4.750 ..  5.000 T  3.409 TT  6.137 M:  0.11972  0.12709
+B  5.000 ..  5.016 T  3.420 TT  6.147 M:  0.60361  0.65479
+B  5.016 ..  5.031 T  3.431 TT  6.158 M:  0.66172  0.58536
+  rtevent:	   T  3.452 TT  6.179 M:  0.71390  0.75457
+  rtevent:	   T  3.495 TT  6.222 M:  0.33667  0.32700
+  rtevent:	   T  3.537 TT  6.265 M:  0.26177  0.23634
+B  5.031 ..  5.250 T  3.579 TT  6.307 M:  0.24139  0.16797
+B  5.250 ..  5.250 T  3.580 TT  6.307 M:  0.06738  0.07216
+  rtevent:	   T  3.623 TT  6.350 M:  0.26365  0.27663
+  rtevent:	   T  3.665 TT  6.393 M:  0.17208  0.15924
+  rtevent:	   T  3.707 TT  6.435 M:  0.14022  0.12489
+B  5.250 ..  5.500 T  3.750 TT  6.477 M:  0.17564  0.08227
+B  5.500 ..  5.504 T  3.753 TT  6.480 M:  0.56520  0.60970
+B  5.504 ..  5.508 T  3.755 TT  6.483 M:  0.57648  0.58015
+  rtevent:	   T  3.793 TT  6.520 M:  0.57449  0.70482
+  rtevent:	   T  3.835 TT  6.563 M:  0.15778  0.22626
+inactive allocs returned to freespace
+end of score.		   overall amps:  1.00000  1.00000
+	   overall samples out of range:        0        0
+0 errors in performance
+Elapsed time at end of performance: real: 4.154s, CPU: 0.781s
+722 512 sample blks of 64-bit floats written to dac

@@ -10,7 +10,7 @@
 
 ```scenario xoscilla
 
-~ nota --read huzam
+~ nota --read bayati
 
 ```
 
@@ -20,6 +20,7 @@
 
 --read ajam
 --read rast
+--read bayati
 --read huzam
 --read shfaddys
 
