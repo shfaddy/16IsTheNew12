@@ -8,9 +8,16 @@
 
 ```
 
+## Ajam-Based Maqams
+
 ```scenario xoscilla
 
-~ nota --read bayati
+~ nota .
+
+--read ajam
+--read ajam2
+
+..
 
 ```
 
@@ -19,10 +26,14 @@
 ~ nota .
 
 --read ajam
+--read nahawand
 --read rast
 --read bayati
 --read huzam
+--read kurd
+--read finish
 --read shfaddys
+--read saba
 
 ~
 

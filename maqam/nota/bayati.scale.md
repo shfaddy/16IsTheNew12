@@ -1,4 +1,4 @@
-# Nota for Rast Maqam Full Scale (Up and Down)
+# Nota for Bayati Maqam Full Scale (Up and Down)
 
 ```scenario oscilla
 
@@ -9,7 +9,7 @@
 * 2/16 4
 * 3/16 7
 * 4/16 10
-* 5/16 12
+* 5/16 11
 * 6/16 14
 * 7/16 16
 
@@ -17,7 +17,7 @@
 
 * 0/16 16 1/16
 * 1/16 14
-* 2/16 12
+* 2/16 11
 * 3/16 10
 * 4/16 7
 * 5/16 4

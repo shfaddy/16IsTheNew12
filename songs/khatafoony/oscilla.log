@@ -1,0 +1,1339 @@
+0dBFS level = 32768.0
+--Csound version 6.14 (double samples) 2020-11-20
+[commit: none]
+libsndfile-1.0.31
+UnifiedCSD:  oscilla.csd
+STARTING FILE
+Creating options
+Creating orchestra
+closing tag
+Creating score
+rtaudio: ALSA module enabled
+rtmidi: ALSA Raw MIDI module enabled
+instr mixer uses instrument number 11
+instr loopback uses instrument number 12
+instr recorder uses instrument number 13
+instr _player uses instrument number 14
+instr player uses instrument number 15
+instr dom uses instrument number 16
+instr tak uses instrument number 17
+instr sak uses instrument number 18
+instr sik uses instrument number 19
+instr sagat uses instrument number 20
+instr _tin uses instrument number 21
+instr tin uses instrument number 22
+Elapsed time at end of orchestra compile: real: 0.019s, CPU: 0.019s
+sorting score ...
+Warp_factor = 2.000000
+Clockbase = 0.000000
+Clockbase = 2.000000
+Clockbase = 4.000000
+Clockbase = 6.000000
+Clockbase = 8.000000
+Clockbase = 10.000000
+Clockbase = 12.000000
+Clockbase = 14.000000
+Clockbase = 16.000000
+Clockbase = 18.000000
+Clockbase = 20.000000
+Clockbase = 22.000000
+Clockbase = 24.000000
+Clockbase = 26.000000
+Clockbase = 28.000000
+Clockbase = 30.000000
+Clockbase = 32.000000
+Clockbase = 34.000000
+Clockbase = 36.000000
+Clockbase = 38.000000
+Clockbase = 40.000000
+Clockbase = 42.000000
+Clockbase = 44.000000
+Clockbase = 46.000000
+Clockbase = 48.000000
+Clockbase = 50.000000
+Clockbase = 52.000000
+Clockbase = 54.000000
+Clockbase = 56.000000
+Clockbase = 58.000000
+Clockbase = 60.000000
+Clockbase = 62.000000
+Clockbase = 64.000000
+Clockbase = 66.000000
+Clockbase = 68.000000
+Clockbase = 70.000000
+Clockbase = 72.000000
+Clockbase = 74.000000
+Clockbase = 76.000000
+Clockbase = 78.000000
+Clockbase = 80.000000
+Clockbase = 82.000000
+Clockbase = 84.000000
+Clockbase = 86.000000
+Clockbase = 88.000000
+Clockbase = 90.000000
+Clockbase = 92.000000
+Clockbase = 94.000000
+Clockbase = 96.000000
+Clockbase = 98.000000
+Clockbase = 100.000000
+Clockbase = 102.000000
+Clockbase = 104.000000
+Clockbase = 106.000000
+Clockbase = 108.000000
+Clockbase = 110.000000
+Clockbase = 112.000000
+Clockbase = 114.000000
+Clockbase = 116.000000
+Clockbase = 118.000000
+Clockbase = 120.000000
+Clockbase = 122.000000
+Clockbase = 124.000000
+Clockbase = 126.000000
+Clockbase = 128.000000
+Clockbase = 130.000000
+Clockbase = 132.000000
+Clockbase = 134.000000
+Clockbase = 136.000000
+Clockbase = 138.000000
+Clockbase = 140.000000
+Clockbase = 142.000000
+Clockbase = 144.000000
+Clockbase = 146.000000
+Clockbase = 148.000000
+Clockbase = 150.000000
+Clockbase = 152.000000
+Clockbase = 154.000000
+Clockbase = 156.000000
+Clockbase = 158.000000
+Clockbase = 160.000000
+Clockbase = 162.000000
+Clockbase = 164.000000
+Clockbase = 166.000000
+Clockbase = 168.000000
+Clockbase = 170.000000
+Clockbase = 172.000000
+Clockbase = 174.000000
+Clockbase = 176.000000
+Clockbase = 178.000000
+Clockbase = 180.000000
+Clockbase = 182.000000
+Clockbase = 184.000000
+Clockbase = 186.000000
+Clockbase = 188.000000
+Clockbase = 190.000000
+Clockbase = 192.000000
+Clockbase = 194.000000
+Clockbase = 196.000000
+Clockbase = 198.000000
+Clockbase = 200.000000
+Clockbase = 202.000000
+Clockbase = 204.000000
+Clockbase = 206.000000
+Clockbase = 208.000000
+Clockbase = 210.000000
+Clockbase = 212.000000
+Clockbase = 214.000000
+Clockbase = 216.000000
+Clockbase = 218.000000
+Clockbase = 220.000000
+Clockbase = 222.000000
+Clockbase = 224.000000
+Clockbase = 226.000000
+Clockbase = 228.000000
+Clockbase = 230.000000
+Clockbase = 232.000000
+Clockbase = 234.000000
+Clockbase = 236.000000
+Clockbase = 238.000000
+Clockbase = 240.000000
+Clockbase = 242.000000
+Clockbase = 244.000000
+Clockbase = 246.000000
+Clockbase = 248.000000
+Clockbase = 250.000000
+Clockbase = 252.000000
+Clockbase = 254.000000
+Clockbase = 256.000000
+Clockbase = 258.000000
+Clockbase = 260.000000
+Clockbase = 262.000000
+Clockbase = 264.000000
+Clockbase = 266.000000
+Clockbase = 268.000000
+Clockbase = 270.000000
+Clockbase = 272.000000
+Clockbase = 274.000000
+Clockbase = 276.000000
+Clockbase = 278.000000
+Clockbase = 280.000000
+Clockbase = 282.000000
+Clockbase = 284.000000
+Clockbase = 286.000000
+Clockbase = 288.000000
+Clockbase = 290.000000
+Clockbase = 292.000000
+Clockbase = 294.000000
+Clockbase = 296.000000
+Clockbase = 298.000000
+Clockbase = 300.000000
+Clockbase = 302.000000
+Clockbase = 304.000000
+Clockbase = 306.000000
+Clockbase = 308.000000
+Clockbase = 310.000000
+Clockbase = 312.000000
+Clockbase = 314.000000
+Clockbase = 316.000000
+Clockbase = 318.000000
+Clockbase = 320.000000
+Clockbase = 322.000000
+Clockbase = 324.000000
+Clockbase = 326.000000
+Clockbase = 328.000000
+Clockbase = 330.000000
+Clockbase = 332.000000
+Clockbase = 334.000000
+Clockbase = 336.000000
+Clockbase = 338.000000
+Clockbase = 340.000000
+Clockbase = 342.000000
+Clockbase = 344.000000
+Clockbase = 346.000000
+Clockbase = 348.000000
+Clockbase = 350.000000
+Clockbase = 352.000000
+Clockbase = 354.000000
+Clockbase = 356.000000
+Clockbase = 358.000000
+Clockbase = 360.000000
+Clockbase = 362.000000
+Clockbase = 364.000000
+Clockbase = 366.000000
+Clockbase = 368.000000
+Clockbase = 370.000000
+Clockbase = 372.000000
+Clockbase = 374.000000
+Clockbase = 376.000000
+Clockbase = 378.000000
+Clockbase = 380.000000
+Clockbase = 382.000000
+Clockbase = 384.000000
+Clockbase = 386.000000
+Clockbase = 388.000000
+Clockbase = 390.000000
+Clockbase = 392.000000
+Clockbase = 394.000000
+Clockbase = 396.000000
+Clockbase = 398.000000
+Clockbase = 400.000000
+Clockbase = 402.000000
+Clockbase = 404.000000
+Clockbase = 406.000000
+Clockbase = 408.000000
+Clockbase = 410.000000
+Clockbase = 412.000000
+Clockbase = 414.000000
+Clockbase = 416.000000
+Clockbase = 418.000000
+Clockbase = 420.000000
+Clockbase = 422.000000
+Clockbase = 424.000000
+Clockbase = 426.000000
+Clockbase = 428.000000
+Clockbase = 430.000000
+Clockbase = 432.000000
+Clockbase = 434.000000
+Clockbase = 436.000000
+Clockbase = 438.000000
+Clockbase = 440.000000
+Clockbase = 442.000000
+Clockbase = 444.000000
+Clockbase = 446.000000
+Clockbase = 448.000000
+Clockbase = 450.000000
+Clockbase = 452.000000
+Clockbase = 454.000000
+Clockbase = 456.000000
+Clockbase = 458.000000
+Clockbase = 460.000000
+Clockbase = 462.000000
+Clockbase = 464.000000
+Clockbase = 466.000000
+Clockbase = 468.000000
+Clockbase = 470.000000
+Clockbase = 472.000000
+Clockbase = 474.000000
+Clockbase = 476.000000
+Clockbase = 478.000000
+Clockbase = 480.000000
+Clockbase = 482.000000
+Clockbase = 484.000000
+Clockbase = 486.000000
+Clockbase = 488.000000
+Clockbase = 490.000000
+Clockbase = 492.000000
+Clockbase = 494.000000
+Clockbase = 496.000000
+Clockbase = 498.000000
+Clockbase = 500.000000
+Clockbase = 502.000000
+Clockbase = 504.000000
+Clockbase = 506.000000
+Clockbase = 508.000000
+Clockbase = 510.000000
+Clockbase = 512.000000
+Clockbase = 514.000000
+Clockbase = 516.000000
+Clockbase = 518.000000
+Clockbase = 520.000000
+Clockbase = 522.000000
+Clockbase = 524.000000
+Clockbase = 526.000000
+Clockbase = 528.000000
+Clockbase = 530.000000
+Clockbase = 532.000000
+Clockbase = 534.000000
+Clockbase = 536.000000
+Clockbase = 538.000000
+Clockbase = 540.000000
+Clockbase = 542.000000
+Clockbase = 544.000000
+Clockbase = 546.000000
+Clockbase = 548.000000
+Clockbase = 550.000000
+Clockbase = 552.000000
+Clockbase = 554.000000
+Clockbase = 556.000000
+Clockbase = 558.000000
+Clockbase = 560.000000
+Clockbase = 562.000000
+Clockbase = 564.000000
+Clockbase = 566.000000
+Clockbase = 568.000000
+Clockbase = 570.000000
+Clockbase = 572.000000
+Clockbase = 574.000000
+Clockbase = 576.000000
+Clockbase = 578.000000
+Clockbase = 580.000000
+Clockbase = 582.000000
+Clockbase = 584.000000
+Clockbase = 586.000000
+Clockbase = 588.000000
+Clockbase = 590.000000
+Clockbase = 592.000000
+Clockbase = 594.000000
+Clockbase = 596.000000
+Clockbase = 598.000000
+Clockbase = 600.000000
+Clockbase = 602.000000
+Clockbase = 604.000000
+Clockbase = 606.000000
+Clockbase = 608.000000
+Clockbase = 610.000000
+Clockbase = 612.000000
+Clockbase = 614.000000
+Clockbase = 616.000000
+Clockbase = 618.000000
+Clockbase = 620.000000
+Clockbase = 622.000000
+Clockbase = 624.000000
+Clockbase = 626.000000
+Clockbase = 628.000000
+Clockbase = 630.000000
+Clockbase = 632.000000
+Clockbase = 634.000000
+Clockbase = 636.000000
+Clockbase = 638.000000
+Clockbase = 640.000000
+Clockbase = 642.000000
+Clockbase = 644.000000
+Clockbase = 646.000000
+Clockbase = 648.000000
+Clockbase = 650.000000
+Clockbase = 652.000000
+Clockbase = 654.000000
+Clockbase = 656.000000
+Clockbase = 658.000000
+Clockbase = 660.000000
+Clockbase = 662.000000
+Clockbase = 664.000000
+Clockbase = 666.000000
+Clockbase = 668.000000
+Clockbase = 670.000000
+Clockbase = 672.000000
+Clockbase = 674.000000
+Clockbase = 676.000000
+Clockbase = 678.000000
+Clockbase = 680.000000
+Clockbase = 682.000000
+Clockbase = 684.000000
+Clockbase = 686.000000
+Clockbase = 688.000000
+Clockbase = 690.000000
+Clockbase = 692.000000
+Clockbase = 694.000000
+Clockbase = 696.000000
+Clockbase = 698.000000
+Clockbase = 700.000000
+Clockbase = 702.000000
+Clockbase = 704.000000
+Clockbase = 706.000000
+Clockbase = 708.000000
+Clockbase = 710.000000
+Clockbase = 712.000000
+Clockbase = 714.000000
+Clockbase = 716.000000
+Clockbase = 718.000000
+Clockbase = 720.000000
+Clockbase = 722.000000
+Clockbase = 724.000000
+Clockbase = 726.000000
+Clockbase = 728.000000
+Clockbase = 730.000000
+Clockbase = 732.000000
+Clockbase = 734.000000
+Clockbase = 736.000000
+Clockbase = 738.000000
+Clockbase = 740.000000
+Clockbase = 742.000000
+Clockbase = 744.000000
+Clockbase = 746.000000
+Clockbase = 748.000000
+Clockbase = 750.000000
+Clockbase = 752.000000
+Clockbase = 754.000000
+Clockbase = 756.000000
+Clockbase = 758.000000
+Clockbase = 760.000000
+Clockbase = 762.000000
+Clockbase = 764.000000
+Clockbase = 766.000000
+Clockbase = 768.000000
+Clockbase = 770.000000
+Clockbase = 772.000000
+Clockbase = 774.000000
+Clockbase = 776.000000
+Clockbase = 778.000000
+Clockbase = 780.000000
+Clockbase = 782.000000
+Clockbase = 784.000000
+Clockbase = 786.000000
+Clockbase = 788.000000
+Clockbase = 790.000000
+Clockbase = 792.000000
+Clockbase = 794.000000
+Clockbase = 796.000000
+Clockbase = 798.000000
+Clockbase = 800.000000
+Clockbase = 802.000000
+Clockbase = 804.000000
+Clockbase = 806.000000
+Clockbase = 808.000000
+Clockbase = 810.000000
+Clockbase = 812.000000
+Clockbase = 814.000000
+Clockbase = 816.000000
+Clockbase = 818.000000
+Clockbase = 820.000000
+Clockbase = 822.000000
+Clockbase = 824.000000
+Clockbase = 826.000000
+Clockbase = 828.000000
+Clockbase = 830.000000
+Clockbase = 832.000000
+Clockbase = 834.000000
+Clockbase = 836.000000
+Clockbase = 838.000000
+Clockbase = 840.000000
+Clockbase = 842.000000
+Clockbase = 844.000000
+Clockbase = 846.000000
+Clockbase = 848.000000
+Clockbase = 850.000000
+Clockbase = 852.000000
+Clockbase = 854.000000
+Clockbase = 856.000000
+Clockbase = 858.000000
+Clockbase = 860.000000
+Clockbase = 862.000000
+Clockbase = 864.000000
+Clockbase = 866.000000
+Clockbase = 868.000000
+Clockbase = 870.000000
+Clockbase = 872.000000
+Clockbase = 874.000000
+Clockbase = 876.000000
+Clockbase = 878.000000
+Clockbase = 880.000000
+Clockbase = 882.000000
+Clockbase = 884.000000
+Clockbase = 886.000000
+Clockbase = 888.000000
+Clockbase = 890.000000
+Clockbase = 892.000000
+Clockbase = 894.000000
+Clockbase = 896.000000
+Clockbase = 898.000000
+Clockbase = 900.000000
+Clockbase = 902.000000
+Clockbase = 904.000000
+Clockbase = 906.000000
+Clockbase = 908.000000
+Clockbase = 910.000000
+Clockbase = 912.000000
+Clockbase = 914.000000
+Clockbase = 916.000000
+Clockbase = 918.000000
+Clockbase = 920.000000
+Clockbase = 922.000000
+Clockbase = 924.000000
+Clockbase = 926.000000
+Clockbase = 928.000000
+Clockbase = 930.000000
+Clockbase = 932.000000
+Clockbase = 934.000000
+Clockbase = 936.000000
+Clockbase = 938.000000
+Clockbase = 940.000000
+Clockbase = 942.000000
+Clockbase = 944.000000
+Clockbase = 946.000000
+Clockbase = 948.000000
+Clockbase = 950.000000
+Clockbase = 952.000000
+Clockbase = 954.000000
+Clockbase = 956.000000
+Clockbase = 958.000000
+Clockbase = 960.000000
+Clockbase = 962.000000
+Clockbase = 964.000000
+Clockbase = 966.000000
+Clockbase = 968.000000
+Clockbase = 970.000000
+Clockbase = 972.000000
+Clockbase = 974.000000
+Clockbase = 976.000000
+Clockbase = 978.000000
+Clockbase = 980.000000
+Clockbase = 982.000000
+Clockbase = 984.000000
+Clockbase = 986.000000
+Clockbase = 988.000000
+Clockbase = 990.000000
+Clockbase = 992.000000
+Clockbase = 994.000000
+Clockbase = 996.000000
+Clockbase = 998.000000
+Clockbase = 1000.000000
+Clockbase = 1002.000000
+Clockbase = 1004.000000
+Clockbase = 1006.000000
+Clockbase = 1008.000000
+Clockbase = 1010.000000
+Clockbase = 1012.000000
+Clockbase = 1014.000000
+Clockbase = 1016.000000
+Clockbase = 1018.000000
+Clockbase = 1020.000000
+Clockbase = 1022.000000
+Clockbase = 1024.000000
+Clockbase = 1026.000000
+Clockbase = 1028.000000
+Clockbase = 1030.000000
+Clockbase = 1032.000000
+Clockbase = 1034.000000
+Clockbase = 1036.000000
+Clockbase = 1038.000000
+Clockbase = 1040.000000
+Clockbase = 1042.000000
+Clockbase = 1044.000000
+Clockbase = 1046.000000
+Clockbase = 1048.000000
+Clockbase = 1050.000000
+Clockbase = 1052.000000
+Clockbase = 1054.000000
+Clockbase = 1056.000000
+Clockbase = 1058.000000
+Clockbase = 1060.000000
+Clockbase = 1062.000000
+Clockbase = 1064.000000
+Clockbase = 1066.000000
+Clockbase = 1068.000000
+Clockbase = 1070.000000
+Clockbase = 1072.000000
+Clockbase = 1074.000000
+Clockbase = 1076.000000
+Clockbase = 1078.000000
+Clockbase = 1080.000000
+Clockbase = 1082.000000
+Clockbase = 1084.000000
+Clockbase = 1086.000000
+Clockbase = 1088.000000
+Clockbase = 1090.000000
+Clockbase = 1092.000000
+Clockbase = 1094.000000
+Clockbase = 1096.000000
+Clockbase = 1098.000000
+Clockbase = 1100.000000
+Clockbase = 1102.000000
+Clockbase = 1104.000000
+Clockbase = 1106.000000
+Clockbase = 1108.000000
+Clockbase = 1110.000000
+Clockbase = 1112.000000
+Clockbase = 1114.000000
+Clockbase = 1116.000000
+Clockbase = 1118.000000
+Clockbase = 1120.000000
+Clockbase = 1122.000000
+Clockbase = 1124.000000
+Clockbase = 1126.000000
+Clockbase = 1128.000000
+Clockbase = 1130.000000
+Clockbase = 1132.000000
+Clockbase = 1134.000000
+Clockbase = 1136.000000
+Clockbase = 1138.000000
+Clockbase = 1140.000000
+Clockbase = 1142.000000
+Clockbase = 1144.000000
+Clockbase = 1146.000000
+Clockbase = 1148.000000
+Clockbase = 1150.000000
+Clockbase = 1152.000000
+Clockbase = 1154.000000
+Clockbase = 1156.000000
+Clockbase = 1158.000000
+Clockbase = 1160.000000
+Clockbase = 1162.000000
+Clockbase = 1164.000000
+Clockbase = 1166.000000
+Clockbase = 1168.000000
+Clockbase = 1170.000000
+Clockbase = 1172.000000
+Clockbase = 1174.000000
+Clockbase = 1176.000000
+Clockbase = 1178.000000
+Clockbase = 1180.000000
+Clockbase = 1182.000000
+Clockbase = 1184.000000
+Clockbase = 1186.000000
+Clockbase = 1188.000000
+Clockbase = 1190.000000
+Clockbase = 1192.000000
+Clockbase = 1194.000000
+Clockbase = 1196.000000
+Clockbase = 1198.000000
+Clockbase = 1200.000000
+Clockbase = 1202.000000
+Clockbase = 1204.000000
+Clockbase = 1206.000000
+Clockbase = 1208.000000
+Clockbase = 1210.000000
+Clockbase = 1212.000000
+Clockbase = 1214.000000
+Clockbase = 1216.000000
+Clockbase = 1218.000000
+Clockbase = 1220.000000
+Clockbase = 1222.000000
+Clockbase = 1224.000000
+Clockbase = 1226.000000
+Clockbase = 1228.000000
+Clockbase = 1230.000000
+Clockbase = 1232.000000
+Clockbase = 1234.000000
+Clockbase = 1236.000000
+Clockbase = 1238.000000
+Clockbase = 1240.000000
+Clockbase = 1242.000000
+Clockbase = 1244.000000
+Clockbase = 1246.000000
+Clockbase = 1248.000000
+Clockbase = 1250.000000
+Clockbase = 1252.000000
+Clockbase = 1254.000000
+Clockbase = 1256.000000
+Clockbase = 1258.000000
+Clockbase = 1260.000000
+Clockbase = 1262.000000
+Clockbase = 1264.000000
+Clockbase = 1266.000000
+Clockbase = 1268.000000
+Clockbase = 1270.000000
+Clockbase = 1272.000000
+Clockbase = 1274.000000
+Clockbase = 1276.000000
+Clockbase = 1278.000000
+Clockbase = 1280.000000
+Clockbase = 1282.000000
+Clockbase = 1284.000000
+Clockbase = 1286.000000
+Clockbase = 1288.000000
+Clockbase = 1290.000000
+Clockbase = 1292.000000
+Clockbase = 1294.000000
+Clockbase = 1296.000000
+Clockbase = 1298.000000
+Clockbase = 1300.000000
+Clockbase = 1302.000000
+Clockbase = 1304.000000
+Clockbase = 1306.000000
+Clockbase = 1308.000000
+Clockbase = 1310.000000
+Clockbase = 1312.000000
+Clockbase = 1314.000000
+Clockbase = 1316.000000
+Clockbase = 1318.000000
+Clockbase = 1320.000000
+Clockbase = 1322.000000
+Clockbase = 1324.000000
+Clockbase = 1326.000000
+Clockbase = 1328.000000
+Clockbase = 1330.000000
+Clockbase = 1332.000000
+Clockbase = 1334.000000
+Clockbase = 1336.000000
+Clockbase = 1338.000000
+Clockbase = 1340.000000
+Clockbase = 1342.000000
+Clockbase = 1344.000000
+Clockbase = 1346.000000
+Clockbase = 1348.000000
+Clockbase = 1350.000000
+Clockbase = 1352.000000
+Clockbase = 1354.000000
+Clockbase = 1356.000000
+Clockbase = 1358.000000
+Clockbase = 1360.000000
+Clockbase = 1362.000000
+Clockbase = 1364.000000
+Clockbase = 1366.000000
+Clockbase = 1368.000000
+Clockbase = 1370.000000
+Clockbase = 1372.000000
+Clockbase = 1374.000000
+Clockbase = 1376.000000
+Clockbase = 1378.000000
+Clockbase = 1380.000000
+Clockbase = 1382.000000
+Clockbase = 1384.000000
+Clockbase = 1386.000000
+Clockbase = 1388.000000
+Clockbase = 1390.000000
+Clockbase = 1392.000000
+Clockbase = 1394.000000
+Clockbase = 1396.000000
+Clockbase = 1398.000000
+Clockbase = 1400.000000
+Clockbase = 1402.000000
+Clockbase = 1404.000000
+Clockbase = 1406.000000
+Clockbase = 1408.000000
+Clockbase = 1410.000000
+Clockbase = 1412.000000
+Clockbase = 1414.000000
+Clockbase = 1416.000000
+Clockbase = 1418.000000
+Clockbase = 1420.000000
+Clockbase = 1422.000000
+Clockbase = 1424.000000
+Clockbase = 1426.000000
+Clockbase = 1428.000000
+Clockbase = 1430.000000
+Clockbase = 1432.000000
+Clockbase = 1434.000000
+Clockbase = 1436.000000
+Clockbase = 1438.000000
+Clockbase = 1440.000000
+Clockbase = 1442.000000
+Clockbase = 1444.000000
+Clockbase = 1446.000000
+Clockbase = 1448.000000
+Clockbase = 1450.000000
+Clockbase = 1452.000000
+Clockbase = 1454.000000
+Clockbase = 1456.000000
+Clockbase = 1458.000000
+Clockbase = 1460.000000
+Clockbase = 1462.000000
+Clockbase = 1464.000000
+Clockbase = 1466.000000
+Clockbase = 1468.000000
+Clockbase = 1470.000000
+Clockbase = 1472.000000
+Clockbase = 1474.000000
+Clockbase = 1476.000000
+Clockbase = 1478.000000
+Clockbase = 1480.000000
+Clockbase = 1482.000000
+Clockbase = 1484.000000
+Clockbase = 1486.000000
+Clockbase = 1488.000000
+Clockbase = 1490.000000
+Clockbase = 1492.000000
+Clockbase = 1494.000000
+Clockbase = 1496.000000
+Clockbase = 1498.000000
+Clockbase = 1500.000000
+Clockbase = 1502.000000
+Clockbase = 1504.000000
+Clockbase = 1506.000000
+Clockbase = 1508.000000
+Clockbase = 1510.000000
+Clockbase = 1512.000000
+Clockbase = 1514.000000
+Clockbase = 1516.000000
+Clockbase = 1518.000000
+Clockbase = 1520.000000
+Clockbase = 1522.000000
+Clockbase = 1524.000000
+Clockbase = 1526.000000
+Clockbase = 1528.000000
+Clockbase = 1530.000000
+Clockbase = 1532.000000
+Clockbase = 1534.000000
+Clockbase = 1536.000000
+Clockbase = 1538.000000
+Clockbase = 1540.000000
+Clockbase = 1542.000000
+Clockbase = 1544.000000
+Clockbase = 1546.000000
+Clockbase = 1548.000000
+Clockbase = 1550.000000
+Clockbase = 1552.000000
+Clockbase = 1554.000000
+Clockbase = 1556.000000
+Clockbase = 1558.000000
+Clockbase = 1560.000000
+Clockbase = 1562.000000
+Clockbase = 1564.000000
+Clockbase = 1566.000000
+Clockbase = 1568.000000
+Clockbase = 1570.000000
+Clockbase = 1572.000000
+Clockbase = 1574.000000
+Clockbase = 1576.000000
+Clockbase = 1578.000000
+Clockbase = 1580.000000
+Clockbase = 1582.000000
+Clockbase = 1584.000000
+Clockbase = 1586.000000
+Clockbase = 1588.000000
+Clockbase = 1590.000000
+Clockbase = 1592.000000
+Clockbase = 1594.000000
+Clockbase = 1596.000000
+Clockbase = 1598.000000
+Clockbase = 1600.000000
+Clockbase = 1602.000000
+Clockbase = 1604.000000
+Clockbase = 1606.000000
+Clockbase = 1608.000000
+Clockbase = 1610.000000
+Clockbase = 1612.000000
+Clockbase = 1614.000000
+Clockbase = 1616.000000
+Clockbase = 1618.000000
+Clockbase = 1620.000000
+Clockbase = 1622.000000
+Clockbase = 1624.000000
+Clockbase = 1626.000000
+Clockbase = 1628.000000
+Clockbase = 1630.000000
+Clockbase = 1632.000000
+Clockbase = 1634.000000
+Clockbase = 1636.000000
+Clockbase = 1638.000000
+Clockbase = 1640.000000
+Clockbase = 1642.000000
+Clockbase = 1644.000000
+Clockbase = 1646.000000
+Clockbase = 1648.000000
+Clockbase = 1650.000000
+Clockbase = 1652.000000
+Clockbase = 1654.000000
+Clockbase = 1656.000000
+Clockbase = 1658.000000
+Clockbase = 1660.000000
+Clockbase = 1662.000000
+Clockbase = 1664.000000
+Clockbase = 1666.000000
+Clockbase = 1668.000000
+Clockbase = 1670.000000
+Clockbase = 1672.000000
+Clockbase = 1674.000000
+Clockbase = 1676.000000
+Clockbase = 1678.000000
+Clockbase = 1680.000000
+Clockbase = 1682.000000
+Clockbase = 1684.000000
+Clockbase = 1686.000000
+Clockbase = 1688.000000
+Clockbase = 1690.000000
+Clockbase = 1692.000000
+Clockbase = 1694.000000
+Clockbase = 1696.000000
+Clockbase = 1698.000000
+Clockbase = 1700.000000
+Clockbase = 1702.000000
+Clockbase = 1704.000000
+Clockbase = 1706.000000
+Clockbase = 1708.000000
+Clockbase = 1710.000000
+Clockbase = 1712.000000
+Clockbase = 1714.000000
+Clockbase = 1716.000000
+Clockbase = 1718.000000
+Clockbase = 1720.000000
+Clockbase = 1722.000000
+Clockbase = 1724.000000
+Clockbase = 1726.000000
+Clockbase = 1728.000000
+Clockbase = 1730.000000
+Clockbase = 1732.000000
+Clockbase = 1734.000000
+Clockbase = 1736.000000
+Clockbase = 1738.000000
+Clockbase = 1740.000000
+Clockbase = 1742.000000
+Clockbase = 1744.000000
+Clockbase = 1746.000000
+Clockbase = 1748.000000
+Clockbase = 1750.000000
+Clockbase = 1752.000000
+Clockbase = 1754.000000
+Clockbase = 1756.000000
+Clockbase = 1758.000000
+Clockbase = 1760.000000
+Clockbase = 1762.000000
+Clockbase = 1764.000000
+Clockbase = 1766.000000
+Clockbase = 1768.000000
+Clockbase = 1770.000000
+Clockbase = 1772.000000
+Clockbase = 1774.000000
+Clockbase = 1776.000000
+Clockbase = 1778.000000
+Clockbase = 1780.000000
+Clockbase = 1782.000000
+Clockbase = 1784.000000
+Clockbase = 1786.000000
+Clockbase = 1788.000000
+Clockbase = 1790.000000
+Clockbase = 1792.000000
+Clockbase = 1794.000000
+Clockbase = 1796.000000
+Clockbase = 1798.000000
+Clockbase = 1800.000000
+Clockbase = 1802.000000
+Clockbase = 1804.000000
+Clockbase = 1806.000000
+Clockbase = 1808.000000
+Clockbase = 1810.000000
+Clockbase = 1812.000000
+Clockbase = 1814.000000
+Clockbase = 1816.000000
+Clockbase = 1818.000000
+Clockbase = 1820.000000
+Clockbase = 1822.000000
+Clockbase = 1824.000000
+Clockbase = 1826.000000
+Clockbase = 1828.000000
+Clockbase = 1830.000000
+Clockbase = 1832.000000
+Clockbase = 1834.000000
+Clockbase = 1836.000000
+Clockbase = 1838.000000
+Clockbase = 1840.000000
+Clockbase = 1842.000000
+Clockbase = 1844.000000
+Clockbase = 1846.000000
+Clockbase = 1848.000000
+Clockbase = 1850.000000
+Clockbase = 1852.000000
+Clockbase = 1854.000000
+Clockbase = 1856.000000
+Clockbase = 1858.000000
+Clockbase = 1860.000000
+Clockbase = 1862.000000
+Clockbase = 1864.000000
+Clockbase = 1866.000000
+Clockbase = 1868.000000
+Clockbase = 1870.000000
+Clockbase = 1872.000000
+Clockbase = 1874.000000
+Clockbase = 1876.000000
+Clockbase = 1878.000000
+Clockbase = 1880.000000
+Clockbase = 1882.000000
+Clockbase = 1884.000000
+Clockbase = 1886.000000
+Clockbase = 1888.000000
+Clockbase = 1890.000000
+Clockbase = 1892.000000
+Clockbase = 1894.000000
+Clockbase = 1896.000000
+Clockbase = 1898.000000
+Clockbase = 1900.000000
+Clockbase = 1902.000000
+Clockbase = 1904.000000
+Clockbase = 1906.000000
+Clockbase = 1908.000000
+Clockbase = 1910.000000
+Clockbase = 1912.000000
+Clockbase = 1914.000000
+Clockbase = 1916.000000
+Clockbase = 1918.000000
+Clockbase = 1920.000000
+Clockbase = 1922.000000
+Clockbase = 1924.000000
+Clockbase = 1926.000000
+Clockbase = 1928.000000
+Clockbase = 1930.000000
+Clockbase = 1932.000000
+Clockbase = 1934.000000
+Clockbase = 1936.000000
+Clockbase = 1938.000000
+Clockbase = 1940.000000
+Clockbase = 1942.000000
+Clockbase = 1944.000000
+Clockbase = 1946.000000
+Clockbase = 1948.000000
+Clockbase = 1950.000000
+Clockbase = 1952.000000
+Clockbase = 1954.000000
+Clockbase = 1956.000000
+Clockbase = 1958.000000
+Clockbase = 1960.000000
+Clockbase = 1962.000000
+Clockbase = 1964.000000
+Clockbase = 1966.000000
+Clockbase = 1968.000000
+Clockbase = 1970.000000
+Clockbase = 1972.000000
+Clockbase = 1974.000000
+Clockbase = 1976.000000
+Clockbase = 1978.000000
+Clockbase = 1980.000000
+Clockbase = 1982.000000
+Clockbase = 1984.000000
+Clockbase = 1986.000000
+Clockbase = 1988.000000
+Clockbase = 1990.000000
+Clockbase = 1992.000000
+Clockbase = 1994.000000
+Clockbase = 1996.000000
+Clockbase = 1998.000000
+Clockbase = 2000.000000
+Clockbase = 2002.000000
+Clockbase = 2004.000000
+Clockbase = 2006.000000
+Clockbase = 2008.000000
+Clockbase = 2010.000000
+Clockbase = 2012.000000
+Clockbase = 2014.000000
+Clockbase = 2016.000000
+Clockbase = 2018.000000
+Clockbase = 2020.000000
+Clockbase = 2022.000000
+Clockbase = 2024.000000
+Clockbase = 2026.000000
+Clockbase = 2028.000000
+Clockbase = 2030.000000
+Clockbase = 2032.000000
+Clockbase = 2034.000000
+Clockbase = 2036.000000
+Clockbase = 2038.000000
+Clockbase = 2040.000000
+Clockbase = 2042.000000
+Clockbase = 2044.000000
+Clockbase = 2046.000000
+	... done
+Elapsed time at end of score sort: real: 0.092s, CPU: 0.092s
+graphics suppressed, ascii substituted
+0dBFS level = 1.0
+ftable 101:
+WARNING: prerequisites/marmstk1.wav sr = 22050, orch sr = 48000.0
+audio sr = 22050, monaural
+opening WAV infile prerequisites/marmstk1.wav
+ftable 101:	256 points, scalemax 1.000
+      _
+
+           _
+
+
+
+                    .
+     _            .
+   -      .    _           _             -      _
+ -                       '      . - -  _    _        -
+__._'____.______'_____-_______.____________-__.___.-___'________
+             .       .         .   - .  .      _    .
+                       '  ' .                '   -    _
+                        '        .    .   '
+              '  . .
+            -
+
+       _
+        _
+ftable 102:
+ftable 102:	128 points, scalemax 1.000
+                _
+            _-'' ''-_
+          .'         '.
+        _-             -_
+       .                 .
+      -                   -
+     -                     -
+    '                       '
+   '                         '
+  '                           '
+_'_____________________________'________________________________
+                                 _                             _
+                                  _                           _
+                                   _                         _
+                                    _                       _
+                                     .                     .
+                                      .                   .
+                                       -                 -
+                                        '.             .'
+                                          -_         _-
+                                            '._____.'
+orch now loaded
+audio buffered in 256 sample-frame blocks
+ALSA input: total buffer size: 1024, period size: 256
+reading 1024-byte blks of shorts from adc (RAW)
+ALSA output: total buffer size: 1024, period size: 256
+writing 512 sample blks of 64-bit floats to dac
+SECTION 1:
+new alloc for instr mixer:
+new alloc for instr mixer:
+new alloc for instr player:
+diskin2: opened 'vocal.wav':
+         48000 Hz, 1 channel(s), 16783872 sample frames
+
+diskin2: opened 'vocal.wav':
+         48000 Hz, 1 channel(s), 16783872 sample frames
+
+new alloc for instr dom:
+new alloc for instr _player:
+WARNING: Seeding from current time 137979610
+
+new alloc for instr _tin:
+WARNING: Seeding from current time 137980015
+
+WARNING: Division by zero
+WARNING: Division by zero
+WARNING: Division by zero
+WARNING: Division by zero
+WARNING: Division by zero
+WARNING: Division by zero
+WARNING: Division by zero
+WARNING: Division by zero
+B  0.000 ..  0.500 T  0.235 TT  0.235 M:  1.00000  0.33081
+new alloc for instr sak:
+new alloc for instr sak:
+B  0.500 ..  0.502 T  0.235 TT  0.235 M:  0.12251  0.09570
+new alloc for instr sak:
+B  0.502 ..  1.000 T  0.469 TT  0.469 M:  0.87329  0.41284
+new alloc for instr tak:
+B  1.000 ..  1.004 T  0.471 TT  0.471 M:  0.17393  0.13471
+new alloc for instr tak:
+B  1.004 ..  1.008 T  0.473 TT  0.473 M:  0.50626  0.07084
+new alloc for instr tak:
+B  1.008 ..  1.500 T  0.703 TT  0.703 M:  0.95111  0.41799
+B  1.500 ..  1.502 T  0.704 TT  0.704 M:  0.11969  0.12307
+WARNING: Buffer underrun in real-time audio output
+B  1.502 ..  2.000 T  0.937 TT  0.937 M:  0.86872  0.36335
+B  2.000 ..  2.500 T  1.172 TT  1.172 M:  1.00000  0.36258
+B  2.500 ..  2.502 T  1.173 TT  1.173 M:  0.15990  0.16729
+B  2.502 ..  3.000 T  1.406 TT  1.406 M:  0.82735  0.40758
+B  3.000 ..  3.004 T  1.408 TT  1.408 M:  0.29451  0.27633
+B  3.004 ..  3.008 T  1.410 TT  1.410 M:  0.53135  0.18452
+B  3.008 ..  3.500 T  1.641 TT  1.641 M:  0.95971  0.36604
+B  3.500 ..  3.501 T  1.641 TT  1.641 M:  0.07911  0.06252
+B  3.501 ..  4.000 T  1.875 TT  1.875 M:  0.85783  0.37233
+B  4.000 ..  4.500 T  2.109 TT  2.109 M:  1.00000  0.35941
+B  4.500 ..  4.501 T  2.110 TT  2.110 M:  0.15707  0.04667
+B  4.501 ..  5.000 T  2.344 TT  2.344 M:  0.88611  0.10341
+B  5.000 ..  5.004 T  2.345 TT  2.345 M:  0.13116  0.00977
+B  5.004 ..  5.008 T  2.347 TT  2.347 M:  0.50367  0.00609
+B  5.008 ..  5.500 T  2.578 TT  2.578 M:  0.99573  0.01619
+B  5.500 ..  5.501 T  2.579 TT  2.579 M:  0.00621  0.00880
+B  5.501 ..  5.502 T  2.579 TT  2.579 M:  0.24164  0.00689
+B  5.502 ..  6.000 T  2.813 TT  2.813 M:  0.68414  0.01274
+B  6.000 ..  6.500 T  3.047 TT  3.047 M:  1.00000  0.00915
+B  6.500 ..  6.501 T  3.047 TT  3.047 M:  0.10040  0.00405
+B  6.501 ..  6.502 T  3.048 TT  3.048 M:  0.28157  0.00337
+B  6.502 ..  7.000 T  3.281 TT  3.281 M:  0.71783  0.39569
+B  7.000 ..  7.004 T  3.283 TT  3.283 M:  0.23527  0.13960
+B  7.004 ..  7.008 T  3.285 TT  3.285 M:  0.45925  0.07425
+B  7.008 ..  7.500 T  3.515 TT  3.515 M:  0.99851  0.35233
+B  7.500 ..  7.501 T  3.516 TT  3.516 M:  0.09099  0.09652
+B  7.501 ..  7.502 T  3.517 TT  3.517 M:  0.30532  0.11229
+B  7.502 ..  8.000 T  3.750 TT  3.750 M:  0.66473  0.35900
+B  8.000 ..  8.500 T  3.985 TT  3.985 M:  1.00000  0.36969
+B  8.500 ..  8.502 T  3.985 TT  3.985 M:  0.06477  0.07263
+B  8.502 ..  9.000 T  4.219 TT  4.219 M:  0.76915  0.42915
+B  9.000 ..  9.004 T  4.221 TT  4.221 M:  0.20649  0.10583
+B  9.004 ..  9.008 T  4.223 TT  4.223 M:  0.46775  0.22709
+B  9.008 ..  9.500 T  4.453 TT  4.453 M:  1.00000  0.34311
+B  9.500 ..  9.502 T  4.454 TT  4.454 M:  0.08799  0.09724
+B  9.502 .. 10.000 T  4.687 TT  4.687 M:  0.86042  0.36352
+B 10.000 .. 10.500 T  4.922 TT  4.922 M:  1.00000  0.35387
+B 10.500 .. 10.502 T  4.923 TT  4.923 M:  0.16197  0.18262
+B 10.502 .. 11.000 T  5.156 TT  5.156 M:  0.86957  0.41696
+B 11.000 .. 11.004 T  5.158 TT  5.158 M:  0.19725  0.13153
+B 11.004 .. 11.008 T  5.160 TT  5.160 M:  0.57557  0.10610
+B 11.008 .. 11.500 T  5.391 TT  5.391 M:  0.96062  0.35930
+B 11.500 .. 11.501 T  5.391 TT  5.391 M:  0.25602  0.24597
+B 11.501 .. 12.000 T  5.625 TT  5.625 M:  0.85184  0.35377
+B 12.000 .. 12.500 T  5.859 TT  5.859 M:  1.00000  0.37530
+B 12.500 .. 12.501 T  5.860 TT  5.860 M:  0.28258  0.18143
+B 12.501 .. 13.000 T  6.094 TT  6.094 M:  0.83595  0.31676
+B 13.000 .. 13.004 T  6.095 TT  6.095 M:  0.10121  0.00779
+B 13.004 .. 13.008 T  6.097 TT  6.097 M:  0.51176  0.00774
+B 13.008 .. 13.500 T  6.328 TT  6.328 M:  0.97615  0.01815
+B 13.500 .. 13.501 T  6.329 TT  6.329 M:  0.00565  0.00242
+B 13.501 .. 13.502 T  6.329 TT  6.329 M:  0.28249  0.00439
+B 13.502 .. 14.000 T  6.563 TT  6.563 M:  0.64060  0.00993
+B 14.000 .. 14.500 T  6.797 TT  6.797 M:  1.00000  0.09852
+B 14.500 .. 14.501 T  6.797 TT  6.797 M:  0.16558  0.06779
+B 14.501 .. 14.502 T  6.798 TT  6.798 M:  0.31947  0.04062
+B 14.502 .. 15.000 T  7.031 TT  7.031 M:  0.73585  0.37713
+B 15.000 .. 15.004 T  7.033 TT  7.033 M:  0.32036  0.23171
+B 15.004 .. 15.008 T  7.035 TT  7.035 M:  0.43364  0.13815
+B 15.008 .. 15.500 T  7.265 TT  7.265 M:  0.98541  0.36058
+B 15.500 .. 15.501 T  7.266 TT  7.266 M:  0.31053  0.31276
+B 15.501 .. 15.502 T  7.267 TT  7.267 M:  0.32563  0.18811
+B 15.502 .. 16.000 T  7.500 TT  7.500 M:  0.62320  0.37719
+B 16.000 .. 16.500 T  7.735 TT  7.735 M:  1.00000  0.34096
+B 16.500 .. 16.502 T  7.735 TT  7.735 M:  0.08086  0.07766
+B 16.502 .. 17.000 T  7.969 TT  7.969 M:  0.88117  0.42810
+B 17.000 .. 17.004 T  7.971 TT  7.971 M:  0.30105  0.11729
+B 17.004 .. 17.008 T  7.973 TT  7.973 M:  0.46636  0.30384
+B 17.008 .. 17.500 T  8.203 TT  8.203 M:  0.99732  0.35417
+B 17.500 .. 17.502 T  8.204 TT  8.204 M:  0.14149  0.14506
+B 17.502 .. 18.000 T  8.437 TT  8.437 M:  0.76060  0.43897
+B 18.000 .. 18.500 T  8.672 TT  8.672 M:  1.00000  0.35184
+B 18.500 .. 18.502 T  8.673 TT  8.673 M:  0.10583  0.06635
+B 18.502 .. 19.000 T  8.906 TT  8.906 M:  0.92977  0.40789
+B 19.000 .. 19.004 T  8.908 TT  8.908 M:  0.23778  0.17391
+B 19.004 .. 19.008 T  8.910 TT  8.910 M:  0.50663  0.08150
+B 19.008 .. 19.500 T  9.141 TT  9.141 M:  0.93611  0.35242
+B 19.500 .. 19.501 T  9.141 TT  9.141 M:  0.00881  0.01632
+B 19.501 .. 20.000 T  9.375 TT  9.375 M:  0.85307  0.38284
+B 20.000 .. 20.500 T  9.609 TT  9.609 M:  1.00000  0.38094
+B 20.500 .. 20.501 T  9.610 TT  9.610 M:  0.34253  0.24108
+B 20.501 .. 21.000 T  9.844 TT  9.844 M:  0.91525  0.34336
+B 21.000 .. 21.004 T  9.845 TT  9.845 M:  0.11631  0.07599
+B 21.004 .. 21.008 T  9.847 TT  9.847 M:  0.40414  0.05966
+B 21.008 .. 21.500 T 10.078 TT 10.078 M:  0.96868  0.04316
+B 21.500 .. 21.501 T 10.079 TT 10.079 M:  0.00604  0.00439
+B 21.501 .. 21.502 T 10.079 TT 10.079 M:  0.25975  0.00806
+B 21.502 .. 22.000 T 10.313 TT 10.313 M:  0.60877  0.01291
+B 22.000 .. 22.500 T 10.547 TT 10.547 M:  1.00000  0.00919
+B 22.500 .. 22.501 T 10.547 TT 10.547 M:  0.09988  0.00276
+B 22.501 .. 22.502 T 10.548 TT 10.548 M:  0.22161  0.00257
+B 22.502 .. 23.000 T 10.781 TT 10.781 M:  0.78741  0.00654
+B 23.000 .. 23.004 T 10.783 TT 10.783 M:  0.21550  0.00469
+B 23.004 .. 23.008 T 10.785 TT 10.785 M:  0.38023  0.00444
+B 23.008 .. 23.500 T 11.015 TT 11.015 M:  0.99476  0.00547
+B 23.500 .. 23.501 T 11.016 TT 11.016 M:  0.00178  0.00180
+B 23.501 .. 23.502 T 11.017 TT 11.017 M:  0.28745  0.00155
+B 23.502 .. 24.000 T 11.250 TT 11.250 M:  0.60670  0.39144
+B 24.000 .. 24.500 T 11.485 TT 11.485 M:  1.00000  0.33164
+B 24.500 .. 24.502 T 11.485 TT 11.485 M:  0.05689  0.08168
+B 24.502 .. 25.000 T 11.719 TT 11.719 M:  0.84557  0.36632
+B 25.000 .. 25.004 T 11.721 TT 11.721 M:  0.26787  0.29270
+B 25.004 .. 25.008 T 11.723 TT 11.723 M:  0.51993  0.17739
+B 25.008 .. 25.500 T 11.953 TT 11.953 M:  0.98432  0.34623
+B 25.500 .. 25.502 T 11.954 TT 11.954 M:  0.09367  0.07014
+B 25.502 .. 26.000 T 12.187 TT 12.187 M:  0.75465  0.29078
+B 26.000 .. 26.500 T 12.422 TT 12.422 M:  1.00000  0.37727
+B 26.500 .. 26.502 T 12.423 TT 12.423 M:  0.05665  0.07303
+B 26.502 .. 27.000 T 12.656 TT 12.656 M:  0.73192  0.35317
+B 27.000 .. 27.004 T 12.658 TT 12.658 M:  0.34100  0.19915
+B 27.004 .. 27.008 T 12.660 TT 12.660 M:  0.57238  0.12278
+B 27.008 .. 27.500 T 12.891 TT 12.891 M:  0.96042  0.36668
+B 27.500 .. 27.501 T 12.891 TT 12.891 M:  0.12269  0.13045
+B 27.501 .. 28.000 T 13.125 TT 13.125 M:  0.84475  0.39792
+B 28.000 .. 28.500 T 13.359 TT 13.359 M:  1.00000  0.36074
+B 28.500 .. 28.501 T 13.360 TT 13.360 M:  0.20965  0.10540
+B 28.501 .. 29.000 T 13.594 TT 13.594 M:  0.88149  0.30206
+B 29.000 .. 29.004 T 13.595 TT 13.595 M:  0.11334  0.01630
+B 29.004 .. 29.008 T 13.597 TT 13.597 M:  0.36963  0.02138
+B 29.008 .. 29.500 T 13.828 TT 13.828 M:  0.99837  0.02192
+B 29.500 .. 29.501 T 13.829 TT 13.829 M:  0.00613  0.00941
+B 29.501 .. 29.502 T 13.829 TT 13.829 M:  0.30048  0.00283
+B 29.502 .. 30.000 T 14.063 TT 14.063 M:  0.63978  0.01568
+B 30.000 .. 30.500 T 14.297 TT 14.297 M:  1.00000  0.06627
+B 30.500 .. 30.501 T 14.297 TT 14.297 M:  0.11979  0.01982
+B 30.501 .. 30.502 T 14.298 TT 14.298 M:  0.26942  0.02300
+B 30.502 .. 31.000 T 14.531 TT 14.531 M:  0.73757  0.35364
+B 31.000 .. 31.004 T 14.533 TT 14.533 M:  0.38949  0.35469
+B 31.004 .. 31.008 T 14.535 TT 14.535 M:  0.52182  0.25183
+B 31.008 .. 31.500 T 14.765 TT 14.765 M:  0.96475  0.34983
+B 31.500 .. 31.501 T 14.766 TT 14.766 M:  0.13616  0.14131
+B 31.501 .. 31.502 T 14.767 TT 14.767 M:  0.32569  0.13582
+B 31.502 .. 32.000 T 15.000 TT 15.000 M:  0.66021  0.38235
+B 32.000 .. 32.500 T 15.235 TT 15.235 M:  1.00000  0.34274
+B 32.500 .. 32.502 T 15.235 TT 15.235 M:  0.26053  0.26838
+B 32.502 .. 33.000 T 15.469 TT 15.469 M:  0.94854  0.39390
+B 33.000 .. 33.004 T 15.471 TT 15.471 M:  0.38773  0.29904
+B 33.004 .. 33.008 T 15.473 TT 15.473 M:  0.51237  0.19501
+B 33.008 .. 33.500 T 15.703 TT 15.703 M:  1.00000  0.36704
+B 33.500 .. 33.502 T 15.704 TT 15.704 M:  0.26931  0.25265
+B 33.502 .. 34.000 T 15.937 TT 15.937 M:  0.69596  0.39035
+B 34.000 .. 34.500 T 16.172 TT 16.172 M:  1.00000  0.36927
+B 34.500 .. 34.502 T 16.173 TT 16.173 M:  0.30047  0.31404
+B 34.502 .. 35.000 T 16.406 TT 16.406 M:  0.82473  0.36684
+B 35.000 .. 35.004 T 16.408 TT 16.408 M:  0.32461  0.29119
+B 35.004 .. 35.008 T 16.410 TT 16.410 M:  0.54704  0.14916
+B 35.008 .. 35.500 T 16.641 TT 16.641 M:  0.95957  0.35422
+B 35.500 .. 35.501 T 16.641 TT 16.641 M:  0.12374  0.12348
+B 35.501 .. 36.000 T 16.875 TT 16.875 M:  0.79090  0.36558
+B 36.000 .. 36.500 T 17.109 TT 17.109 M:  1.00000  0.37156
+B 36.500 .. 36.501 T 17.110 TT 17.110 M:  0.25590  0.19169
+B 36.501 .. 37.000 T 17.344 TT 17.344 M:  0.85426  0.33990
+B 37.000 .. 37.004 T 17.345 TT 17.345 M:  0.12271  0.01561
+B 37.004 .. 37.008 T 17.347 TT 17.347 M:  0.54416  0.01343
+B 37.008 .. 37.500 T 17.578 TT 17.578 M:  0.99272  0.02251
+B 37.500 .. 37.501 T 17.579 TT 17.579 M:  0.01092  0.00847
+B 37.501 .. 37.502 T 17.579 TT 17.579 M:  0.26170  0.00751
+B 37.502 .. 38.000 T 17.813 TT 17.813 M:  0.68205  0.01548
+B 38.000 .. 38.500 T 18.047 TT 18.047 M:  1.00000  0.07483
+B 38.500 .. 38.501 T 18.047 TT 18.047 M:  0.11104  0.02671
+B 38.501 .. 38.502 T 18.048 TT 18.048 M:  0.30585  0.01900
+B 38.502 .. 39.000 T 18.281 TT 18.281 M:  0.78454  0.32090
+B 39.000 .. 39.004 T 18.283 TT 18.283 M:  0.28042  0.15168
+B 39.004 .. 39.008 T 18.285 TT 18.285 M:  0.34484  0.12701
+B 39.008 .. 39.500 T 18.515 TT 18.515 M:  0.90645  0.23184
+B 39.500 .. 39.501 T 18.516 TT 18.516 M:  0.04892  0.04440
+B 39.501 .. 39.502 T 18.517 TT 18.517 M:  0.33964  0.09686
+B 39.502 .. 40.000 T 18.750 TT 18.750 M:  0.60659  0.30158
+B 40.000 .. 40.500 T 18.985 TT 18.985 M:  1.00000  0.37781
+B 40.500 .. 40.502 T 18.985 TT 18.985 M:  0.19382  0.17652
+B 40.502 .. 41.000 T 19.219 TT 19.219 M:  0.79894  0.37410
+B 41.000 .. 41.004 T 19.221 TT 19.221 M:  0.34703  0.33938
+B 41.004 .. 41.008 T 19.223 TT 19.223 M:  0.49957  0.14033
+B 41.008 .. 41.500 T 19.453 TT 19.453 M:  0.99302  0.35194
+B 41.500 .. 41.502 T 19.454 TT 19.454 M:  0.04578  0.04743
+B 41.502 .. 42.000 T 19.687 TT 19.687 M:  0.77868  0.37896
+B 42.000 .. 42.500 T 19.922 TT 19.922 M:  1.00000  0.31691
+B 42.500 .. 42.502 T 19.923 TT 19.923 M:  0.13093  0.11041
+B 42.502 .. 43.000 T 20.156 TT 20.156 M:  0.86258  0.35996
+B 43.000 .. 43.004 T 20.158 TT 20.158 M:  0.29362  0.23703
+B 43.004 .. 43.008 T 20.160 TT 20.160 M:  0.47074  0.15335
+B 43.008 .. 43.500 T 20.391 TT 20.391 M:  0.91759  0.39823
+B 43.500 .. 43.501 T 20.391 TT 20.391 M:  0.14164  0.14988
+B 43.501 .. 44.000 T 20.625 TT 20.625 M:  0.83139  0.36517
+B 44.000 .. 44.500 T 20.859 TT 20.859 M:  1.00000  0.35607
+B 44.500 .. 44.501 T 20.860 TT 20.860 M:  0.14263  0.04298
+inactive allocs returned to freespace
+end of score.		   overall amps:  1.00000  0.43897
+	   overall samples out of range:        0        0
+0 errors in performance
+Elapsed time at end of performance: real: 21.777s, CPU: 3.153s
+3949 512 sample blks of 64-bit floats written to dac
