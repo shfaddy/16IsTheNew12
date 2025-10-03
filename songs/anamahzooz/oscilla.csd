@@ -459,18 +459,19 @@ iOrnament += 1
 od
 endif
 p1 init int ( p1 ) + rnd ( .99999 )
-iAttack init $p_length / 2^3
+iPLength init abs ( $p_length )
+iAttack init iPLength / 2^3
 iDecay init iAttack / 2^2
 iSustain init 1 / 2^1
-iRelease init $p_length / 2^3
+iRelease init iPLength / 2^3
 aAmplitude adsr iAttack, iDecay, iSustain, iRelease
 iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
 aAmplitude poscil aAmplitude / ( iPDistance + 1 ), iFrequency * 2^0
 iAttack /= 2^11
 iDecay /= 2^11
 aFrequency linseg iFrequency * 2^(16/16), iAttack, iFrequency * 2^(4/16), iDecay, iFrequency * 2^(0/16), iRelease, iFrequency * 2^(-.5/16)
-aClip rspline 0, 1, 0, $p_length * 2^2
-aSkew rspline -1, 1, 0, $p_length * 2^3
+aClip rspline 0, 1, 0, iPLength * 2^2
+aSkew rspline -1, 1, 0, iPLength * 2^3
 aNote squinewave aFrequency, aClip, aSkew
 aNote butterlp aNote, aFrequency * 2^2
 aNote *= aAmplitude
@@ -488,12 +489,56 @@ i [1.2] [0] [-1] "chord" "chord" [1/2] [1] [3/4] [1] [.1] [1]
 i [1.3] [0] [-1] "percussion" "percussion" [1/2] [1] [3/4] [1] [0] [3]
 t 0 105
 v 8
-#define thickness #64#
+f 0 1
+i 11 [0] [-1] [16] [8] [0] "drone" [6] [1]
+i 11 [0] [-1] [16] [8] [0 + 7] "drone" [6] [1]
+i 11 [0] [-1] [16] [8] [0 + 7 + 5] "drone" [6] [1]
+s 8
+t 0 105
+v 8
+#define thickness #16#
 { $thickness beat
-i 10 [$beat/$thickness] [1/$thickness] [16] [8] [0] "drone" [8] [3]
-i 10 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 7] "drone" [8] [3]
-i 10 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 7 + 5] "drone" [8] [3]
+i 10 [$beat/$thickness] [1/$thickness] [16] [7] [0] "chord" [0] [3]
+i 10 [$beat/$thickness] [1/$thickness] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [$beat/$thickness] [1/$thickness] [16] [7] [0 + 7 + 5] "chord" [0] [3]
 }
+s 8
+t 0 105
+v 4
+b 0
+i 10 [0] [1/8] [16] [7] [0] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+b 4
+i 10 [0] [1/8] [16] [7] [8] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+s 8
+t 0 105
 v 4
 b 0
 i 10 [0] [1/8] [16] [7] [0] "chord" [0] [3]
@@ -528,50 +573,309 @@ i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
 i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
 i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
 v 4
-b 0
-i 11 [0] [1/2] [16] [6] [0] "drone" [2] [1]
-i 11 [0] [1/2] [16] [6] [0 + 7] "drone" [2] [1]
-i 11 [0] [1/2] [16] [6] [0 + 7 + 5] "drone" [2] [1]
-i 11 [1/2] [1/2] [16] [6] [7] "drone" [2] [1]
-i 11 [1/2] [1/2] [16] [6] [7 + 7] "drone" [2] [1]
-i 11 [1/2] [1/2] [16] [6] [7 + 7 + 5] "drone" [2] [1]
-b 4
-i 11 [0] [1/2] [16] [6] [3] "drone" [2] [1]
-i 11 [0] [1/2] [16] [6] [3 + 7] "drone" [2] [1]
-i 11 [0] [1/2] [16] [6] [3 + 7 + 5] "drone" [2] [1]
-i 11 [1/2] [1/2] [16] [6] [0] "drone" [2] [1]
-i 11 [1/2] [1/2] [16] [6] [0 + 7] "drone" [2] [1]
-i 11 [1/2] [1/2] [16] [6] [0 + 7 + 5] "drone" [2] [1]
-v 4
 { 2 bar
 b [ 4 * $bar ]
-i 9 [0] [0] [0] "percussion" "percussion" [6]
-i 9 [2/8] [0] [0] "percussion" "percussion" [6]
-i 9 [4/8] [0] [0] "percussion" "percussion" [6]
-i 9 [6/8] [0] [0] "percussion" "percussion" [6]
-{ 2 finger
-i [8 + .$finger] [0 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [24]
-i [8 + .$finger] [3/8 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [24]
-i [8 + .$finger] [4/8 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [24]
-i [8 + .$finger] [6/8 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [24]
-}
-i [4] [0] [1/2] "percussion" [1]
-i [4] [1/2] [1/2] "percussion" [1]
 { 3 finger
 i [7 + .$finger] [1/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
-i [5 + .$finger] [2/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
 i [7 + .$finger] [3/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
 i [6 + .$finger] [4/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
 i [6 + .$finger] [5/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
-i [5 + .$finger] [6/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
 i [7 + .$finger] [7/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
 i [7 + .$finger] [9/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
 i [6 + .$finger] [10/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
 i [6 + .$finger] [11/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
-i [5 + .$finger] [12/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
 i [6 + .$finger] [13/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
 i [6 + .$finger] [14/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
 i [7 + .$finger] [15/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+}
+}
+s 8
+t 0 105
+v 4
+b 0
+i 10 [0] [1/8] [16] [7] [0] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+b 4
+i 10 [0] [1/8] [16] [7] [8] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [7 + .$finger] [1/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [3/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [4/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [5/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [7/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [9/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [10/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [11/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [13/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [14/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [15/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+}
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [5 + .$finger] [2/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [6/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [12/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+}
+}
+s 8
+t 0 105
+v 4
+b 0
+i 10 [0] [1/8] [16] [7] [0] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+b 4
+i 10 [0] [1/8] [16] [7] [8] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [7 + .$finger] [1/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [3/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [4/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [5/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [7/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [9/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [10/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [11/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [13/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [14/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [15/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+}
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [5 + .$finger] [2/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [6/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [12/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+}
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+i [4] [0] [1/2] "percussion" [1]
+i [4] [1/2] [1/2] "percussion" [1]
+}
+s 8
+t 0 105
+v 4
+b 0
+i 10 [0] [1/8] [16] [7] [0] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+b 4
+i 10 [0] [1/8] [16] [7] [8] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [7 + .$finger] [1/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [3/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [4/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [5/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [7/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [9/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [10/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [11/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [13/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [14/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [15/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+}
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [5 + .$finger] [2/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [6/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [12/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+}
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+i [4] [0] [1/2] "percussion" [1]
+i [4] [1/2] [1/2] "percussion" [1]
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+i 9 [1/8] [0] [0] "percussion" "percussion" [6]
+i 9 [3/8] [0] [0] "percussion" "percussion" [6]
+i 9 [5/8] [0] [0] "percussion" "percussion" [6]
+i 9 [7/8] [0] [0] "percussion" "percussion" [6]
+}
+s 8
+r 4
+t 0 105
+v 4
+b 0
+i 10 [0] [1/8] [16] [7] [0] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [-3 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+b 4
+i 10 [0] [1/8] [16] [7] [8] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [0] [1/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7] "chord" [0] [3]
+i 10 [1/8] [2/8] [16] [7] [8 + 7 + 5] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7] "chord" [0] [3]
+i 10 [3/8] [1/8] [16] [7] [4 + 7 + 5] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [4/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7] "chord" [0] [3]
+i 10 [6/8] [2/8] [16] [7] [0 + 7 + 5] "chord" [0] [3]
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [7 + .$finger] [1/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [3/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [4/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [5/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [7/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [7 + .$finger] [9/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+i [6 + .$finger] [10/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [11/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [13/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [6 + .$finger] [14/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [5]
+i [7 + .$finger] [15/16 + $finger/2^11] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [32]
+}
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 3 finger
+i [5 + .$finger] [2/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [6/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+i [5 + .$finger] [12/16 + $finger/2^9] [(1/2)] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [4]
+}
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+i [4] [0] [1/2] "percussion" [1]
+i [4] [1/2] [1/2] "percussion" [1]
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+i 9 [1/8] [0] [0] "percussion" "percussion" [6]
+i 9 [3/8] [0] [0] "percussion" "percussion" [6]
+i 9 [5/8] [0] [0] "percussion" "percussion" [6]
+i 9 [7/8] [0] [0] "percussion" "percussion" [6]
+}
+v 4
+{ 2 bar
+b [ 4 * $bar ]
+{ 2 finger
+i [8 + .$finger] [0 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [16]
+i [8 + .$finger] [3/8 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [16]
+i [8 + .$finger] [4/8 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [16]
+i [8 + .$finger] [6/8 + $finger/2^9] [(1/2^3)] [0 + ~ + ( $finger * 4 )] "percussion" [16]
 }
 }
 s 8

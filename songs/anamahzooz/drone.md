@@ -4,23 +4,19 @@
 
 + v 8
 
-tin .
++ f 0 1
+
+tew .
 
 channel = drone
 
-ornaments = 3
-
-+ #define thickness #64#
-
-+ { $thickness beat
+ornaments = 1
 
 octave = 8
 
-distance = 8
+distance = 6
 
-* $beat/$thickness 0 1/$thickness 7 5
-
-+ }
+* 0 0 -1 7 5
 
 ..
 

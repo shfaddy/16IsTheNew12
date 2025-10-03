@@ -6,45 +6,129 @@
 
 ```
 
+## Start with Only Drone
+
 ```scenario oscilla
 
 --read clock
 
 --read drone
 
---read chord
-
---read sammy
-
---read rhythm
-
 + s 8
 
 ```
 
-```scenario xoscilla
+## Getting Ready for Guitar-Like Chord
+
+```scenario oscilla
 
 --read clock
 
---read drone
-
 --read start
-
---read start.rhythm
 
 + s 8
 
 ```
 
-```scenario xoscilla
+## Introduction of Guitar-Like Chord
+
+```scenario oscilla
+
+--read clock
+
+--read chord
+
++ s 8
+
+```
+
+## Introduction of Saks and Siks
+
+```scenario oscilla
+
+--read clock
+
+--read chord
+
+--read rhythm.saksik
+
++ s 8
+
+```
+
+## Introduction of Taks
+
+```scenario oscilla
+
+--read clock
+
+--read chord
+
+--read rhythm.saksik
+
+--read rhythm.tak
+
++ s 8
+
+```
+
+## Introduction of Doms
+
+```scenario oscilla
+
+--read clock
+
+--read chord
+
+--read rhythm.saksik
+
+--read rhythm.tak
+
+--read rhythm.dom
+
++ s 8
+
+```
+
+## Introduction of Claps
+
+```scenario oscilla
+
+--read clock
+
+--read chord
+
+--read rhythm.saksik
+
+--read rhythm.tak
+
+--read rhythm.dom
+
+--read rhythm.claps
+
++ s 8
+
+```
+
+## Introduction of Sagat
+
+```scenario oscilla
 
 + r 4
 
 --read clock
 
---read drone
-
 --read chord
+
+--read rhythm.saksik
+
+--read rhythm.tak
+
+--read rhythm.dom
+
+--read rhythm.claps
+
+--read rhythm.sagat
 
 + s 8
 

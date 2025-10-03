@@ -2,17 +2,11 @@
 
 ```scenario oscilla
 
+--read chord.tin
+
 + v 4
 
 tin .
-
-channel = chord
-
-distance = 0
-
-ornaments = 3
-
-octave = 7
 
 + b 0
 

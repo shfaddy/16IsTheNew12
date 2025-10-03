@@ -2,23 +2,17 @@
 
 ```scenario oscilla
 
-+ v 8
+--read chord.tin
 
 tin .
 
-channel = chord
-
-octave = 7
-
-ornaments = 3
++ v 8
 
 + #define thickness #16#
 
 + { $thickness beat
 
-distance = 0
-
-* $beat/$thickness 0 1/$thickness 5 4
+* $beat/$thickness 0 1/$thickness 7 5
 
 + }
 
