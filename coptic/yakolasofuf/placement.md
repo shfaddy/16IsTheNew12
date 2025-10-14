@@ -11,8 +11,8 @@ length = -1
 left = drone
 right = drone
 
-dry = 10
-wet = 0
+dry = 1
+wet = 4
 
 *
 
@@ -24,7 +24,7 @@ right = chord
 roomMin = 7/8
 
 dry = 0
-wet = 2
+wet = 8
 
 *
 

@@ -2,19 +2,7 @@
 
 ```scenario oscilla
 
-+ r 2
-
-```
-
-```scenario oscilla
-
 --read placement
-
-```
-
-```scenario oscilla
-
---read clock
 
 ```
 
@@ -22,24 +10,78 @@
 
 ```scenario oscilla
 
-+ { 4 instrument
-
 tin .
 
 channel = chord
 
-octave = 5+$instrument
+octave = 7+$instrument
 
-distance = 2
+distance = 1
 
-ornaments = $instrument
+ornaments = 3
+
+..
+
+```
+
+```scenario oscilla
+
+bow .
+
+channel = drone
+
+octave = 6+$instrument
+
+distance = 0
+
+ornaments = 3
+
+..
+
+```
+
+```scenario oscilla
+
+--read clock
+
++ { 2 instrument
+
++ b 2
+
++ { 4 beat
+
+tin * $beat/4 $fa 1/4
+
+bow * $beat/4 $fa 1/4
+
++ }
+
++ }
+
++ f 0 1
+
++ s
+
+```
+
+```scenario oscilla
+
++ r 2
+
+--read clock
 
 + b 0
 + a 0 0 0
 
---read from ~ melody.draft
+```
 
-..
+```scenario oscilla
+
++ { 2 instrument
+
+tin --read from ~ melody
+
+bow --read from ~ melody
 
 + }
 
@@ -49,7 +91,7 @@ ornaments = $instrument
 
 tin .
 
-+ { 4 instrument
++ { 2 instrument
 
 + $bar(0)
 
@@ -68,12 +110,12 @@ tin .
 
 + $bar(3)
 
-* 0 $do 1
+* 0 $do 1/2
 
 ..
 
 + }
 
-+ s
++ s 14
 
 ```

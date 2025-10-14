@@ -44,6 +44,7 @@ giKey = 0
 --instrument sagat
 
 --instrument tin
+--instrument bow
 
 + .
 

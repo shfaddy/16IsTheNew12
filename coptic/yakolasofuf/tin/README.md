@@ -4,20 +4,15 @@
 
 ```scenario oscilla
 
-note .
-
---string
---wrapper none
---combinator .
-
-..
-
 --parameter scale = 16
 --parameter octave = 8
 --parameter tone
 --parameter channel --string
 --parameter distance
 --parameter ornaments
+--parameter method = 2
+--parameter parameter1 = 2
+--parameter parameter2
 
 ```
 
@@ -31,32 +26,20 @@ note .
 
 p1 init int ( p1 ) + rnd ( .99999 )
 
-iAttack init $p_length / 2^13
-iDecay init $p_length / 2^13
-
-aAmplitude linseg 0, iAttack, 1, iDecay, 0
+iAttack init 1 / 2^6
+iDecay init $p_length / 2^2
 
 iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
 
-aFrequency linsegr iFrequency * 2^(32/16), iAttack / 2^0, iFrequency, iDecay / 2^0, iFrequency * 2^(-4/16)
+kAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
 
-aClip rspline 0, 1, 0, $p_length
+kFrequency linsegr iFrequency * 2^(4/16), iAttack / 2^3, iFrequency, iDecay / 2^3, iFrequency * 2^(-4/16)
 
-aSkew rspline -1, 1, 0, $p_length
+aNote pluck kAmplitude, kFrequency, iFrequency, 0, iPMethod, iPParameter1, iPParameter2
 
-aNote squinewave aFrequency, aClip, aSkew
+aNote butterlp aNote, kFrequency * 2^1
 
-aNote *= aAmplitude / 2^2
-
-aAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
-
-aPluck pluck k ( aAmplitude ), k ( aFrequency ) / 2^0, iFrequency, 0, 1
-
-aNote += aPluck / 2
-
-aNote butterlp aNote, aFrequency * 2^1
-
-aNote butterhp aNote, aFrequency / 2^0
+aNote butterhp aNote, kFrequency / 2^0
 
 chnmix aNote / ( iPDistance + 1 ), SPChannel
 
