@@ -8,7 +8,7 @@
 
 <CsInstruments>
 
-sr = 48000
+sr = 24000
 ksmps = 32
 nchnls = 2
 0dbfs = 1
@@ -373,13 +373,23 @@ iOrnament += 1
 od
 endif
 p1 init int ( p1 ) + rnd ( .99999 )
+/*
 iAttack init 1 / 2^6
 iDecay init $p_length / 2^2
+*/
+iAttack init 1 / 2^( 6 + rnd ( 1 ) )
+iDecay init $p_length / 2^( 1 + rnd ( 1 ) )
+iSustain init 1/2^2
+iRelease init iDecay + rnd ( 1/2^6 )
 iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
-kAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
-kFrequency linsegr iFrequency * 2^(4/16), iAttack / 2^3, iFrequency, iDecay / 2^3, iFrequency * 2^(-4/16)
+; kAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
+kAmplitude linsegr 0, iAttack, 1, $p_length - iAttack, iSustain, iRelease, 0
+iDetune init 2^7
+kDetune rspline 2^(-1/iDetune), 2^(1/iDetune), 0, 1 / ( $p_length * 2^2 )
+kFrequency linseg iFrequency * 2^( ( 0 + rnd ( -4 ) ) / iDetune ), $p_length, iFrequency
+kFrequency *= kDetune
 aNote pluck kAmplitude, kFrequency, iFrequency, 0, iPMethod, iPParameter1, iPParameter2
-aNote butterlp aNote, kFrequency * 2^1
+aNote butterlp aNote, kFrequency * 2^2
 aNote butterhp aNote, kFrequency / 2^0
 chnmix aNote / ( iPDistance + 1 ), SPChannel
 
@@ -466,7 +476,7 @@ v $measure
 { 2 instrument
 b 2
 { 4 beat
-i [9] [$beat/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [$beat/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 i [10] [$beat/4] [1/4] [16] [6+$instrument] [$fa] "drone" [0] [3] [2] [2] [0]
 }
 }
@@ -481,190 +491,190 @@ b 0
 a 0 0 0
 { 2 instrument
 $bar(0)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(1)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(2)
-i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(3)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(4)
-i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
 $bar(5)
-i [9] [0] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(6)
-i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(7)
-i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(8)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
 $bar(9)
-i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(10)
-i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(11)
-i [9] [0] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(12)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(13)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [4/8] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
-i [9] [6/8] [1/8] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [7/8] [1/8] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [4/8] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
+i [9] [6/8] [1/8] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [7/8] [1/8] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(14)
-i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(15)
-i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(16)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
 $bar(17)
-i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(18)
-i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(19)
-i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(20)
-i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(21)
-i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(22)
-i [9] [0] [1] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
 $bar(23)
-i [9] [0] [1] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(24)
-i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
 $bar(25)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(26)
-i [9] [0] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(27)
-i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [5] [0]
 $bar(28)
-i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(29)
-i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/2] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/2] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [5] [0]
 $bar(30)
-i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(31)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
 $bar(32)
-i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(33)
-i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(34)
-i [9] [0] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
 $bar(35)
-i [9] [0] [1/2] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
 $bar(36)
-i [9] [0] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [17+$do] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [17+$do] "chord" [1] [3] [2] [5] [0]
 $bar(37)
-i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
 $bar(38)
-i [9] [0] [1] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(39)
-i [9] [0] [1/2] [16] [7+$instrument] [17+$do] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [17+$do] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$si] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
 $bar(40)
-i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
 $bar(41)
-i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(42)
-i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
 $bar(43)
-i [9] [0] [1] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(44)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(45)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(46)
-i [9] [0] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(47)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [3/4] [1/4] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(48)
-i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(49)
-i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(50)
-i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$la] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(0)
 i [10] [0] [1/2] [16] [6+$instrument] [$fa] "drone" [0] [3] [2] [2] [0]
 i [10] [1/2] [1/2] [16] [6+$instrument] [$sol] "drone" [0] [3] [2] [2] [0]
@@ -858,16 +868,16 @@ v $measure
 #define bar(time) #b [ $measure * $time ]#
 { 2 instrument
 $bar(0)
-i [9] [0] [1] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1] [16] [7+$instrument] [$sol] "chord" [1] [3] [2] [5] [0]
 $bar(1)
-i [9] [0] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [2] [0]
-i [9] [2/4] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [1/4] [1/4] [16] [7+$instrument] [$fa] "chord" [1] [3] [2] [5] [0]
+i [9] [2/4] [1/2] [16] [7+$instrument] [$mi] "chord" [1] [3] [2] [5] [0]
 $bar(2)
-i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [2] [0]
-i [9] [1/2] [1/2] [16] [7+$instrument] [-16+$si] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$re] "chord" [1] [3] [2] [5] [0]
+i [9] [1/2] [1/2] [16] [7+$instrument] [-16+$si] "chord" [1] [3] [2] [5] [0]
 $bar(3)
-i [9] [0] [1/2] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [2] [0]
+i [9] [0] [1/2] [16] [7+$instrument] [$do] "chord" [1] [3] [2] [5] [0]
 }
 s 14
 i [3] [0] [-1]

@@ -22,6 +22,16 @@ left = chord
 right = chord
 
 dry = 0
+wet = 1
+
+*
+
+--instance percussion
+
+left = percussion
+right = percussion
+
+dry = 0
 wet = 8
 
 *

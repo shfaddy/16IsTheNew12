@@ -18,7 +18,7 @@
 
 ## Loopback
 
-```scenario oscilla
+```scenario xoscilla
 
 loopback length = -1 *
 

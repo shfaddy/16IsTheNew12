@@ -6,6 +6,8 @@
 
 --options .
 
+-i adc
+
 -o dac
 
 ..
@@ -23,7 +25,7 @@ ksmps = 32
 nchnls = 2
 0dbfs = 1
 
-giKey = 9
+giKey = 7
 
 ..
 
@@ -33,18 +35,6 @@ giKey = 9
 
 ```scenario oscilla
 
---instrument room
---instrument mixer
---instrument loopback
-
---instrument dom
---instrument tak
---instrument sak
---instrument sik
---instrument sagat
---instrument claps
-
---instrument tin
---instrument tew
+--instrument recorder
 
 ```

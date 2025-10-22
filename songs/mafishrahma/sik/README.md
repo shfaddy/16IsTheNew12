@@ -4,7 +4,7 @@
 
 ```scenario oscilla
 
-note --attach + .$channel + .0$finger
+note --attach + .$finger
 
 step --attach + $finger/2^11
 
@@ -14,7 +14,7 @@ length = (1/2)
 
 tone --attach + ( $finger * 4 ) + ( ~ * 2 )
 
---parameter channel = $channel
+--parameter channel --string
 
 --parameter distance = 2
 
@@ -68,6 +68,8 @@ aSnatch butterlp aSnatch, aSnatchFrequency * iPitch
 aNote += aSnatch / 2^2
 
 aNote clip aNote, 1, 1
+
+chnmix aNote / ( iPDistance + 1 ), SPChannel
 
 ..
 

@@ -12,6 +12,8 @@
 
 --read drone
 
+--read start.rhythm
+
 + s 8
 
 ```
@@ -23,6 +25,8 @@
 --read drone
 
 --read start
+
+--read start.rhythm
 
 + s 8
 

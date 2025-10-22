@@ -30,7 +30,6 @@ gaNote [] init nchnls
 
 instr $mixer, mixer
 
-#define parameters #p4#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -39,6 +38,7 @@ iPStep init p2
 iPLength init p3
 #define p_channel #p4#
 iPChannel init p4
+#define parameters #SParameters sprintf {{%f}}, iPChannel#
 
 aNote clip gaNote [ iPChannel ], 1, 0dbfs
 outch iPChannel + 1, aNote
@@ -50,7 +50,6 @@ endin
 
 instr $loopback, loopback
 
-#define parameters ##
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -93,7 +92,6 @@ endin
 
 instr $player, player
 
-#define parameters #p4, p5, p6#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -106,6 +104,7 @@ iPChannel init p4
 iPDistance init p5
 #define p_loop #p6#
 iPLoop init p6
+#define parameters #SParameters sprintf {{%f %f %f}}, iPChannel, iPDistance, iPLoop#
 
 iMeasure init abs ( p3 )
 iSkip init ( iPLoop * iMeasure ) + ( iMeasure / 2.438 )
@@ -119,7 +118,6 @@ endin
 
 instr $dom, dom
 
-#define parameters #p4, p5#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -130,6 +128,7 @@ iPLength init p3
 iPChannel init p4
 #define p_distance #p5#
 iPDistance init p5
+#define parameters #SParameters sprintf {{%f %f}}, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^5
@@ -161,7 +160,6 @@ endin
 
 instr $tak, tak
 
-#define parameters #p4, p5, p6#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -174,6 +172,7 @@ iPTone init p4
 iPChannel init p5
 #define p_distance #p6#
 iPDistance init p6
+#define parameters #SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^7
@@ -206,7 +205,6 @@ endin
 
 instr $sak, sak
 
-#define parameters #p4, p5, p6#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -219,6 +217,7 @@ iPTone init p4
 iPChannel init p5
 #define p_distance #p6#
 iPDistance init p6
+#define parameters #SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^10
@@ -251,7 +250,6 @@ endin
 
 instr $sik, sik
 
-#define parameters #p4, p5, p6#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -264,6 +262,7 @@ iPTone init p4
 iPChannel init p5
 #define p_distance #p6#
 iPDistance init p6
+#define parameters #SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^10
@@ -296,7 +295,6 @@ endin
 
 instr $sagat, sagat
 
-#define parameters #p4, p5, p6#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -309,6 +307,7 @@ iPTone init p4
 iPChannel init p5
 #define p_distance #p6#
 iPDistance init p6
+#define parameters #SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^8
@@ -382,7 +381,6 @@ endin
 
 instr $tin, tin
 
-#define parameters #p4, p5, p6, p7, p8, p9#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -401,6 +399,7 @@ iPChannel init p7
 iPDistance init p8
 #define p_ornaments #p9#
 iPOrnaments init p9
+#define parameters #SParameters sprintf {{%f %f %f %f %f %f}}, iPScale, iPOctave, iPTone, iPChannel, iPDistance, iPOrnaments#
 
 iKey init 0
 iVelocity init 0

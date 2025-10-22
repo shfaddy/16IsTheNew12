@@ -40,7 +40,7 @@ iPDampMax init p9
 iPDry init p10
 #define p_wet #p11#
 iPWet init p11
-SParameters sprintf {{"%s" "%s" %f %f %f %f %f %f}}, SPLeft, SPRight, iPRoomMin, iPRoomMax, iPDampMin, iPDampMax, iPDry, iPWet
+#define parameters #SParameters sprintf {{"%s" "%s" %f %f %f %f %f %f}}, SPLeft, SPRight, iPRoomMin, iPRoomMax, iPDampMin, iPDampMax, iPDry, iPWet#
 
 aRoomLeft chnget SPLeft
 aRoomRight chnget SPRight
@@ -119,7 +119,7 @@ iPLength init p3
 iPChannel init p4
 #define p_distance #p5#
 iPDistance init p5
-SParameters sprintf {{%f %f}}, iPChannel, iPDistance
+#define parameters #SParameters sprintf {{%f %f}}, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^5
@@ -162,7 +162,7 @@ iPTone init p4
 iPChannel init p5
 #define p_distance #p6#
 iPDistance init p6
-SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance
+#define parameters #SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^7
@@ -206,7 +206,7 @@ iPTone init p4
 iPChannel init p5
 #define p_distance #p6#
 iPDistance init p6
-SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance
+#define parameters #SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^10
@@ -247,10 +247,10 @@ iPLength init p3
 #define p_tone #p4#
 iPTone init p4
 #define p_channel #p5#
-iPChannel init p5
+SPChannel strget p5
 #define p_distance #p6#
 iPDistance init p6
-SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance
+#define parameters #SParameters sprintf {{%f "%s" %f}}, iPTone, SPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^10
@@ -275,6 +275,7 @@ aSnatch noise aSnatchAmplitude, 0
 aSnatch butterlp aSnatch, aSnatchFrequency * iPitch
 aNote += aSnatch / 2^2
 aNote clip aNote, 1, 1
+chnmix aNote / ( iPDistance + 1 ), SPChannel
 
 endin
 
@@ -294,7 +295,7 @@ iPTone init p4
 iPChannel init p5
 #define p_distance #p6#
 iPDistance init p6
-SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance
+#define parameters #SParameters sprintf {{%f %f %f}}, iPTone, iPChannel, iPDistance#
 
 aNote = 0
 iAttack init 1/2^8
@@ -333,7 +334,7 @@ endin
 instr $tin, tin
 
 #define p_note #p1#
-SPNote strget p1
+iPNote init p1
 #define p_step #p2#
 iPStep init p2
 #define p_length #p3#
@@ -350,7 +351,13 @@ SPChannel strget p7
 iPDistance init p8
 #define p_ornaments #p9#
 iPOrnaments init p9
-SParameters sprintf {{%f %f %f "%s" %f %f}}, iPScale, iPOctave, iPTone, SPChannel, iPDistance, iPOrnaments
+#define p_method #p10#
+iPMethod init p10
+#define p_parameter1 #p11#
+iPParameter1 init p11
+#define p_parameter2 #p12#
+iPParameter2 init p12
+#define parameters #SParameters sprintf {{%f %f %f "%s" %f %f %f %f %f}}, iPScale, iPOctave, iPTone, SPChannel, iPDistance, iPOrnaments, iPMethod, iPParameter1, iPParameter2#
 
 if $p_ornaments > 0 then
 iOrnaments init 2 ^ int ( rnd ( $p_ornaments ) )
@@ -358,27 +365,22 @@ $p_length /= iOrnaments
 iOrnament init 1
 iPOrnaments = -1
 while iOrnament < iOrnaments do
+$parameters
 SOrnament sprintf {{ i %f %f %f %s }}, p1, iOrnament * $p_length, $p_length, SParameters
 prints "%s\n", SOrnament
-; scoreline_i SOrnament
+scoreline_i SOrnament
 iOrnament += 1
 od
 endif
 p1 init int ( p1 ) + rnd ( .99999 )
-iAttack init $p_length / 2^13
-iDecay init $p_length / 2^13
-aAmplitude linseg 0, iAttack, 1, iDecay, 0
+iAttack init 1 / 2^6
+iDecay init $p_length / 2^2
 iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
-aFrequency linsegr iFrequency * 2^(32/16), iAttack / 2^0, iFrequency, iDecay / 2^0, iFrequency * 2^(-4/16)
-aClip rspline 0, 1, 0, $p_length
-aSkew rspline -1, 1, 0, $p_length
-aNote squinewave aFrequency, aClip, aSkew
-aNote *= aAmplitude / 2^2
-aAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
-aPluck pluck k ( aAmplitude ), k ( aFrequency ) / 2^0, iFrequency, 0, 1
-aNote += aPluck / 2
-aNote butterlp aNote, aFrequency * 2^1
-aNote butterhp aNote, aFrequency / 2^0
+kAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
+kFrequency linsegr iFrequency * 2^(4/16), iAttack / 2^3, iFrequency, iDecay / 2^3, iFrequency * 2^(-4/16)
+aNote pluck kAmplitude, kFrequency, iFrequency, 0, iPMethod, iPParameter1, iPParameter2
+aNote butterlp aNote, kFrequency * 2^1
+aNote butterhp aNote, kFrequency / 2^0
 chnmix aNote / ( iPDistance + 1 ), SPChannel
 
 endin
@@ -389,30 +391,45 @@ endin
 
 i [2] [0] [-1]
 i [1.1] [0] [-1] "drone" "drone" [1/2] [1] [3/4] [1] [10] [0]
-i [1.2] [0] [-1] "chord" "chord" [1/2] [1] [3/4] [1] [0] [8]
+i [1.2] [0] [-1] "chord" "chord" [1/2] [1] [3/4] [1] [0] [1]
+i [1.3] [0] [-1] "percussion" "percussion" [1/2] [1] [3/4] [1] [0] [8]
 t 0 120
 v 8
 #define thickness #64#
 { $thickness beat
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0] "drone" [8] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5] "drone" [8] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5 + 4] "drone" [8] [3]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0] "drone" [8] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5] "drone" [8] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5 + 4] "drone" [8] [3] [2] [2] [0]
+}
+v 8
+{ 3 finger
+#define thickness #32#
+{ $thickness beat
+i [7 + .$finger] [$beat/$thickness + $finger/2^11] [1/$thickness] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [12]
+}
 }
 s 8
 t 0 120
 v 8
 #define thickness #64#
 { $thickness beat
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0] "drone" [8] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5] "drone" [8] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5 + 4] "drone" [8] [3]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0] "drone" [8] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5] "drone" [8] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5 + 4] "drone" [8] [3] [2] [2] [0]
 }
 v 8
 #define thickness #16#
 { $thickness beat
-i 9 [$beat/$thickness] [1/$thickness] [16] [7] [0] "chord" [0] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [7] [0 + 5] "chord" [0] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [7] [0 + 5 + 4] "chord" [0] [3]
+i [9] [$beat/$thickness] [1/$thickness] [16] [7] [0] "chord" [0] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [7] [0 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [7] [0 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+}
+v 8
+{ 3 finger
+#define thickness #32#
+{ $thickness beat
+i [7 + .$finger] [$beat/$thickness + $finger/2^11] [1/$thickness] [0 + ( $finger * 4 ) + ( ~ * 2 )] "percussion" [12]
+}
 }
 s 8
 r 4
@@ -420,60 +437,60 @@ t 0 120
 v 8
 #define thickness #64#
 { $thickness beat
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0] "drone" [8] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5] "drone" [8] [3]
-i 9 [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5 + 4] "drone" [8] [3]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0] "drone" [8] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5] "drone" [8] [3] [2] [2] [0]
+i [9] [$beat/$thickness] [1/$thickness] [16] [8] [0 + 5 + 4] "drone" [8] [3] [2] [2] [0]
 }
 v 4
-i 9 [0] [1/8] [16] [6] [0] "chord" [0] [3]
-i 9 [0] [1/8] [16] [6] [0 + 5] "chord" [0] [3]
-i 9 [0] [1/8] [16] [6] [0 + 5 + 4] "chord" [0] [3]
-i 9 [1/8] [1/8] [16] [6] [12] "chord" [0] [3]
-i 9 [1/8] [1/8] [16] [6] [12 + 5] "chord" [0] [3]
-i 9 [1/8] [1/8] [16] [6] [12 + 5 + 4] "chord" [0] [3]
-i 9 [2/8] [1/8] [16] [6] [-4] "chord" [0] [3]
-i 9 [2/8] [1/8] [16] [6] [-4 + 5] "chord" [0] [3]
-i 9 [2/8] [1/8] [16] [6] [-4 + 5 + 4] "chord" [0] [3]
-i 9 [3/8] [1/8] [16] [6] [14] "chord" [0] [3]
-i 9 [3/8] [1/8] [16] [6] [14 + 5] "chord" [0] [3]
-i 9 [3/8] [1/8] [16] [6] [14 + 5 + 4] "chord" [0] [3]
-i 9 [4/8] [1/8] [16] [6] [-2] "chord" [0] [3]
-i 9 [4/8] [1/8] [16] [6] [-2 + 5] "chord" [0] [3]
-i 9 [4/8] [1/8] [16] [6] [-2 + 5 + 4] "chord" [0] [3]
-i 9 [5/8] [1/8] [16] [6] [16] "chord" [0] [3]
-i 9 [5/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3]
-i 9 [5/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3]
-i 9 [6/8] [1/8] [16] [6] [0] "chord" [0] [3]
-i 9 [6/8] [1/8] [16] [6] [0 + 5] "chord" [0] [3]
-i 9 [6/8] [1/8] [16] [6] [0 + 5 + 4] "chord" [0] [3]
-i 9 [7/8] [1/8] [16] [6] [16] "chord" [0] [3]
-i 9 [7/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3]
-i 9 [7/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3]
+i [9] [0] [1/8] [16] [6] [0] "chord" [0] [3] [2] [2] [0]
+i [9] [0] [1/8] [16] [6] [0 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [0] [1/8] [16] [6] [0 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [1/8] [1/8] [16] [6] [12] "chord" [0] [3] [2] [2] [0]
+i [9] [1/8] [1/8] [16] [6] [12 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [1/8] [1/8] [16] [6] [12 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [2/8] [1/8] [16] [6] [-4] "chord" [0] [3] [2] [2] [0]
+i [9] [2/8] [1/8] [16] [6] [-4 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [2/8] [1/8] [16] [6] [-4 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [3/8] [1/8] [16] [6] [14] "chord" [0] [3] [2] [2] [0]
+i [9] [3/8] [1/8] [16] [6] [14 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [3/8] [1/8] [16] [6] [14 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [4/8] [1/8] [16] [6] [-2] "chord" [0] [3] [2] [2] [0]
+i [9] [4/8] [1/8] [16] [6] [-2 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [4/8] [1/8] [16] [6] [-2 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [5/8] [1/8] [16] [6] [16] "chord" [0] [3] [2] [2] [0]
+i [9] [5/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [5/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [6/8] [1/8] [16] [6] [0] "chord" [0] [3] [2] [2] [0]
+i [9] [6/8] [1/8] [16] [6] [0 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [6/8] [1/8] [16] [6] [0 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [7/8] [1/8] [16] [6] [16] "chord" [0] [3] [2] [2] [0]
+i [9] [7/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [7/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3] [2] [2] [0]
 b 4
-i 9 [0] [1/8] [16] [6] [3] "chord" [0] [3]
-i 9 [0] [1/8] [16] [6] [3 + 5] "chord" [0] [3]
-i 9 [0] [1/8] [16] [6] [3 + 5 + 4] "chord" [0] [3]
-i 9 [1/8] [1/8] [16] [6] [21] "chord" [0] [3]
-i 9 [1/8] [1/8] [16] [6] [21 + 5] "chord" [0] [3]
-i 9 [1/8] [1/8] [16] [6] [21 + 5 + 4] "chord" [0] [3]
-i 9 [2/8] [1/8] [16] [6] [5] "chord" [0] [3]
-i 9 [2/8] [1/8] [16] [6] [5 + 5] "chord" [0] [3]
-i 9 [2/8] [1/8] [16] [6] [5 + 5 + 4] "chord" [0] [3]
-i 9 [3/8] [1/8] [16] [6] [19] "chord" [0] [3]
-i 9 [3/8] [1/8] [16] [6] [19 + 5] "chord" [0] [3]
-i 9 [3/8] [1/8] [16] [6] [19 + 5 + 4] "chord" [0] [3]
-i 9 [4/8] [1/8] [16] [6] [3] "chord" [0] [3]
-i 9 [4/8] [1/8] [16] [6] [3 + 5] "chord" [0] [3]
-i 9 [4/8] [1/8] [16] [6] [3 + 5 + 4] "chord" [0] [3]
-i 9 [5/8] [1/8] [16] [6] [16] "chord" [0] [3]
-i 9 [5/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3]
-i 9 [5/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3]
-i 9 [6/8] [1/8] [16] [6] [0] "chord" [0] [3]
-i 9 [6/8] [1/8] [16] [6] [0 + 5] "chord" [0] [3]
-i 9 [6/8] [1/8] [16] [6] [0 + 5 + 4] "chord" [0] [3]
-i 9 [7/8] [1/8] [16] [6] [16] "chord" [0] [3]
-i 9 [7/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3]
-i 9 [7/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3]
+i [9] [0] [1/8] [16] [6] [3] "chord" [0] [3] [2] [2] [0]
+i [9] [0] [1/8] [16] [6] [3 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [0] [1/8] [16] [6] [3 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [1/8] [1/8] [16] [6] [21] "chord" [0] [3] [2] [2] [0]
+i [9] [1/8] [1/8] [16] [6] [21 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [1/8] [1/8] [16] [6] [21 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [2/8] [1/8] [16] [6] [5] "chord" [0] [3] [2] [2] [0]
+i [9] [2/8] [1/8] [16] [6] [5 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [2/8] [1/8] [16] [6] [5 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [3/8] [1/8] [16] [6] [19] "chord" [0] [3] [2] [2] [0]
+i [9] [3/8] [1/8] [16] [6] [19 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [3/8] [1/8] [16] [6] [19 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [4/8] [1/8] [16] [6] [3] "chord" [0] [3] [2] [2] [0]
+i [9] [4/8] [1/8] [16] [6] [3 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [4/8] [1/8] [16] [6] [3 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [5/8] [1/8] [16] [6] [16] "chord" [0] [3] [2] [2] [0]
+i [9] [5/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [5/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [6/8] [1/8] [16] [6] [0] "chord" [0] [3] [2] [2] [0]
+i [9] [6/8] [1/8] [16] [6] [0 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [6/8] [1/8] [16] [6] [0 + 5 + 4] "chord" [0] [3] [2] [2] [0]
+i [9] [7/8] [1/8] [16] [6] [16] "chord" [0] [3] [2] [2] [0]
+i [9] [7/8] [1/8] [16] [6] [16 + 5] "chord" [0] [3] [2] [2] [0]
+i [9] [7/8] [1/8] [16] [6] [16 + 5 + 4] "chord" [0] [3] [2] [2] [0]
 s 8
 i [3] [0] [-1]
 
