@@ -1,0 +1,32 @@
+{
+  "name": "@shfaddy/browsist",
+  "version": "1.0.0",
+  "description": "Shaikh Faddy's Browsing Tool",
+  "homepage": "https://github.com/shfaddy/browsist#readme",
+  "bugs": {
+    "url": "https://github.com/shfaddy/browsist/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shfaddy/browsist.git"
+  },
+  "license": "Unlicense",
+  "author": "Shaikh Faddy <shfaddy@gmail.com>",
+  "type": "module",
+  "main": "server.js",
+  "bin": "./server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@shfaddy/scenarist": "file:../scenarist",
+    "puppeteer": "^24.15.0"
+  },
+"exports": {
+
+".": "./scenario/index.js",
+"./*": "./scenario/*.js"
+
+}
+
+}

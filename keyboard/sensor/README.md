@@ -36,8 +36,8 @@ if kCode > 0 then
 
 kTone = gkTone [ kCode ]
 
-schedulek $tin + .1 + ( kCode/10000 ), 0, 1/4, 0, iPOctave, kTone
-schedulek $tin + .2 + kCode/10000, 0, 1/4, 0, iPOctave, kTone
+schedulek $tin + .1 + ( kCode/10000 ), 0, 1/4, 0, iPScale, iPOctave, kTone, iPMethod, iPParameter1, iPParameter2
+schedulek $tin + .2 + kCode/10000, 0, 1/4, 0, iPScale, iPOctave, kTone, iPMethod, iPParameter1, iPParameter2
 
 endif
 

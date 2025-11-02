@@ -44,7 +44,6 @@ endin
 
 instr $tin, tin
 
-#define parameters #p4, p5, p6#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -53,25 +52,34 @@ iPStep init p2
 iPLength init p3
 #define p_channel #p4#
 iPChannel init p4
-#define p_octave #p5#
-iPOctave init p5
-#define p_tone #p6#
-iPTone init p6
+#define p_scale #p5#
+iPScale init p5
+#define p_octave #p6#
+iPOctave init p6
+#define p_tone #p7#
+iPTone init p7
+#define p_method #p8#
+iPMethod init p8
+#define p_parameter1 #p9#
+iPParameter1 init p9
+#define p_parameter2 #p10#
+iPParameter2 init p10
+#define parameters #SParameters sprintf {{%f %f %f %f %f %f %f}}, iPChannel, iPScale, iPOctave, iPTone, iPMethod, iPParameter1, iPParameter2#
 
-iAttack init p3 / 2^13
-iDecay init p3 / 2^13
-aAmplitude linseg 0, iAttack, 1, iDecay, 0
-iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / 16 ) )
-aFrequency linsegr iFrequency * 2^(32/16), iAttack / 2^0, iFrequency, iDecay / 2^0, iFrequency * 2^(-4/16)
-aClip rspline 0, 1, 0, p3
-aSkew rspline -1, 1, 0, p3
-aNote squinewave aFrequency, aClip, aSkew
-aNote *= aAmplitude / 2^2
-aAmplitude linseg 0, iAttack, 1, p3 - iAttack, 0
-aPluck pluck k ( aAmplitude ), k ( aFrequency ) / 2^0, iFrequency, 0, 1
-aNote += aPluck / 2
-aNote butterlp aNote, aFrequency * 2^1
-aNote butterhp aNote, aFrequency / 2^0
+p1 init int ( p1 ) + rnd ( .99999 )
+iAttack init 1 / 2^( 6 + rnd ( 1 ) )
+iDecay init $p_length / 2^( 0 + rnd ( 1 ) )
+iSustain init 1/2^2
+iRelease init iDecay * 2^0
+iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
+kAmplitude linsegr 0, iAttack, 1, iDecay, iSustain, iRelease, 0
+iDetune init 2^7
+kDetune rspline 2^(-1/iDetune), 2^(1/iDetune), 0, 1 / ( $p_length * 2^2 )
+kFrequency linsegr iFrequency * 2^( rnd ( 4 ) / iDetune ), $p_length, iFrequency, iRelease, iFrequency * 2^( rnd ( -4 ) / iDetune )
+kFrequency *= kDetune
+aNote pluck kAmplitude, kFrequency, iFrequency, 0, iPMethod, iPParameter1, iPParameter2
+aNote butterlp aNote, kFrequency * 2^.75
+aNote butterhp aNote, kFrequency / 2^.75
 gaTin [ iPChannel ] = gaTin [ iPChannel ] + aNote
 
 endin
@@ -119,7 +127,6 @@ gkTone [ 48 ] init 31
 
 instr $sequencer, sequencer
 
-#define parameters #p4, p5, p6#
 #define p_note #p1#
 iPNote init p1
 #define p_step #p2#
@@ -128,17 +135,35 @@ iPStep init p2
 iPLength init p3
 #define p_channel #p4#
 iPChannel init p4
-#define p_octave #p5#
-iPOctave init p5
-#define p_tone #p6#
-iPTone init p6
+#define p_scale #p5#
+iPScale init p5
+#define p_octave #p6#
+iPOctave init p6
+#define p_tone #p7#
+iPTone init p7
+#define p_method #p8#
+iPMethod init p8
+#define p_parameter1 #p9#
+iPParameter1 init p9
+#define p_parameter2 #p10#
+iPParameter2 init p10
+#define parameters #SParameters sprintf {{%f %f %f %f %f %f %f}}, iPChannel, iPScale, iPOctave, iPTone, iPMethod, iPParameter1, iPParameter2#
 
+kKey init 0
 kCode sense
 if kCode > 0 then
+if kCode == 61 then
+kKey += 1
+kTone = 0
+elseif kCode == 45 then
+kTone = 0
+kKey -= 1
+else
 kTone = gkTone [ kCode ]
+endif
 if kTone >= 0 then
-schedulek $tin + .1 + ( kCode/10000 ), 0, 1/4, 0, iPOctave, kTone
-schedulek $tin + .2 + kCode/10000, 0, 1/4, 0, iPOctave, kTone
+schedulek $tin + .1 + ( kCode/10000 ), 0, 1/4, 0, iPScale, iPOctave, kTone + kKey, iPMethod, iPParameter1, iPParameter2
+schedulek $tin + .2 + kCode/10000, 0, 1/4, 0, iPScale, iPOctave, kTone + kKey, iPMethod, iPParameter1, iPParameter2
 endif
 endif
 
@@ -149,7 +174,7 @@ endin
 <CsScore>
 
 i "_tin" 0 -1
-i [2] [0] [2^13] [0] [8] [0]
+i [2] [0] [2^13] [0] [16] [8] [0] [1] [10] [0]
 
 </CsScore>
 

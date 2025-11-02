@@ -40,16 +40,34 @@ od
 
 --body .
 
+kKey init 0
+
 kCode sense
 
 if kCode > 0 then
 
+if kCode == 61 then
+
+kKey += 1
+
+kTone = 0
+
+elseif kCode == 45 then
+
+kTone = 0
+
+kKey -= 1
+
+else
+
 kTone = gkTone [ kCode ]
+
+endif
 
 if kTone >= 0 then
 
-schedulek $tin + .1 + ( kCode/10000 ), 0, 1/4, 0, iPOctave, kTone
-schedulek $tin + .2 + kCode/10000, 0, 1/4, 0, iPOctave, kTone
+schedulek $tin + .1 + ( kCode/10000 ), 0, 1/4, 0, iPScale, iPOctave, kTone + kKey, iPMethod, iPParameter1, iPParameter2
+schedulek $tin + .2 + kCode/10000, 0, 1/4, 0, iPScale, iPOctave, kTone + kKey, iPMethod, iPParameter1, iPParameter2
 
 endif
 

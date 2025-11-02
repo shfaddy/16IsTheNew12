@@ -4,6 +4,8 @@
 
 ```scenario oscilla
 
+--parameter loopback
+
 --parameter scale = 16
 --parameter octave = 8
 --parameter tone
@@ -33,6 +35,12 @@ giStrikeFT ftgen 0, 0, 256, 1, "prerequisites/marmstk1.wav", 0, 0, 0
 ```scenario oscilla
 
 --body .
+
+if iPLoopback > 0 then
+
+rewindscore
+
+endif
 
 --read from ~ tin ornaments
 

@@ -69,32 +69,30 @@ endin
 
 --body .
 
-iAttack init p3 / 2^13
-iDecay init p3 / 2^13
+p1 init int ( p1 ) + rnd ( .99999 )
 
-aAmplitude linseg 0, iAttack, 1, iDecay, 0
+iAttack init 1 / 2^( 6 + rnd ( 1 ) )
+iDecay init $p_length / 2^( 0 + rnd ( 1 ) )
+iSustain init 1/2^2
+iRelease init iDecay * 2^0
 
-iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / 16 ) )
+iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
 
-aFrequency linsegr iFrequency * 2^(32/16), iAttack / 2^0, iFrequency, iDecay / 2^0, iFrequency * 2^(-4/16)
+kAmplitude linsegr 0, iAttack, 1, iDecay, iSustain, iRelease, 0
 
-aClip rspline 0, 1, 0, p3
+iDetune init 2^7
 
-aSkew rspline -1, 1, 0, p3
+kDetune rspline 2^(-1/iDetune), 2^(1/iDetune), 0, 1 / ( $p_length * 2^2 )
 
-aNote squinewave aFrequency, aClip, aSkew
+kFrequency linsegr iFrequency * 2^( rnd ( 4 ) / iDetune ), $p_length, iFrequency, iRelease, iFrequency * 2^( rnd ( -4 ) / iDetune )
 
-aNote *= aAmplitude / 2^2
+kFrequency *= kDetune
 
-aAmplitude linseg 0, iAttack, 1, p3 - iAttack, 0
+aNote pluck kAmplitude, kFrequency, iFrequency, 0, iPMethod, iPParameter1, iPParameter2
 
-aPluck pluck k ( aAmplitude ), k ( aFrequency ) / 2^0, iFrequency, 0, 1
+aNote butterlp aNote, kFrequency * 2^.75
 
-aNote += aPluck / 2
-
-aNote butterlp aNote, aFrequency * 2^1
-
-aNote butterhp aNote, aFrequency / 2^0
+aNote butterhp aNote, kFrequency / 2^.75
 
 gaTin [ iPChannel ] = gaTin [ iPChannel ] + aNote
 

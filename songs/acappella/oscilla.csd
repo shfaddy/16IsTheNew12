@@ -8,7 +8,7 @@
 
 <CsInstruments>
 
-sr = 32768
+sr = 48000; 32768
 ksmps = 32
 nchnls = 2
 0dbfs = 1
@@ -87,24 +87,9 @@ chnclear "right"
 
 endin
 
-#define loopback #3#
+#define strings #3#
 
-instr $loopback, loopback
-
-#define p_note #p1#
-iPNote init p1
-#define p_step #p2#
-iPStep init p2
-#define p_length #p3#
-iPLength init p3
-
-rewindscore
-
-endin
-
-#define drone #4#
-
-instr $drone, drone
+instr $strings, strings
 
 #define p_note #p1#
 iPNote init p1
@@ -122,43 +107,71 @@ iPTone init p6
 SPChannel strget p7
 #define p_distance #p8#
 iPDistance init p8
-#define p_ornaments #p9#
-iPOrnaments init p9
-#define p_method #p10#
-iPMethod init p10
-#define p_parameter1 #p11#
-iPParameter1 init p11
-#define p_parameter2 #p12#
-iPParameter2 init p12
-#define parameters #SParameters sprintf {{%f %f %f "%s" %f %f %f %f %f}}, iPScale, iPOctave, iPTone, SPChannel, iPDistance, iPOrnaments, iPMethod, iPParameter1, iPParameter2#
+#define p_method #p9#
+iPMethod init p9
+#define p_parameter1 #p10#
+iPParameter1 init p10
+#define p_parameter2 #p11#
+iPParameter2 init p11
+#define p_loopback #p12#
+iPLoopback init p12
+#define p_drone #p13#
+iPDrone init p13
+#define p_ornaments #p14#
+iPOrnaments init p14
+#define p_ornament #p15#
+iPOrnament init p15
+#define parameters #SParameters sprintf {{%f %f %f "%s" %f %f %f %f %f %f %f %f}}, iPScale, iPOctave, iPTone, SPChannel, iPDistance, iPMethod, iPParameter1, iPParameter2, iPLoopback, iPDrone, iPOrnaments, iPOrnament#
 
-if $p_ornaments > 0 then
+if iPLoopback > 0 then
+rewindscore
+endif
+if iPDrone > 0 then
+$parameters
+SDrone sprintf {{ i %f %f %f %s }}, p1, $p_length, $p_length, SParameters
+scoreline_i SDrone
+endif
+if iPOrnaments > 0 then
 iOrnaments init 2 ^ int ( rnd ( $p_ornaments ) )
 $p_length /= iOrnaments
-iOrnament init 1
+iIndex init 1
 iPOrnaments = -1
-while iOrnament < iOrnaments do
+while iIndex < iOrnaments do
+iTone init iPTone
+if iIndex % 2 != 0 then
+if rnd ( 10 ) > 0 then
+iOrnament init iPOrnament
+else
+iOrnament init 0
+endif
+iPTone += iOrnament
+endif
 $parameters
-SOrnament sprintf {{ i %f %f %f %s }}, p1, iOrnament * $p_length, $p_length, SParameters
-prints "%s\n", SOrnament
+iPTone init iTone
+SOrnament sprintf {{ i %f %f %f %s }}, p1, iIndex * $p_length, $p_length, SParameters
 scoreline_i SOrnament
-iOrnament += 1
+iIndex += 1
 od
 endif
 p1 init int ( p1 ) + rnd ( .99999 )
-iAttack init 1 / 2^6
-iDecay init $p_length / 2^2
+iAttack init 1 / 2^( 8 + rnd ( 1 ) )
+iDecay init $p_length / 2^( 4 + rnd ( 1 ) )
+iSustain init 1/2^2
+iRelease init iDecay * 2^0
 iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
-kAmplitude linseg 0, iAttack, 1, $p_length - iAttack, 0
-kFrequency linsegr iFrequency * 2^(4/16), iAttack / 2^3, iFrequency, iDecay / 2^3, iFrequency * 2^(-4/16)
+kAmplitude linsegr 0, iAttack, 1, iDecay, iSustain, iRelease, 0
+iDetune init 2^5
+kDetune rspline 2^(-1/iDetune), 2^(1/iDetune), 0, 1 / ( $p_length * 2^2 )
+kFrequency linsegr iFrequency * 2^( rnd ( 48 ) / iDetune ), $p_length, iFrequency, iRelease, iFrequency * 2^( rnd ( -4 ) / iDetune )
+kFrequency *= kDetune
 aNote pluck kAmplitude, kFrequency, iFrequency, 0, iPMethod, iPParameter1, iPParameter2
-aNote butterlp aNote, kFrequency * 2^1
-aNote butterhp aNote, kFrequency / 2^0
-chnmix aNote / ( iPDistance + 1 ), SPChannel
+aNote butterlp aNote, kFrequency * 2^3
+aNote butterhp aNote, kFrequency / 2^1
+chnmix aNote / ( iPDistance + 1 + rnd ( .01 ) ), SPChannel
 
 endin
 
-#define claps #5#
+#define claps #4#
 
 instr $claps, claps
 
@@ -194,18 +207,29 @@ endin
 <CsScore>
 
 i [1.1] [0] [-1] "drone" "drone" [1/2] [1] [3/4] [1] [1] [0]
-i [1.2] [0] [-1] "percussion-left" "percussion-right" [1/2] [1] [3/4] [1] [1] [8]
+i [1.2] [0] [-1] "percussion" "percussion" [1/2] [1] [3/4] [1] [0] [2^16]
 i [2] [0] [-1]
-v 4
+#define measure #4#
+v $measure
 { 1024 bar
-b [ $bar * 4 ]
-i [5] [0] [0] [0] "percussion-left" "percussion-right" [2]
-i [5] [1/8] [0] [0] "percussion-left" "percussion-right" [2]
-i [5] [4/8] [0] [0] "percussion-left" "percussion-right" [2]
-i [5] [5/8] [0] [0] "percussion-left" "percussion-right" [2]
-i [5] [7/8] [0] [0] "percussion-left" "percussion-right" [2]
+{ 3 hand
+b [ ( $bar * $measure ) + ( $hand / 2^8 ) ]
+i [3.1] 0 [1/8] [16] [5] [$hand*2] "percussion" [0] [3] [.5] [0] [0] [0] [2] [16]
+i [3.1] + [2/8] [16] [5] [32+($hand*2)] "percussion" [0] [3] [.5] [0] [0] [0] [3] [16]
+i [3.1] + [1/8] [16] [5] [32+($hand*2)] "percussion" [0] [3] [.5] [0] [0] [0] [3] [16]
+i [3.1] + [2/8] [16] [5] [$hand*2] "percussion" [0] [3] [.5] [0] [0] [0] [2] [16]
+i [3.1] + [2/8] [16] [5] [32+($hand*2)] "percussion" [0] [3] [.5] [0] [0] [0] [3] [16]
 }
-t 0 90
+}
+v $measure
+{ 1024 bar
+b [ $bar * $measure ]
+i [4] [0] [0] [0] "percussion" "percussion" [2]
+i [4] [1/4] [0] [0] "percussion" "percussion" [2]
+i [4] [2/4] [0] [0] "percussion" "percussion" [2]
+i [4] [3/4] [0] [0] "percussion" "percussion" [2]
+}
+t 0 105
 
 </CsScore>
 

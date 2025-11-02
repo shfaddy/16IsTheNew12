@@ -1,0 +1,39 @@
+{
+  "name": "@shfaddy/oscilla",
+  "version": "1.0.0",
+  "description": "Shaikh Faddy's Oscilla",
+  "keywords": [
+    "shfaddy",
+    "shaikhfaddy",
+    "oscilla",
+    "framework",
+    "functional",
+    "scenarios",
+    "music",
+    "sound",
+    "versatile",
+    "recursive",
+    "recursion"
+  ],
+  "homepage": "https://github.com/shfaddy/oscilla#readme",
+  "bugs": {
+    "url": "https://github.com/shfaddy/oscilla/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shfaddy/oscilla.git"
+  },
+  "license": "Unlicense",
+  "author": "Shaikh Faddy <shfaddy@gmail.com> (https://github.com/shfaddy#README)",
+  "type": "module",
+  "main": "server.js",
+  "exports": {
+    ".": "./scenario/index.js",
+    "./*": "./scenario/*.js",
+    "./kit/*": "./kit/*.js"
+  },
+  "bin": "./server.js",
+  "dependencies": {
+    "@shfaddy/scenarist": "file:../scenarist"
+  }
+}

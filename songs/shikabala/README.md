@@ -37,20 +37,9 @@ giKey = 2
 
 --instrument room
 --instrument mixer
---instrument loopback
 
 + t 0 120
 
 --instrument tin
-
-```
-
-## Loopback
-
-```scenario oscilla
-
-+ b 0
-
-loopback length = -1 * $duration
 
 ```

@@ -14,10 +14,10 @@ instr _tin uses instrument number 3
 instr tin uses instrument number 4
 instr sequencer uses instrument number 5
 WARNING: cngoto: perf-time code in global space, ignored
-Elapsed time at end of orchestra compile: real: 0.009s, CPU: 0.009s
+Elapsed time at end of orchestra compile: real: 0.004s, CPU: 0.004s
 sorting score ...
 	... done
-Elapsed time at end of score sort: real: 0.009s, CPU: 0.009s
+Elapsed time at end of score sort: real: 0.004s, CPU: 0.004s
 graphics suppressed, ascii substituted
 0dBFS level = 1.0
 orch now loaded
@@ -27,12 +27,11 @@ writing 512 sample blks of 64-bit floats to dac
 SECTION 1:
 new alloc for instr sequencer:
 new alloc for instr _tin:
-WARNING: Seeding from current time 1222687822
+WARNING: Seeding from current time 4062655363
 
-WARNING: Buffer underrun in real-time audio output
 inactive allocs returned to freespace
 end of score.		   overall amps:  0.00000  0.00000
 	   overall samples out of range:        0        0
 0 errors in performance
-Elapsed time at end of performance: real: 1.279s, CPU: 0.111s
-190 512 sample blks of 64-bit floats written to dac
+Elapsed time at end of performance: real: 1.143s, CPU: 0.088s
+162 512 sample blks of 64-bit floats written to dac

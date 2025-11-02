@@ -6,7 +6,7 @@
 
 channel = melody
 
-ornaments = 3
+ornaments = 1
 
 octave = 8
 
@@ -22,17 +22,13 @@ distance = 0
 
 + a 0 0 [ $measure * 0 ]
 
-+ #define duration #34#
-
 * 0 0 0
 
 step --wrapper none
 
 ```
 
-## Section: Ostoora Shatoora Kora Soora
-
-### Shikabala Da Ostoora - Helwa WeShatoora
+### Shikabala Da Ostoora / Helwa WeShatoora
 
 ```scenario xoscilla
 
@@ -44,19 +40,22 @@ step --wrapper none
 
 ```scenario oscilla
 
-* + -4 1/8
-* +
+* + 3 1/8
+* + 2
 
 + { 2 time
 
 + { 2 verse
 
-* + 3 1/4
 * + 3 1/8
+* + 2
+* + 3
 * +
-* + 6 1/4
+* + 6 1/8
+* +
 * + 9
-* + 3 1/8
+* + 6
+* + 3
 
 ```
 
@@ -67,8 +66,10 @@ step --wrapper none
 * + 3 1/8
 * + -1
 * + 2
-* + 3 1/4
+* + 3
+* + 2
 * + -4+($verse*10)
+* +
 
 ```
 
@@ -82,11 +83,16 @@ step --wrapper none
 
 ```scenario oscilla
 
-* + 6 1/4
+* + 6 1/8
+* + 5
+* + 6
 * +
+* + 5
 * + 9
 * + 10
 * + 13 1/8
+
+loopback = 1 length = -1 * +
 
 ```
 

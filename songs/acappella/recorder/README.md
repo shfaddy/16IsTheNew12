@@ -1,35 +1,44 @@
-# Recorder Instrument
+# Recorder
 
-## Parameters
+## Options
 
 ```scenario oscilla
 
-length = -1
-
---parameter file --string = recording
+--options -i adc
 
 ```
 
-## Body
+## Header
 
 ```scenario oscilla
 
---body .
+--header .
+
+sr = 48000
+ksmps = 32
+nchnls = 2
+0dbfs = 1
+
+alwayson "recorder"
+
+instr recorder
 
 a1 inch 1
 a2 inch 2
 
 iTimeStamp date
 
-SFile sprintf "%s.%d.wav", SPFile, iTimeStamp
+SFile sprintf "%d.wav", iTimeStamp
 
-SSplit sprintf "split.%s", SFile
-
+SChannel1 sprintf "channel1.%s", SFile
+SChannel2 sprintf "channel2.%s", SFile
 SMix sprintf "mix.%s", SFile
 
-fout SSplit, -1, a1, a2
-
+fout SChannel1, -1, a1
+fout SChannel2, -1, a2
 fout SMix, -1, a1 + a2
+
+endin
 
 ..
 

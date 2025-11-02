@@ -1,0 +1,25 @@
+0dBFS level = 32768.0
+--Csound version 6.14 (double samples) 2020-11-20
+[commit: none]
+libsndfile-1.0.31
+UnifiedCSD:  oscilla.csd
+STARTING FILE
+Creating options
+Creating orchestra
+closing tag
+Creating score
+rtaudio: ALSA module enabled
+rtmidi: ALSA Raw MIDI module enabled
+instr room uses instrument number 5
+instr mixer uses instrument number 6
+instr loopback uses instrument number 7
+instr tin uses instrument number 8
+Elapsed time at end of orchestra compile: real: 0.004s, CPU: 0.004s
+sorting score ...
+score error:  illegal character n(6e) in [] expression
+  section 1:  at position 21
+WARNING: Internal error in print_input_backtrace()
+end of score.		   overall amps:  0.00000  0.00000
+	   overall samples out of range:        0        0
+0 errors in performance
+Elapsed time at end of performance: real: 0.004s, CPU: 0.004s

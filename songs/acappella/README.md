@@ -20,7 +20,7 @@
 
 --header .
 
-sr = 32768
+sr = 48000; 32768
 ksmps = 32
 nchnls = 2
 0dbfs = 1
@@ -37,15 +37,14 @@ giKey = 0
 
 --instrument room
 --instrument mixer
---instrument loopback
 
---instrument drone
+--instrument strings
 --instrument claps
 
 ```
 
 ```scenario oscilla
 
-+ t 0 90
++ t 0 105
 
 ```

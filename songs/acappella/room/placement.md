@@ -29,11 +29,11 @@ roomMax 15/16
 
 --instance percussion
 
-left = percussion-left
-right = percussion-right
+left = percussion
+right = percussion
 
-dry = 1
-wet = 8
+dry = 0
+wet = 2^16
 
 roomMin 3/8
 roomMax 4/8
