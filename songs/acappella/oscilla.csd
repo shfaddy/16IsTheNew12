@@ -9,7 +9,7 @@
 <CsInstruments>
 
 sr = 48000; 32768
-ksmps = 32
+ksmps = 64
 nchnls = 2
 0dbfs = 1
 giKey = 0
@@ -154,8 +154,8 @@ iIndex += 1
 od
 endif
 p1 init int ( p1 ) + rnd ( .99999 )
-iAttack init 1 / 2^( 8 + rnd ( 1 ) )
-iDecay init $p_length / 2^( 4 + rnd ( 1 ) )
+iAttack init 1 / 2^( 5 + rnd ( 1 ) )
+iDecay init $p_length / 2^( 3 + rnd ( 1 ) )
 iSustain init 1/2^2
 iRelease init iDecay * 2^0
 iFrequency init 2^( iPOctave + ( ( giKey + iPTone ) / iPScale ) )
@@ -212,7 +212,7 @@ i [2] [0] [-1]
 #define measure #4#
 v $measure
 { 1024 bar
-{ 3 hand
+{ 8 hand
 b [ ( $bar * $measure ) + ( $hand / 2^8 ) ]
 i [3.1] 0 [1/8] [16] [5] [$hand*2] "percussion" [0] [3] [.5] [0] [0] [0] [2] [16]
 i [3.1] + [2/8] [16] [5] [32+($hand*2)] "percussion" [0] [3] [.5] [0] [0] [0] [3] [16]
@@ -224,10 +224,11 @@ i [3.1] + [2/8] [16] [5] [32+($hand*2)] "percussion" [0] [3] [.5] [0] [0] [0] [3
 v $measure
 { 1024 bar
 b [ $bar * $measure ]
-i [4] [0] [0] [0] "percussion" "percussion" [2]
-i [4] [1/4] [0] [0] "percussion" "percussion" [2]
-i [4] [2/4] [0] [0] "percussion" "percussion" [2]
-i [4] [3/4] [0] [0] "percussion" "percussion" [2]
+i [4] [0] [0] [16] "percussion" "percussion" [4]
+i [4] [1/8] [0] [16] "percussion" "percussion" [4]
+i [4] [3/8] [0] [16] "percussion" "percussion" [4]
+i [4] [4/8] [0] [16] "percussion" "percussion" [4]
+i [4] [6/8] [0] [16] "percussion" "percussion" [4]
 }
 t 0 105
 

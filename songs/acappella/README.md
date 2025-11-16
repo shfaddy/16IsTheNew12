@@ -21,7 +21,7 @@
 --header .
 
 sr = 48000; 32768
-ksmps = 32
+ksmps = 64
 nchnls = 2
 0dbfs = 1
 

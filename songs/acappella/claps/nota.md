@@ -5,7 +5,9 @@
 left = percussion
 right = percussion
 
-distance = 2
+distance = 4
+
+swing = 16
 
 ```
 
@@ -18,9 +20,10 @@ distance = 2
 + b [ $bar * $measure ]
 
 * 0
-* 1/4
-* 2/4
-* 3/4
+* 1/8
+* 3/8
+* 4/8
+* 6/8
 
 + }
 

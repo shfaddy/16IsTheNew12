@@ -35,8 +35,8 @@
 
 p1 init int ( p1 ) + rnd ( .99999 )
 
-iAttack init 1 / 2^( 8 + rnd ( 1 ) )
-iDecay init $p_length / 2^( 4 + rnd ( 1 ) )
+iAttack init 1 / 2^( 5 + rnd ( 1 ) )
+iDecay init $p_length / 2^( 3 + rnd ( 1 ) )
 iSustain init 1/2^2
 iRelease init iDecay * 2^0
 

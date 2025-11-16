@@ -1,1 +1,0 @@
-/home/studio/music/theory/16IsTheNew12/tools/scenarist/index.js
