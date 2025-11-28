@@ -74,6 +74,7 @@ chnmix aNote / ( iPDistance + 1 + rnd ( .01 ) ), SPChannel
 
 ```scenario oscilla
 
---read melody
+--read nota
+scratch
 
 ```

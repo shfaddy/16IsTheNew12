@@ -13,11 +13,11 @@
 --parameter dampMin = 14/16
 --parameter dampMax = 1
 
---parameter delayMin = 1/2^3
---parameter delayMax = 1/2^2
+--parameter delayMin = 2^-2
+--parameter delayMax = 2^-2
 
 --parameter feedbackMin = 2^-2
---parameter feedbackMax = 2^-1
+--parameter feedbackMax = 2^-2
 
 --parameter dry
 --parameter wet

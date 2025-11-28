@@ -10,16 +10,16 @@ closing tag
 Creating score
 rtaudio: ALSA module enabled
 rtmidi: ALSA Raw MIDI module enabled
-instr clock uses instrument number 5
-instr room uses instrument number 6
-instr mixer uses instrument number 7
-instr strings uses instrument number 8
-Elapsed time at end of orchestra compile: real: 0.004s, CPU: 0.004s
+instr clock uses instrument number 6
+instr room uses instrument number 7
+instr mixer uses instrument number 8
+instr strings uses instrument number 9
+instr claps uses instrument number 10
+Elapsed time at end of orchestra compile: real: 0.011s, CPU: 0.011s
 sorting score ...
 Warp_factor = 4.000000
-Warp_factor = 4.000000
 	... done
-Elapsed time at end of score sort: real: 0.004s, CPU: 0.004s
+Elapsed time at end of score sort: real: 0.014s, CPU: 0.014s
 graphics suppressed, ascii substituted
 0dBFS level = 1.0
 orch now loaded
@@ -30,600 +30,145 @@ SECTION 1:
 new alloc for instr clock:
 new alloc for instr room:
 new alloc for instr room:
+new alloc for instr room:
 new alloc for instr mixer:
 new alloc for instr strings:
-WARNING: Division by zero
 new alloc for instr strings:
 new alloc for instr strings:
 new alloc for instr strings:
-  rtevent:	   T  0.072 TT  0.072 M:  0.60677  0.60677
+new alloc for instr strings:
+new alloc for instr strings:
+new alloc for instr strings:
+new alloc for instr strings:
+new alloc for instr strings:
+new alloc for instr strings:
+new alloc for instr strings:
+new alloc for instr claps:
+diskin2: opened 'claps/2.wav':
+         44100 Hz, 2 channel(s), 16538 sample frames
+
+  rtevent:	   T  0.072 TT  0.072 M:  0.97008  0.97008
 new alloc for instr strings:
   rtevent:	   T  0.072 TT  0.072 M:  0.00000  0.00000
 new alloc for instr strings:
-  rtevent:	   T  0.143 TT  0.143 M:  0.54765  0.51854
-  rtevent:	   T  0.215 TT  0.215 M:  0.38679  0.42480
-  rtevent:	   T  0.285 TT  0.285 M:  0.28962  0.32146
+  rtevent:	   T  0.072 TT  0.072 M:  0.00000  0.00000
+new alloc for instr strings:
+  rtevent:	   T  0.145 TT  0.145 M:  0.19360  0.19356
+  rtevent:	   T  0.219 TT  0.219 M:  0.03168  0.03166
+  rtevent:	   T  0.285 TT  0.285 M:  0.09217  0.09213
+new alloc for instr strings:
+  rtevent:	   T  0.292 TT  0.292 M:  0.34963  0.34963
 new alloc for instr strings:
 new alloc for instr strings:
-  rtevent:	   T  0.359 TT  0.359 M:  0.64995  0.62432
-  rtevent:	   T  0.429 TT  0.429 M:  0.56318  0.55220
-  rtevent:	   T  0.501 TT  0.501 M:  0.33634  0.36711
-B  0.000 ..  1.000 T  0.572 TT  0.572 M:  0.23995  0.23885
-  rtevent:	   T  0.572 TT  0.572 M:  0.00000  0.00000
-  rtevent:	   T  0.572 TT  0.572 M:  0.00000  0.00000
-  rtevent:	   T  0.572 TT  0.572 M:  0.00000  0.00000
-  rtevent:	   T  0.645 TT  0.645 M:  0.70709  0.69369
-  rtevent:	   T  0.716 TT  0.716 M:  0.62245  0.62656
-  rtevent:	   T  0.788 TT  0.788 M:  0.50172  0.48836
-  rtevent:	   T  0.859 TT  0.859 M:  0.38702  0.38181
-  rtevent:	   T  0.932 TT  0.932 M:  0.26080  0.28672
-  rtevent:	   T  1.003 TT  1.003 M:  0.16549  0.18558
-  rtevent:	   T  1.075 TT  1.075 M:  0.15662  0.16790
-B  1.000 ..  2.000 T  1.143 TT  1.143 M:  0.14144  0.14688
-  rtevent:	   T  1.145 TT  1.145 M:  0.14888  0.13369
-  rtevent:	   T  1.219 TT  1.219 M:  0.55826  0.57317
-  rtevent:	   T  1.289 TT  1.289 M:  0.43997  0.43968
 new alloc for instr strings:
-  rtevent:	   T  1.361 TT  1.361 M:  0.35843  0.35112
-B  2.000 ..  2.500 T  1.428 TT  1.428 M:  0.29951  0.23789
-  rtevent:	   T  1.432 TT  1.432 M:  0.11844  0.11607
-  rtevent:	   T  1.505 TT  1.505 M:  0.67683  0.67363
-  rtevent:	   T  1.576 TT  1.576 M:  0.52187  0.53030
-  rtevent:	   T  1.648 TT  1.648 M:  0.39752  0.42159
-  rtevent:	   T  1.713 TT  1.713 M:  0.24247  0.23873
-  rtevent:	   T  1.719 TT  1.719 M:  0.21140  0.15379
-  rtevent:	   T  1.792 TT  1.792 M:  0.80242  0.80337
-  rtevent:	   T  1.863 TT  1.863 M:  0.60334  0.62887
-  rtevent:	   T  1.935 TT  1.935 M:  0.46953  0.46499
-B  2.500 ..  3.500 T  2.000 TT  2.000 M:  0.31789  0.30802
-  rtevent:	   T  2.005 TT  2.005 M:  0.24469  0.27268
-  rtevent:	   T  2.079 TT  2.079 M:  0.67027  0.67692
-  rtevent:	   T  2.143 TT  2.143 M:  0.28911  0.27148
-  rtevent:	   T  2.149 TT  2.149 M:  0.35426  0.33822
-  rtevent:	   T  2.221 TT  2.221 M:  0.63434  0.65060
-  rtevent:	   T  2.285 TT  2.285 M:  0.30924  0.29205
-  rtevent:	   T  2.292 TT  2.292 M:  0.20945  0.25056
-  rtevent:	   T  2.292 TT  2.292 M:  0.00000  0.00000
-  rtevent:	   T  2.292 TT  2.292 M:  0.00000  0.00000
-  rtevent:	   T  2.365 TT  2.365 M:  0.59532  0.62627
-  rtevent:	   T  2.428 TT  2.428 M:  0.39333  0.39840
-  rtevent:	   T  2.436 TT  2.436 M:  0.40547  0.43681
-  rtevent:	   T  2.508 TT  2.508 M:  0.70220  0.68428
-B  3.500 ..  4.500 T  2.572 TT  2.572 M:  0.31291  0.30813
-  rtevent:	   T  2.579 TT  2.579 M:  0.24235  0.23593
-  rtevent:	   T  2.652 TT  2.652 M:  0.77888  0.75880
-  rtevent:	   T  2.715 TT  2.715 M:  0.28063  0.29498
-  rtevent:	   T  2.723 TT  2.723 M:  0.56078  0.56667
+  rtevent:	   T  0.365 TT  0.365 M:  0.71369  0.71372
+  rtevent:	   T  0.439 TT  0.439 M:  0.11990  0.11989
+  rtevent:	   T  0.512 TT  0.512 M:  0.10728  0.10726
+B  0.000 ..  1.000 T  0.572 TT  0.572 M:  0.10002  0.10003
 new alloc for instr strings:
-  rtevent:	   T  2.795 TT  2.795 M:  0.71804  0.72926
-  rtevent:	   T  2.857 TT  2.857 M:  0.28251  0.31230
-  rtevent:	   T  2.865 TT  2.865 M:  0.33654  0.36220
-  rtevent:	   T  2.939 TT  2.939 M:  0.78952  0.80279
-  rtevent:	   T  3.000 TT  3.000 M:  0.49052  0.53882
-  rtevent:	   T  3.009 TT  3.009 M:  0.34489  0.34494
-  rtevent:	   T  3.081 TT  3.081 M:  0.58850  0.60066
-B  4.500 ..  5.500 T  3.143 TT  3.143 M:  0.35810  0.34275
-  rtevent:	   T  3.152 TT  3.152 M:  0.25858  0.24149
-  rtevent:	   T  3.225 TT  3.225 M:  0.72652  0.73957
-  rtevent:	   T  3.296 TT  3.296 M:  0.49069  0.54390
-  rtevent:	   T  3.368 TT  3.368 M:  0.33971  0.30829
-  rtevent:	   T  3.428 TT  3.428 M:  0.17716  0.19801
-  rtevent:	   T  3.439 TT  3.439 M:  0.47117  0.43344
-  rtevent:	   T  3.583 TT  3.583 M:  0.73555  0.73605
-B  5.500 ..  6.500 T  3.715 TT  3.715 M:  0.21792  0.22262
-  rtevent:	   T  3.725 TT  3.725 M:  0.52509  0.52360
-  rtevent:	   T  3.799 TT  3.799 M:  0.68820  0.66460
-  rtevent:	   T  3.857 TT  3.857 M:  0.27744  0.28948
-  rtevent:	   T  3.869 TT  3.869 M:  0.29448  0.29196
-  rtevent:	   T  3.941 TT  3.941 M:  0.52713  0.54068
-  rtevent:	   T  4.000 TT  4.000 M:  0.33469  0.32363
-  rtevent:	   T  4.012 TT  4.012 M:  0.67110  0.66229
-  rtevent:	   T  4.012 TT  4.012 M:  0.00000  0.00000
-  rtevent:	   T  4.012 TT  4.012 M:  0.00000  0.00000
-  rtevent:	   T  4.085 TT  4.085 M:  0.64751  0.66128
-  rtevent:	   T  4.143 TT  4.143 M:  0.26695  0.27712
-  rtevent:	   T  4.156 TT  4.156 M:  0.50604  0.47580
-  rtevent:	   T  4.228 TT  4.228 M:  0.72560  0.71966
-B  6.500 ..  7.500 T  4.285 TT  4.285 M:  0.36280  0.31619
-  rtevent:	   T  4.299 TT  4.299 M:  0.46829  0.52531
-  rtevent:	   T  4.443 TT  4.443 M:  0.64717  0.65461
-  rtevent:	   T  4.585 TT  4.585 M:  0.42065  0.38776
-  rtevent:	   T  4.659 TT  4.659 M:  0.24463  0.25748
-  rtevent:	   T  4.729 TT  4.729 M:  0.15329  0.17899
-  rtevent:	   T  4.729 TT  4.729 M:  0.00000  0.00000
-  rtevent:	   T  4.729 TT  4.729 M:  0.00000  0.00000
-  rtevent:	   T  4.801 TT  4.801 M:  0.12518  0.12560
-  rtevent:	   T  4.801 TT  4.801 M:  0.00000  0.00000
-B  7.500 ..  8.500 T  4.857 TT  4.857 M:  0.10756  0.12166
-  rtevent:	   T  4.872 TT  4.872 M:  0.47768  0.48299
-  rtevent:	   T  4.945 TT  4.945 M:  0.53783  0.54118
-  rtevent:	   T  5.016 TT  5.016 M:  0.40825  0.40077
-  rtevent:	   T  5.088 TT  5.088 M:  0.33708  0.34075
-  rtevent:	   T  5.159 TT  5.159 M:  0.27933  0.29281
-  rtevent:	   T  5.232 TT  5.232 M:  0.19704  0.18615
-  rtevent:	   T  5.303 TT  5.303 M:  0.17858  0.19655
-  rtevent:	   T  5.375 TT  5.375 M:  0.16652  0.17544
-B  8.500 ..  9.500 T  5.428 TT  5.428 M:  0.18247  0.17296
-  rtevent:	   T  5.445 TT  5.445 M:  0.58674  0.59716
-  rtevent:	   T  5.519 TT  5.519 M:  0.59802  0.59270
-  rtevent:	   T  5.589 TT  5.589 M:  0.44795  0.41988
-  rtevent:	   T  5.661 TT  5.661 M:  0.19609  0.20298
-  rtevent:	   T  5.713 TT  5.713 M:  0.14773  0.15037
-  rtevent:	   T  5.732 TT  5.732 M:  0.59130  0.60682
-  rtevent:	   T  5.805 TT  5.805 M:  0.55607  0.53993
-  rtevent:	   T  5.876 TT  5.876 M:  0.32644  0.31852
-  rtevent:	   T  5.948 TT  5.948 M:  0.16796  0.17687
-B  9.500 .. 10.500 T  6.000 TT  6.000 M:  0.14258  0.13955
-  rtevent:	   T  6.019 TT  6.019 M:  0.71583  0.73347
-  rtevent:	   T  6.092 TT  6.092 M:  0.67356  0.68743
-  rtevent:	   T  6.163 TT  6.163 M:  0.49282  0.51598
-  rtevent:	   T  6.235 TT  6.235 M:  0.45491  0.48119
-  rtevent:	   T  6.305 TT  6.305 M:  0.42353  0.44003
-  rtevent:	   T  6.379 TT  6.379 M:  0.34820  0.34443
-  rtevent:	   T  6.449 TT  6.449 M:  0.33116  0.30827
-  rtevent:	   T  6.521 TT  6.521 M:  0.30065  0.26215
-  rtevent:	   T  6.592 TT  6.592 M:  0.29447  0.24510
-  rtevent:	   T  6.665 TT  6.665 M:  0.23605  0.23698
-  rtevent:	   T  6.736 TT  6.736 M:  0.19522  0.19598
-  rtevent:	   T  6.808 TT  6.808 M:  0.14456  0.14738
-  rtevent:	   T  6.879 TT  6.879 M:  0.13368  0.12972
-  rtevent:	   T  6.952 TT  6.952 M:  0.11389  0.12406
-  rtevent:	   T  7.023 TT  7.023 M:  0.11562  0.11856
-  rtevent:	   T  7.095 TT  7.095 M:  0.11466  0.12391
-B 10.500 .. 12.500 T  7.143 TT  7.143 M:  0.12593  0.11311
-  rtevent:	   T  7.165 TT  7.165 M:  0.54954  0.55417
-  rtevent:	   T  7.239 TT  7.239 M:  0.58898  0.59078
-  rtevent:	   T  7.309 TT  7.309 M:  0.38047  0.38851
-  rtevent:	   T  7.381 TT  7.381 M:  0.25260  0.27299
-B 12.500 .. 13.000 T  7.428 TT  7.428 M:  0.13193  0.12117
-  rtevent:	   T  7.452 TT  7.452 M:  0.70398  0.69559
-  rtevent:	   T  7.525 TT  7.525 M:  0.70011  0.71138
-  rtevent:	   T  7.571 TT  7.571 M:  0.25004  0.27554
-  rtevent:	   T  7.596 TT  7.596 M:  0.68512  0.67455
-  rtevent:	   T  7.668 TT  7.668 M:  0.66512  0.66891
-B 13.000 .. 13.500 T  7.715 TT  7.715 M:  0.32303  0.31118
-  rtevent:	   T  7.739 TT  7.739 M:  0.73816  0.72135
-  rtevent:	   T  7.883 TT  7.883 M:  0.84242  0.81266
-  rtevent:	   T  8.025 TT  8.025 M:  0.52632  0.52928
-  rtevent:	   T  8.099 TT  8.099 M:  0.33173  0.31714
-  rtevent:	   T  8.169 TT  8.169 M:  0.20930  0.23186
-  rtevent:	   T  8.169 TT  8.169 M:  0.00000  0.00000
-  rtevent:	   T  8.169 TT  8.169 M:  0.00000  0.00000
-  rtevent:	   T  8.241 TT  8.241 M:  0.19160  0.19154
-B 13.500 .. 14.500 T  8.285 TT  8.285 M:  0.18493  0.18701
-  rtevent:	   T  8.312 TT  8.312 M:  0.52122  0.50899
-  rtevent:	   T  8.312 TT  8.312 M:  0.00000  0.00000
-  rtevent:	   T  8.312 TT  8.312 M:  0.00000  0.00000
-  rtevent:	   T  8.357 TT  8.357 M:  0.41005  0.39827
-  rtevent:	   T  8.385 TT  8.385 M:  0.63921  0.63908
-  rtevent:	   T  8.428 TT  8.428 M:  0.49115  0.49970
-  rtevent:	   T  8.456 TT  8.456 M:  0.64306  0.64094
-  rtevent:	   T  8.500 TT  8.500 M:  0.54069  0.55930
-  rtevent:	   T  8.528 TT  8.528 M:  0.63886  0.64564
-B 14.500 .. 15.000 T  8.572 TT  8.572 M:  0.52629  0.55706
-  rtevent:	   T  8.599 TT  8.599 M:  0.62676  0.63555
-  rtevent:	   T  8.644 TT  8.644 M:  0.47907  0.47422
-  rtevent:	   T  8.715 TT  8.715 M:  0.58960  0.60196
-  rtevent:	   T  8.743 TT  8.743 M:  0.65622  0.64175
-  rtevent:	   T  8.787 TT  8.787 M:  0.47888  0.48395
-B 15.000 .. 15.500 T  8.857 TT  8.857 M:  0.59253  0.62058
-  rtevent:	   T  8.885 TT  8.885 M:  0.70116  0.70676
-  rtevent:	   T  8.959 TT  8.959 M:  0.56002  0.57436
-  rtevent:	   T  8.959 TT  8.959 M:  0.00000  0.00000
-  rtevent:	   T  9.000 TT  9.000 M:  0.24846  0.21317
-  rtevent:	   T  9.029 TT  9.029 M:  0.59448  0.57648
-  rtevent:	   T  9.101 TT  9.101 M:  0.52903  0.52847
-B 15.500 .. 16.000 T  9.143 TT  9.143 M:  0.20504  0.22142
-  rtevent:	   T  9.172 TT  9.172 M:  0.59720  0.59928
-  rtevent:	   T  9.245 TT  9.245 M:  0.54761  0.53001
-  rtevent:	   T  9.285 TT  9.285 M:  0.15875  0.17345
-  rtevent:	   T  9.316 TT  9.316 M:  0.69121  0.69810
-  rtevent:	   T  9.388 TT  9.388 M:  0.53323  0.53966
-B 16.000 .. 16.500 T  9.428 TT  9.428 M:  0.30448  0.29836
-  rtevent:	   T  9.459 TT  9.459 M:  0.64706  0.62838
-  rtevent:	   T  9.459 TT  9.459 M:  0.00000  0.00000
-  rtevent:	   T  9.459 TT  9.459 M:  0.00000  0.00000
-  rtevent:	   T  9.532 TT  9.532 M:  0.58296  0.59866
-  rtevent:	   T  9.603 TT  9.603 M:  0.45688  0.44460
-  rtevent:	   T  9.675 TT  9.675 M:  0.24291  0.25575
-B 16.500 .. 17.000 T  9.715 TT  9.715 M:  0.20564  0.25126
-  rtevent:	   T  9.745 TT  9.745 M:  0.67431  0.66223
-  rtevent:	   T  9.819 TT  9.819 M:  0.62542  0.63057
-  rtevent:	   T  9.889 TT  9.889 M:  0.41941  0.38988
-  rtevent:	   T  9.961 TT  9.961 M:  0.23209  0.23961
-B 17.000 .. 17.500 T 10.000 TT 10.000 M:  0.20391  0.18177
-  rtevent:	   T 10.032 TT 10.032 M:  0.55644  0.55277
-  rtevent:	   T 10.072 TT 10.072 M:  0.49316  0.49448
-  rtevent:	   T 10.143 TT 10.143 M:  0.48769  0.50402
-  rtevent:	   T 10.176 TT 10.176 M:  0.51764  0.50165
-  rtevent:	   T 10.215 TT 10.215 M:  0.38399  0.36450
-B 17.500 .. 18.000 T 10.285 TT 10.285 M:  0.70739  0.73068
-  rtevent:	   T 10.319 TT 10.319 M:  0.74010  0.71880
-  rtevent:	   T 10.357 TT 10.357 M:  0.42827  0.41545
-  rtevent:	   T 10.392 TT 10.392 M:  0.60804  0.63196
-  rtevent:	   T 10.428 TT 10.428 M:  0.44675  0.45765
-  rtevent:	   T 10.463 TT 10.463 M:  0.67358  0.68415
-  rtevent:	   T 10.500 TT 10.500 M:  0.44639  0.42983
-  rtevent:	   T 10.535 TT 10.535 M:  0.48481  0.48667
-B 18.000 .. 18.500 T 10.572 TT 10.572 M:  0.36941  0.38109
-  rtevent:	   T 10.605 TT 10.605 M:  0.70255  0.73133
-  rtevent:	   T 10.749 TT 10.749 M:  0.65000  0.63788
-  rtevent:	   T 10.749 TT 10.749 M:  0.00000  0.00000
-  rtevent:	   T 10.857 TT 10.857 M:  0.25097  0.20879
-  rtevent:	   T 10.892 TT 10.892 M:  0.50103  0.50918
-  rtevent:	   T 10.965 TT 10.965 M:  0.46555  0.49225
-  rtevent:	   T 11.036 TT 11.036 M:  0.28652  0.30426
-  rtevent:	   T 11.108 TT 11.108 M:  0.15183  0.13219
-B 18.500 .. 19.500 T 11.143 TT 11.143 M:  0.13256  0.13015
-  rtevent:	   T 11.179 TT 11.179 M:  0.75102  0.74527
-  rtevent:	   T 11.252 TT 11.252 M:  0.68882  0.67974
-  rtevent:	   T 11.323 TT 11.323 M:  0.56943  0.56415
-  rtevent:	   T 11.395 TT 11.395 M:  0.47620  0.49593
-  rtevent:	   T 11.465 TT 11.465 M:  0.35502  0.40832
-  rtevent:	   T 11.539 TT 11.539 M:  0.27097  0.28719
-  rtevent:	   T 11.609 TT 11.609 M:  0.21244  0.16867
-  rtevent:	   T 11.681 TT 11.681 M:  0.13661  0.11857
-B 19.500 .. 20.500 T 11.715 TT 11.715 M:  0.17738  0.15393
-  rtevent:	   T 11.752 TT 11.752 M:  0.71255  0.68653
-  rtevent:	   T 11.896 TT 11.896 M:  0.58845  0.58642
-  rtevent:	   T 12.039 TT 12.039 M:  0.32941  0.32579
-  rtevent:	   T 12.112 TT 12.112 M:  0.18727  0.19895
-  rtevent:	   T 12.183 TT 12.183 M:  0.13315  0.15036
-  rtevent:	   T 12.255 TT 12.255 M:  0.13589  0.11629
-B 20.500 .. 21.500 T 12.285 TT 12.285 M:  0.08913  0.09096
-  rtevent:	   T 12.325 TT 12.325 M:  0.81482  0.79940
-  rtevent:	   T 12.399 TT 12.399 M:  0.60297  0.62383
-  rtevent:	   T 12.428 TT 12.428 M:  0.19526  0.18402
-  rtevent:	   T 12.469 TT 12.469 M:  0.66237  0.65999
-  rtevent:	   T 12.541 TT 12.541 M:  0.63182  0.64184
-  rtevent:	   T 12.571 TT 12.571 M:  0.20530  0.21789
-  rtevent:	   T 12.612 TT 12.612 M:  0.84748  0.85276
-  rtevent:	   T 12.685 TT 12.685 M:  0.64664  0.65529
-  rtevent:	   T 12.713 TT 12.713 M:  0.21916  0.22513
-  rtevent:	   T 12.756 TT 12.756 M:  0.64023  0.63674
-  rtevent:	   T 12.828 TT 12.828 M:  0.50749  0.51673
-B 21.500 .. 22.500 T 12.857 TT 12.857 M:  0.15395  0.16066
-  rtevent:	   T 12.899 TT 12.899 M:  0.66259  0.67942
-  rtevent:	   T 13.000 TT 13.000 M:  0.57989  0.60887
-  rtevent:	   T 13.043 TT 13.043 M:  0.62304  0.61881
-  rtevent:	   T 13.143 TT 13.143 M:  0.45564  0.47410
-  rtevent:	   T 13.185 TT 13.185 M:  0.69898  0.71057
-  rtevent:	   T 13.285 TT 13.285 M:  0.67178  0.65185
-B 22.500 .. 23.500 T 13.428 TT 13.428 M:  0.55471  0.59577
-  rtevent:	   T 13.472 TT 13.472 M:  0.72107  0.70770
-  rtevent:	   T 13.571 TT 13.571 M:  0.52864  0.48971
-  rtevent:	   T 13.616 TT 13.616 M:  0.70331  0.69202
-  rtevent:	   T 13.713 TT 13.713 M:  0.63071  0.62783
-  rtevent:	   T 13.759 TT 13.759 M:  0.76362  0.79148
-  rtevent:	   T 13.832 TT 13.832 M:  0.64178  0.65587
-  rtevent:	   T 13.856 TT 13.856 M:  0.22286  0.20695
-  rtevent:	   T 13.903 TT 13.903 M:  0.60430  0.63241
-  rtevent:	   T 13.975 TT 13.975 M:  0.44694  0.51718
-B 23.500 .. 24.500 T 14.000 TT 14.000 M:  0.19451  0.22355
-  rtevent:	   T 14.045 TT 14.045 M:  0.51451  0.48031
-  rtevent:	   T 14.119 TT 14.119 M:  0.38257  0.32978
-  rtevent:	   T 14.143 TT 14.143 M:  0.16601  0.16623
-  rtevent:	   T 14.189 TT 14.189 M:  0.67986  0.67737
-  rtevent:	   T 14.261 TT 14.261 M:  0.46512  0.43230
-B 24.500 .. 25.000 T 14.285 TT 14.285 M:  0.17780  0.20633
-  rtevent:	   T 14.332 TT 14.332 M:  0.70316  0.70731
-  rtevent:	   T 14.405 TT 14.405 M:  0.42282  0.41619
-  rtevent:	   T 14.428 TT 14.428 M:  0.15318  0.17823
-  rtevent:	   T 14.476 TT 14.476 M:  0.54960  0.57202
-  rtevent:	   T 14.548 TT 14.548 M:  0.40208  0.43058
-B 25.000 .. 25.500 T 14.572 TT 14.572 M:  0.18180  0.19554
-  rtevent:	   T 14.619 TT 14.619 M:  0.68561  0.69682
-  rtevent:	   T 14.692 TT 14.692 M:  0.53455  0.55556
-  rtevent:	   T 14.715 TT 14.715 M:  0.22254  0.25784
-  rtevent:	   T 14.763 TT 14.763 M:  0.66958  0.70172
-  rtevent:	   T 14.835 TT 14.835 M:  0.52603  0.51011
-B 25.500 .. 26.000 T 14.857 TT 14.857 M:  0.24224  0.25518
-  rtevent:	   T 14.905 TT 14.905 M:  0.67809  0.69264
-  rtevent:	   T 15.049 TT 15.049 M:  0.52515  0.53330
-B 26.000 .. 26.500 T 15.143 TT 15.143 M:  0.16792  0.18338
-  rtevent:	   T 15.192 TT 15.192 M:  0.77822  0.77702
-  rtevent:	   T 15.265 TT 15.265 M:  0.64717  0.65785
-  rtevent:	   T 15.336 TT 15.336 M:  0.38158  0.35912
-  rtevent:	   T 15.408 TT 15.408 M:  0.19424  0.21294
-  rtevent:	   T 15.428 TT 15.428 M:  0.20183  0.19814
-  rtevent:	   T 15.479 TT 15.479 M:  0.57826  0.55988
-  rtevent:	   T 15.623 TT 15.623 M:  0.58965  0.58772
-B 26.500 .. 27.500 T 15.715 TT 15.715 M:  0.25892  0.23280
-end of section 1	 sect peak amps:  0.84748  0.85276
-SECTION 1:
+new alloc for instr strings:
+new alloc for instr strings:
+  rtevent:	   T  0.585 TT  0.585 M:  0.99089  0.99091
+new alloc for instr strings:
+  rtevent:	   T  0.659 TT  0.659 M:  0.80302  0.80299
+  rtevent:	   T  0.659 TT  0.659 M:  0.00000  0.00000
+  rtevent:	   T  0.659 TT  0.659 M:  0.00000  0.00000
+  rtevent:	   T  0.732 TT  0.732 M:  0.10914  0.10913
+  rtevent:	   T  0.805 TT  0.805 M:  0.11043  0.11048
+  rtevent:	   T  0.857 TT  0.857 M:  0.10550  0.10545
+  rtevent:	   T  0.879 TT  0.879 M:  0.40378  0.40381
+  rtevent:	   T  0.952 TT  0.952 M:  0.16007  0.15993
+  rtevent:	   T  1.025 TT  1.025 M:  0.11202  0.11206
+  rtevent:	   T  1.099 TT  1.099 M:  0.11462  0.11460
+B  1.000 ..  2.000 T  1.143 TT  1.143 M:  0.11046  0.11050
+diskin2: opened 'claps/1.wav':
+         44100 Hz, 2 channel(s), 11969 sample frames
+
+  rtevent:	   T  1.172 TT  1.172 M:  0.99490  0.99490
+  rtevent:	   T  1.245 TT  1.245 M:  0.65642  0.65641
+  rtevent:	   T  1.319 TT  1.319 M:  0.12248  0.12248
+  rtevent:	   T  1.392 TT  1.392 M:  0.10327  0.10329
+  rtevent:	   T  1.428 TT  1.428 M:  0.11237  0.11239
+  rtevent:	   T  1.465 TT  1.465 M:  0.74300  0.74299
+  rtevent:	   T  1.539 TT  1.539 M:  0.19802  0.19810
+  rtevent:	   T  1.612 TT  1.612 M:  0.10783  0.10784
+  rtevent:	   T  1.685 TT  1.685 M:  0.11742  0.11740
+B  2.000 ..  3.000 T  1.715 TT  1.715 M:  0.11100  0.11097
+  rtevent:	   T  1.759 TT  1.759 M:  0.91152  0.91153
+  rtevent:	   T  1.832 TT  1.832 M:  0.19122  0.19119
+  rtevent:	   T  1.905 TT  1.905 M:  0.10656  0.10656
+  rtevent:	   T  1.979 TT  1.979 M:  0.11734  0.11733
+  rtevent:	   T  2.000 TT  2.000 M:  0.11475  0.11478
+  rtevent:	   T  2.052 TT  2.052 M:  0.53568  0.53569
+  rtevent:	   T  2.125 TT  2.125 M:  0.11634  0.11635
+  rtevent:	   T  2.199 TT  2.199 M:  0.12015  0.12014
+  rtevent:	   T  2.272 TT  2.272 M:  0.12048  0.12048
+  rtevent:	   T  2.272 TT  2.272 M:  0.00000  0.00000
+  rtevent:	   T  2.272 TT  2.272 M:  0.00000  0.00000
+  rtevent:	   T  2.285 TT  2.285 M:  0.11620  0.11620
+diskin2: opened 'claps/2.wav':
+         44100 Hz, 2 channel(s), 16538 sample frames
+
+  rtevent:	   T  2.345 TT  2.345 M:  0.99008  0.99007
+  rtevent:	   T  2.419 TT  2.419 M:  0.32303  0.32305
+  rtevent:	   T  2.492 TT  2.492 M:  0.12202  0.12202
+  rtevent:	   T  2.565 TT  2.565 M:  0.10072  0.10070
+  rtevent:	   T  2.572 TT  2.572 M:  0.11452  0.11453
+  rtevent:	   T  2.639 TT  2.639 M:  0.82710  0.82711
+  rtevent:	   T  2.639 TT  2.639 M:  0.00000  0.00000
+  rtevent:	   T  2.639 TT  2.639 M:  0.00000  0.00000
+  rtevent:	   T  2.712 TT  2.712 M:  0.10869  0.10868
+  rtevent:	   T  2.785 TT  2.785 M:  0.10023  0.10026
+B  3.000 ..  5.000 T  2.857 TT  2.857 M:  0.09935  0.09936
 WARNING: Division by zero
--L with negative p2 illegal
-illegal RT scoreline:
- i 4.200000 -1.142857 -1.142857 6.000000 0.000000 2.000000 0.000000 16.000000 8.000000 0.000000 "melody" 1.000000 2.000000 3.000000 0.000000 1.000000 0.000000 -1.000000 0.000000 
-                                                                                                                                                                                  ^
-  rtevent:	   T  0.143 TT  0.143 M:  0.60637  0.60637
-  rtevent:	   T  0.285 TT  0.285 M:  0.41152  0.39276
-  rtevent:	   T  0.359 TT  0.359 M:  0.63840  0.65624
-  rtevent:	   T  0.429 TT  0.429 M:  0.44109  0.43517
-  rtevent:	   T  0.501 TT  0.501 M:  0.37019  0.32553
-B  0.000 ..  1.000 T  0.572 TT  0.572 M:  0.20939  0.19351
-  rtevent:	   T  0.572 TT  0.572 M:  0.00000  0.00000
-  rtevent:	   T  0.572 TT  0.572 M:  0.00000  0.00000
-  rtevent:	   T  0.572 TT  0.572 M:  0.00000  0.00000
-  rtevent:	   T  0.715 TT  0.715 M:  0.68331  0.67456
-  rtevent:	   T  0.716 TT  0.716 M:  0.12306  0.13900
-  rtevent:	   T  0.857 TT  0.857 M:  0.62887  0.62647
-  rtevent:	   T  0.859 TT  0.859 M:  0.11907  0.13935
-  rtevent:	   T  1.000 TT  1.000 M:  0.56181  0.55978
-  rtevent:	   T  1.003 TT  1.003 M:  0.14778  0.13361
-B  1.000 ..  2.000 T  1.143 TT  1.143 M:  0.48853  0.53944
-  rtevent:	   T  1.145 TT  1.145 M:  0.13646  0.11877
-  rtevent:	   T  1.215 TT  1.215 M:  0.53901  0.54346
-  rtevent:	   T  1.219 TT  1.219 M:  0.15240  0.20329
-  rtevent:	   T  1.285 TT  1.285 M:  0.53919  0.49312
-  rtevent:	   T  1.289 TT  1.289 M:  0.21841  0.20037
-  rtevent:	   T  1.357 TT  1.357 M:  0.70361  0.68167
-  rtevent:	   T  1.361 TT  1.361 M:  0.22860  0.19159
-B  2.000 ..  2.500 T  1.428 TT  1.428 M:  0.70006  0.70129
-  rtevent:	   T  1.432 TT  1.432 M:  0.19319  0.14993
-  rtevent:	   T  1.576 TT  1.576 M:  0.72840  0.74867
-  rtevent:	   T  1.719 TT  1.719 M:  0.57911  0.59750
-  rtevent:	   T  1.792 TT  1.792 M:  0.45167  0.39082
-  rtevent:	   T  1.863 TT  1.863 M:  0.39112  0.33403
-  rtevent:	   T  1.935 TT  1.935 M:  0.23469  0.20757
-B  2.500 ..  3.500 T  2.000 TT  2.000 M:  0.21687  0.20845
-  rtevent:	   T  2.005 TT  2.005 M:  0.21287  0.23514
-  rtevent:	   T  2.079 TT  2.079 M:  0.65822  0.64930
-  rtevent:	   T  2.143 TT  2.143 M:  0.28038  0.29597
-  rtevent:	   T  2.149 TT  2.149 M:  0.23996  0.20558
-  rtevent:	   T  2.221 TT  2.221 M:  0.62994  0.63586
-  rtevent:	   T  2.285 TT  2.285 M:  0.49608  0.47832
-  rtevent:	   T  2.292 TT  2.292 M:  0.31474  0.27628
-  rtevent:	   T  2.292 TT  2.292 M:  0.00000  0.00000
-  rtevent:	   T  2.292 TT  2.292 M:  0.00000  0.00000
-  rtevent:	   T  2.365 TT  2.365 M:  0.68954  0.67132
-  rtevent:	   T  2.428 TT  2.428 M:  0.25887  0.23445
-  rtevent:	   T  2.436 TT  2.436 M:  0.37406  0.36873
-  rtevent:	   T  2.508 TT  2.508 M:  0.75428  0.73389
-B  3.500 ..  4.500 T  2.572 TT  2.572 M:  0.53044  0.52032
-  rtevent:	   T  2.579 TT  2.579 M:  0.30015  0.28235
-  rtevent:	   T  2.652 TT  2.652 M:  0.68711  0.69034
-  rtevent:	   T  2.723 TT  2.723 M:  0.63371  0.62227
-  rtevent:	   T  2.795 TT  2.795 M:  0.50455  0.49696
-  rtevent:	   T  2.865 TT  2.865 M:  0.41504  0.40626
-  rtevent:	   T  2.939 TT  2.939 M:  0.30826  0.31306
-  rtevent:	   T  3.009 TT  3.009 M:  0.18624  0.16348
-  rtevent:	   T  3.081 TT  3.081 M:  0.17887  0.17686
-B  4.500 ..  5.500 T  3.143 TT  3.143 M:  0.16253  0.16068
-  rtevent:	   T  3.152 TT  3.152 M:  0.34439  0.35299
-  rtevent:	   T  3.225 TT  3.225 M:  0.61560  0.63715
-  rtevent:	   T  3.285 TT  3.285 M:  0.35876  0.40187
-  rtevent:	   T  3.296 TT  3.296 M:  0.42153  0.43557
-  rtevent:	   T  3.368 TT  3.368 M:  0.72219  0.71172
-  rtevent:	   T  3.428 TT  3.428 M:  0.31824  0.30985
-  rtevent:	   T  3.439 TT  3.439 M:  0.43582  0.45201
-  rtevent:	   T  3.512 TT  3.512 M:  0.58324  0.61612
-  rtevent:	   T  3.571 TT  3.571 M:  0.21462  0.18305
-  rtevent:	   T  3.583 TT  3.583 M:  0.41628  0.43078
-  rtevent:	   T  3.655 TT  3.655 M:  0.59323  0.59291
-B  5.500 ..  6.500 T  3.715 TT  3.715 M:  0.19170  0.19358
-  rtevent:	   T  3.725 TT  3.725 M:  0.42948  0.43600
-  rtevent:	   T  3.799 TT  3.799 M:  0.79894  0.81301
-  rtevent:	   T  3.869 TT  3.869 M:  0.60848  0.64281
-  rtevent:	   T  3.941 TT  3.941 M:  0.56440  0.58731
-  rtevent:	   T  4.012 TT  4.012 M:  0.51333  0.50896
-  rtevent:	   T  4.012 TT  4.012 M:  0.00000  0.00000
-  rtevent:	   T  4.012 TT  4.012 M:  0.00000  0.00000
-  rtevent:	   T  4.085 TT  4.085 M:  0.47895  0.47795
-  rtevent:	   T  4.156 TT  4.156 M:  0.42584  0.34744
-  rtevent:	   T  4.156 TT  4.156 M:  0.00000  0.00000
-  rtevent:	   T  4.228 TT  4.228 M:  0.32863  0.33493
-B  6.500 ..  7.500 T  4.285 TT  4.285 M:  0.23607  0.23933
-  rtevent:	   T  4.299 TT  4.299 M:  0.63052  0.61220
-  rtevent:	   T  4.372 TT  4.372 M:  0.65076  0.64132
-  rtevent:	   T  4.443 TT  4.443 M:  0.45183  0.46712
-  rtevent:	   T  4.515 TT  4.515 M:  0.39989  0.42994
-  rtevent:	   T  4.585 TT  4.585 M:  0.28507  0.26436
-  rtevent:	   T  4.659 TT  4.659 M:  0.21089  0.19624
-  rtevent:	   T  4.729 TT  4.729 M:  0.15158  0.16333
-  rtevent:	   T  4.729 TT  4.729 M:  0.00000  0.00000
-  rtevent:	   T  4.729 TT  4.729 M:  0.00000  0.00000
-  rtevent:	   T  4.801 TT  4.801 M:  0.16605  0.14072
-  rtevent:	   T  4.801 TT  4.801 M:  0.00000  0.00000
-B  7.500 ..  8.500 T  4.857 TT  4.857 M:  0.14406  0.14569
-  rtevent:	   T  4.872 TT  4.872 M:  0.59510  0.61239
-  rtevent:	   T  5.143 TT  5.143 M:  0.66734  0.66622
-  rtevent:	   T  5.159 TT  5.159 M:  0.68903  0.67379
-  rtevent:	   T  5.232 TT  5.232 M:  0.66697  0.66077
-  rtevent:	   T  5.303 TT  5.303 M:  0.54149  0.50121
-  rtevent:	   T  5.375 TT  5.375 M:  0.35203  0.33062
-  rtevent:	   T  5.375 TT  5.375 M:  0.00000  0.00000
-B  8.500 ..  9.500 T  5.428 TT  5.428 M:  0.22711  0.18684
-  rtevent:	   T  5.445 TT  5.445 M:  0.71921  0.68089
-  rtevent:	   T  5.519 TT  5.519 M:  0.58191  0.57706
-  rtevent:	   T  5.571 TT  5.571 M:  0.38663  0.42371
-  rtevent:	   T  5.589 TT  5.589 M:  0.58868  0.59827
-  rtevent:	   T  5.661 TT  5.661 M:  0.60004  0.57851
-  rtevent:	   T  5.713 TT  5.713 M:  0.21428  0.22631
-  rtevent:	   T  5.732 TT  5.732 M:  0.66743  0.67171
-  rtevent:	   T  5.805 TT  5.805 M:  0.59909  0.61136
-  rtevent:	   T  5.856 TT  5.856 M:  0.20784  0.18331
-  rtevent:	   T  5.876 TT  5.876 M:  0.74846  0.75869
-  rtevent:	   T  5.948 TT  5.948 M:  0.75371  0.75027
-B  9.500 .. 10.500 T  6.000 TT  6.000 M:  0.27573  0.25607
-  rtevent:	   T  6.019 TT  6.019 M:  0.56789  0.52939
-  rtevent:	   T  6.163 TT  6.163 M:  0.61630  0.61628
-  rtevent:	   T  6.305 TT  6.305 M:  0.47014  0.48725
-  rtevent:	   T  6.379 TT  6.379 M:  0.37739  0.35594
-  rtevent:	   T  6.449 TT  6.449 M:  0.34187  0.36342
-  rtevent:	   T  6.521 TT  6.521 M:  0.32327  0.31358
-  rtevent:	   T  6.592 TT  6.592 M:  0.31138  0.26020
-  rtevent:	   T  6.665 TT  6.665 M:  0.25893  0.23900
-  rtevent:	   T  6.736 TT  6.736 M:  0.19443  0.22373
-  rtevent:	   T  6.808 TT  6.808 M:  0.18276  0.18790
-  rtevent:	   T  6.879 TT  6.879 M:  0.15189  0.13550
-  rtevent:	   T  6.952 TT  6.952 M:  0.16004  0.14645
-  rtevent:	   T  7.023 TT  7.023 M:  0.13923  0.14475
-  rtevent:	   T  7.095 TT  7.095 M:  0.13816  0.12314
-B 10.500 .. 12.500 T  7.143 TT  7.143 M:  0.13070  0.12585
-  rtevent:	   T  7.165 TT  7.165 M:  0.64104  0.64572
-  rtevent:	   T  7.215 TT  7.215 M:  0.60184  0.61105
-  rtevent:	   T  7.239 TT  7.239 M:  0.82002  0.81329
-  rtevent:	   T  7.285 TT  7.285 M:  0.66632  0.66841
-  rtevent:	   T  7.309 TT  7.309 M:  0.66468  0.64353
-  rtevent:	   T  7.357 TT  7.357 M:  0.62705  0.59746
-  rtevent:	   T  7.381 TT  7.381 M:  0.69587  0.68042
-B 12.500 .. 13.000 T  7.428 TT  7.428 M:  0.53068  0.50839
-  rtevent:	   T  7.452 TT  7.452 M:  0.68707  0.66209
-  rtevent:	   T  7.571 TT  7.571 M:  0.55356  0.54625
-  rtevent:	   T  7.596 TT  7.596 M:  0.76561  0.77930
-B 13.000 .. 13.500 T  7.715 TT  7.715 M:  0.72732  0.69763
-  rtevent:	   T  7.739 TT  7.739 M:  0.65940  0.64711
-  rtevent:	   T  7.812 TT  7.812 M:  0.51597  0.52202
-  rtevent:	   T  7.857 TT  7.857 M:  0.21918  0.28142
-  rtevent:	   T  7.883 TT  7.883 M:  0.52579  0.55618
-  rtevent:	   T  7.955 TT  7.955 M:  0.47096  0.45857
-  rtevent:	   T  8.000 TT  8.000 M:  0.21934  0.21320
-  rtevent:	   T  8.025 TT  8.025 M:  0.64427  0.65730
-  rtevent:	   T  8.099 TT  8.099 M:  0.55603  0.58371
-  rtevent:	   T  8.143 TT  8.143 M:  0.27471  0.27412
-  rtevent:	   T  8.169 TT  8.169 M:  0.52547  0.58567
-  rtevent:	   T  8.169 TT  8.169 M:  0.00000  0.00000
-  rtevent:	   T  8.169 TT  8.169 M:  0.00000  0.00000
-  rtevent:	   T  8.241 TT  8.241 M:  0.50171  0.52782
-B 13.500 .. 14.500 T  8.285 TT  8.285 M:  0.18138  0.16503
-  rtevent:	   T  8.312 TT  8.312 M:  0.63301  0.63136
-  rtevent:	   T  8.312 TT  8.312 M:  0.00000  0.00000
-  rtevent:	   T  8.312 TT  8.312 M:  0.00000  0.00000
-  rtevent:	   T  8.385 TT  8.385 M:  0.53064  0.54118
-  rtevent:	   T  8.456 TT  8.456 M:  0.35360  0.33933
-  rtevent:	   T  8.528 TT  8.528 M:  0.19409  0.17812
-B 14.500 .. 15.000 T  8.572 TT  8.572 M:  0.16896  0.18839
-  rtevent:	   T  8.599 TT  8.599 M:  0.70030  0.69641
-  rtevent:	   T  8.644 TT  8.644 M:  0.63978  0.64301
-  rtevent:	   T  8.672 TT  8.672 M:  0.75926  0.78318
-  rtevent:	   T  8.715 TT  8.715 M:  0.63950  0.66908
-  rtevent:	   T  8.743 TT  8.743 M:  0.57654  0.53232
-  rtevent:	   T  8.787 TT  8.787 M:  0.40182  0.40567
-  rtevent:	   T  8.815 TT  8.815 M:  0.58257  0.57749
-B 15.000 .. 15.500 T  8.857 TT  8.857 M:  0.53022  0.52975
-  rtevent:	   T  8.885 TT  8.885 M:  0.64417  0.62978
-  rtevent:	   T  8.959 TT  8.959 M:  0.68662  0.68593
-  rtevent:	   T  8.959 TT  8.959 M:  0.00000  0.00000
-  rtevent:	   T  9.000 TT  9.000 M:  0.31663  0.31311
-  rtevent:	   T  9.029 TT  9.029 M:  0.52991  0.53304
-  rtevent:	   T  9.101 TT  9.101 M:  0.50202  0.49567
-B 15.500 .. 16.000 T  9.143 TT  9.143 M:  0.22825  0.20645
-  rtevent:	   T  9.172 TT  9.172 M:  0.47911  0.50583
-  rtevent:	   T  9.245 TT  9.245 M:  0.49189  0.50615
-  rtevent:	   T  9.316 TT  9.316 M:  0.33990  0.33283
-  rtevent:	   T  9.388 TT  9.388 M:  0.17574  0.17611
-B 16.000 .. 16.500 T  9.428 TT  9.428 M:  0.14729  0.16038
-  rtevent:	   T  9.459 TT  9.459 M:  0.57114  0.56232
-  rtevent:	   T  9.459 TT  9.459 M:  0.00000  0.00000
-  rtevent:	   T  9.459 TT  9.459 M:  0.00000  0.00000
-  rtevent:	   T  9.500 TT  9.500 M:  0.43796  0.43552
-  rtevent:	   T  9.532 TT  9.532 M:  0.73207  0.73199
-  rtevent:	   T  9.571 TT  9.571 M:  0.53045  0.56543
-  rtevent:	   T  9.603 TT  9.603 M:  0.54518  0.54256
-  rtevent:	   T  9.603 TT  9.603 M:  0.00000  0.00000
-  rtevent:	   T  9.643 TT  9.643 M:  0.34982  0.38401
-  rtevent:	   T  9.675 TT  9.675 M:  0.54535  0.53115
-B 16.500 .. 17.000 T  9.715 TT  9.715 M:  0.33699  0.30052
-  rtevent:	   T  9.745 TT  9.745 M:  0.61987  0.62810
-  rtevent:	   T  9.819 TT  9.819 M:  0.56523  0.57369
-  rtevent:	   T  9.857 TT  9.857 M:  0.21395  0.22771
-  rtevent:	   T  9.889 TT  9.889 M:  0.58486  0.58175
-  rtevent:	   T  9.961 TT  9.961 M:  0.60391  0.62271
-B 17.000 .. 17.500 T 10.000 TT 10.000 M:  0.21983  0.24534
-  rtevent:	   T 10.032 TT 10.032 M:  0.67187  0.68631
-  rtevent:	   T 10.176 TT 10.176 M:  0.66773  0.67203
-B 17.500 .. 18.000 T 10.285 TT 10.285 M:  0.27505  0.25657
-  rtevent:	   T 10.319 TT 10.319 M:  0.62233  0.59446
-  rtevent:	   T 10.428 TT 10.428 M:  0.58674  0.57723
-  rtevent:	   T 10.463 TT 10.463 M:  0.67457  0.67018
-B 18.000 .. 18.500 T 10.572 TT 10.572 M:  0.65269  0.66836
-  rtevent:	   T 10.605 TT 10.605 M:  0.73285  0.76943
-  rtevent:	   T 10.679 TT 10.679 M:  0.75424  0.73680
-  rtevent:	   T 10.749 TT 10.749 M:  0.52352  0.55443
-  rtevent:	   T 10.821 TT 10.821 M:  0.40714  0.43487
-  rtevent:	   T 10.892 TT 10.892 M:  0.37829  0.35464
-  rtevent:	   T 10.965 TT 10.965 M:  0.31133  0.32325
-  rtevent:	   T 11.036 TT 11.036 M:  0.24191  0.23579
-  rtevent:	   T 11.108 TT 11.108 M:  0.18228  0.17239
-B 18.500 .. 19.500 T 11.143 TT 11.143 M:  0.18445  0.17549
-  rtevent:	   T 11.179 TT 11.179 M:  0.68582  0.68216
-  rtevent:	   T 11.252 TT 11.252 M:  0.60975  0.63609
-  rtevent:	   T 11.323 TT 11.323 M:  0.54338  0.54435
-  rtevent:	   T 11.395 TT 11.395 M:  0.44364  0.46211
-  rtevent:	   T 11.465 TT 11.465 M:  0.34441  0.34136
-  rtevent:	   T 11.609 TT 11.609 M:  0.28423  0.28699
-B 19.500 .. 20.500 T 11.715 TT 11.715 M:  0.16689  0.15704
-  rtevent:	   T 11.752 TT 11.752 M:  0.75222  0.76081
-  rtevent:	   T 11.896 TT 11.896 M:  0.60647  0.60872
-  rtevent:	   T 12.000 TT 12.000 M:  0.14220  0.14293
-  rtevent:	   T 12.039 TT 12.039 M:  0.69820  0.72092
-  rtevent:	   T 12.112 TT 12.112 M:  0.69222  0.68524
+WARNING: Division by zero
+  rtevent:	   T  2.859 TT  2.859 M:  0.08954  0.08956
 new alloc for instr strings:
-  rtevent:	   T 12.183 TT 12.183 M:  0.49928  0.52734
-  rtevent:	   T 12.255 TT 12.255 M:  0.32693  0.29932
-B 20.500 .. 21.500 T 12.285 TT 12.285 M:  0.17579  0.17632
-  rtevent:	   T 12.325 TT 12.325 M:  0.61980  0.61916
-  rtevent:	   T 12.399 TT 12.399 M:  0.55406  0.55859
-  rtevent:	   T 12.469 TT 12.469 M:  0.37431  0.39811
-  rtevent:	   T 12.541 TT 12.541 M:  0.19799  0.22429
-  rtevent:	   T 12.571 TT 12.571 M:  0.16031  0.14657
-  rtevent:	   T 12.612 TT 12.612 M:  0.67786  0.68052
-  rtevent:	   T 12.685 TT 12.685 M:  0.46461  0.46053
-  rtevent:	   T 12.756 TT 12.756 M:  0.30324  0.28411
-  rtevent:	   T 12.828 TT 12.828 M:  0.17087  0.18598
-B 21.500 .. 22.500 T 12.857 TT 12.857 M:  0.12024  0.14126
-  rtevent:	   T 12.899 TT 12.899 M:  0.71928  0.69773
-  rtevent:	   T 13.043 TT 13.043 M:  0.67097  0.67756
-  rtevent:	   T 13.185 TT 13.185 M:  0.44638  0.43404
-  rtevent:	   T 13.259 TT 13.259 M:  0.22790  0.25028
-  rtevent:	   T 13.329 TT 13.329 M:  0.20624  0.24396
-  rtevent:	   T 13.401 TT 13.401 M:  0.16264  0.15963
-B 22.500 .. 23.500 T 13.428 TT 13.428 M:  0.15359  0.16729
-  rtevent:	   T 13.472 TT 13.472 M:  0.73623  0.73775
-  rtevent:	   T 13.545 TT 13.545 M:  0.52117  0.52855
-  rtevent:	   T 13.571 TT 13.571 M:  0.26755  0.24023
-  rtevent:	   T 13.616 TT 13.616 M:  0.64805  0.64124
-  rtevent:	   T 13.688 TT 13.688 M:  0.35099  0.33778
-  rtevent:	   T 13.713 TT 13.713 M:  0.19669  0.20505
-  rtevent:	   T 13.759 TT 13.759 M:  0.57643  0.56610
-  rtevent:	   T 13.832 TT 13.832 M:  0.41555  0.45290
-  rtevent:	   T 13.856 TT 13.856 M:  0.16489  0.19451
-  rtevent:	   T 13.903 TT 13.903 M:  0.83185  0.80640
-  rtevent:	   T 13.975 TT 13.975 M:  0.68689  0.70552
-B 23.500 .. 24.500 T 14.000 TT 14.000 M:  0.38291  0.39320
-  rtevent:	   T 14.045 TT 14.045 M:  0.69214  0.69569
-  rtevent:	   T 14.119 TT 14.119 M:  0.65410  0.67157
-  rtevent:	   T 14.189 TT 14.189 M:  0.48043  0.51180
-  rtevent:	   T 14.261 TT 14.261 M:  0.35490  0.39530
-B 24.500 .. 25.000 T 14.285 TT 14.285 M:  0.21873  0.26310
-  rtevent:	   T 14.332 TT 14.332 M:  0.70761  0.69604
-  rtevent:	   T 14.357 TT 14.357 M:  0.31235  0.33319
-  rtevent:	   T 14.405 TT 14.405 M:  0.61065  0.61801
-  rtevent:	   T 14.428 TT 14.428 M:  0.35097  0.40870
-  rtevent:	   T 14.476 TT 14.476 M:  0.54860  0.59003
-  rtevent:	   T 14.500 TT 14.500 M:  0.35616  0.37000
-  rtevent:	   T 14.548 TT 14.548 M:  0.66539  0.69144
-B 25.000 .. 25.500 T 14.572 TT 14.572 M:  0.45529  0.46795
-  rtevent:	   T 14.619 TT 14.619 M:  0.62420  0.62620
-  rtevent:	   T 14.644 TT 14.644 M:  0.25238  0.22922
-  rtevent:	   T 14.715 TT 14.715 M:  0.66068  0.62194
-  rtevent:	   T 14.763 TT 14.763 M:  0.62978  0.62199
-  rtevent:	   T 14.787 TT 14.787 M:  0.48513  0.48234
-B 25.500 .. 26.000 T 14.857 TT 14.857 M:  0.65300  0.66253
-  rtevent:	   T 14.905 TT 14.905 M:  0.61865  0.63524
-  rtevent:	   T 14.979 TT 14.979 M:  0.56313  0.55015
-  rtevent:	   T 15.049 TT 15.049 M:  0.39959  0.39100
-  rtevent:	   T 15.121 TT 15.121 M:  0.26435  0.29901
-B 26.000 .. 26.500 T 15.143 TT 15.143 M:  0.15333  0.16377
-  rtevent:	   T 15.192 TT 15.192 M:  0.60386  0.62888
-  rtevent:	   T 15.336 TT 15.336 M:  0.54165  0.52735
-  rtevent:	   T 15.479 TT 15.479 M:  0.33213  0.33807
-  rtevent:	   T 15.552 TT 15.552 M:  0.19989  0.26449
-  rtevent:	   T 15.623 TT 15.623 M:  0.17244  0.16566
+  rtevent:	   T  2.932 TT  2.932 M:  0.96890  0.96893
+  rtevent:	   T  3.000 TT  3.000 M:  0.47078  0.47253
+  rtevent:	   T  3.005 TT  3.005 M:  0.32874  0.34700
+  rtevent:	   T  3.079 TT  3.079 M:  0.79045  0.80240
+  rtevent:	   T  3.143 TT  3.143 M:  0.42723  0.50503
+  rtevent:	   T  3.144 TT  3.144 M:  0.15156  0.10879
+  rtevent:	   T  3.152 TT  3.152 M:  0.67225  0.67779
+  rtevent:	   T  3.225 TT  3.225 M:  0.95916  0.97683
+  rtevent:	   T  3.285 TT  3.285 M:  0.37068  0.38304
+  rtevent:	   T  3.299 TT  3.299 M:  0.63531  0.64299
+  rtevent:	   T  3.372 TT  3.372 M:  0.67849  0.67881
+B  5.000 ..  6.000 T  3.428 TT  3.428 M:  0.38621  0.43128
+diskin2: opened 'claps/2.wav':
+         44100 Hz, 2 channel(s), 16538 sample frames
+
+  rtevent:	   T  3.445 TT  3.445 M:  1.00000  0.99852
+new alloc for instr strings:
+  rtevent:	   T  3.519 TT  3.519 M:  0.99905  0.99994
+  rtevent:	   T  3.592 TT  3.592 M:  0.72477  0.68647
+  rtevent:	   T  3.665 TT  3.665 M:  0.57485  0.58750
+  rtevent:	   T  3.715 TT  3.715 M:  0.54777  0.49997
+  rtevent:	   T  3.739 TT  3.739 M:  0.87512  0.79880
+  rtevent:	   T  3.812 TT  3.812 M:  0.75886  0.69539
+  rtevent:	   T  3.885 TT  3.885 M:  0.36004  0.39170
+  rtevent:	   T  3.959 TT  3.959 M:  0.30999  0.29363
+B  6.000 ..  7.000 T  4.000 TT  4.000 M:  0.25865  0.19530
+  rtevent:	   T  4.032 TT  4.032 M:  0.97720  0.96602
+  rtevent:	   T  4.105 TT  4.105 M:  0.87765  0.86338
+  rtevent:	   T  4.179 TT  4.179 M:  0.64144  0.69120
+  rtevent:	   T  4.252 TT  4.252 M:  0.52702  0.56829
+  rtevent:	   T  4.287 TT  4.287 M:  0.43171  0.48193
+  rtevent:	   T  4.325 TT  4.325 M:  0.89492  0.88305
+  rtevent:	   T  4.399 TT  4.399 M:  0.34163  0.40598
+  rtevent:	   T  4.399 TT  4.399 M:  0.00000  0.00000
+  rtevent:	   T  4.399 TT  4.399 M:  0.00000  0.00000
+  rtevent:	   T  4.472 TT  4.472 M:  0.28773  0.28634
+  rtevent:	   T  4.545 TT  4.545 M:  0.28987  0.25016
+B  7.000 ..  8.000 T  4.572 TT  4.572 M:  0.25362  0.24568
+diskin2: opened 'claps/3.wav':
+         44100 Hz, 2 channel(s), 16538 sample frames
+
+  rtevent:	   T  4.619 TT  4.619 M:  0.97879  0.97819
 inactive allocs returned to freespace
-end of score.		   overall amps:  0.84748  0.85276
+end of score.		   overall amps:  1.00000  0.99994
 	   overall samples out of range:        0        0
 0 errors in performance
-Elapsed time at end of performance: real: 31.350s, CPU: 2.887s
-5884 512 sample blks of 64-bit floats written to dac
+Elapsed time at end of performance: real: 4.639s, CPU: 0.819s
+874 512 sample blks of 64-bit floats written to dac

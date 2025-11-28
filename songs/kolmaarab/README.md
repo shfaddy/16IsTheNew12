@@ -42,13 +42,6 @@ giKey = 0
 --produce function
 
 --instrument strings
-
-```
-
-## Loopback
-
-```scenario xoscilla
-
-loopback length = -1 *
+--instrument claps
 
 ```
